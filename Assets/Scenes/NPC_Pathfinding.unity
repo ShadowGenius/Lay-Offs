@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 231359459}
   - component: {fileID: 231359458}
+  - component: {fileID: 231359460}
   m_Layer: 0
   m_Name: PathfindingObject
   m_TagString: Untagged
@@ -148,12 +149,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc6d5fb865ece34f9cfbd56dd5df011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  gridHeight: 10
-  gridWidth: 10
+  gridHeight: 100
+  gridWidth: 100
   cellHeight: 1
   cellWidth: 1
   generatePath: 0
   visualizeGrid: 0
+  startPos: {x: 0, y: 0}
+  endPos: {x: 68, y: 57}
+  cellsToSearch: []
+  searchedCells: []
+  finalPath: []
 --- !u!4 &231359459
 Transform:
   m_ObjectHideFlags: 0
@@ -169,6 +175,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &231359460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231359457}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb225dbab7e9264695241faee18b4d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MapManager
+  gridHeight: 10
+  gridWidth: 10
+  cellHeight: 1
+  cellWidth: 1
+  generatePath: 0
+  visualizeGrid: 0
+  startPos: {x: 0, y: 0}
+  endPos: {x: 0, y: 0}
+  cellsToSearch: []
+  searchedCells: []
+  finalPath: []
 --- !u!1 &1636355441
 GameObject:
   m_ObjectHideFlags: 0

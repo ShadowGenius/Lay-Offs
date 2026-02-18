@@ -14,6 +14,9 @@ public class pathfindingScript : MonoBehaviour
     [SerializeField] private bool generatePath;
     [SerializeField] private bool visualizeGrid;
 
+    [SerializeField] private Vector2 startPos;
+    [SerializeField] private Vector2 endPos;
+
     private bool pathGenerated;
 
     private Dictionary<Vector2, Cell> cells;
@@ -34,7 +37,7 @@ public class pathfindingScript : MonoBehaviour
         if (generatePath && !pathGenerated)
         {
             GenerateGrid();
-            FindPath(new Vector2(0, 1), new Vector2(5, 7));
+            FindPath(startPos, endPos);
             pathGenerated = true;
         }
         else if (!generatePath)
@@ -56,12 +59,18 @@ public class pathfindingScript : MonoBehaviour
                 cells.Add(pos, new Cell(pos));
             }
         }
-        for(int i = 0; i < 40; i++)
-        {
-            //Vector2 pos = new Vector2(Random.Range(0, gridWidth), Random.Range(0, gridHeight));
-            Vector2 pos = new Vector2(Mathf.Floor(Random.Range(0, gridWidth)), Mathf.Floor(Random.Range(0, gridHeight)));
-            cells[pos].isWall = true;
-        }
+        cells[new Vector2(2, 0)].isWall = true;
+        cells[new Vector2(2, 1)].isWall = true;
+        cells[new Vector2(2, 2)].isWall = true;
+        cells[new Vector2(2, 3)].isWall = true;
+        cells[new Vector2(2, 4)].isWall = true;
+        cells[new Vector2(2, 5)].isWall = true;
+        cells[new Vector2(2, 6)].isWall = true;
+        cells[new Vector2(2, 7)].isWall = true;
+        cells[new Vector2(2, 8)].isWall = true;
+        cells[new Vector2(4, 9)].isWall = true;
+        cells[new Vector2(4, 8)].isWall = true;
+        cells[new Vector2(4, 7)].isWall = true;
     }
 
     private void FindPath(Vector2 startPos, Vector2 endPos)
@@ -156,7 +165,6 @@ public class pathfindingScript : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Debug.Log("Testing");
         if (!visualizeGrid || cells == null)
         {
             return;
