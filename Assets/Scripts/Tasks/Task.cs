@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Task : MonoBehaviour
+public class Task
 {
     private enum TaskStatus
     {
@@ -15,12 +15,12 @@ public class Task : MonoBehaviour
                                     // need to deliver 5 papers
     private int currentProgressUnits; // number of progress units already completed
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Task(int totalProgressUnits) 
     {
-        
+        this.status = TaskStatus.NotStarted;
+        this.totalProgressUnits = totalProgressUnits;
+        this.currentProgressUnits = 0;
     }
-
     void BeginTask()
     {
         status = TaskStatus.InProgress;
@@ -45,26 +45,29 @@ public class Task : MonoBehaviour
 
         return (double)currentProgressUnits / totalProgressUnits * 100.0;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
 
 public class Printing : Task
 {
-    
+    public Printing(int totalProgressUnits) : base(totalProgressUnits)
+    {
+
+    }
 }
 
 public class Delivery : Task
 {
+    public Delivery(int totalProgressUnits) : base(totalProgressUnits)
+    {
 
+    }
 }
 
 
 public class ComputerUse : Task
 {
-    
+    public ComputerUse(int totalProgressUnits) : base(totalProgressUnits)
+    {
+
+    }
 }
