@@ -32,11 +32,10 @@ public class NPCpathfinding: MonoBehaviour
 
     private void Update()
     {
-        if (pathIndex >= currentPath.Count && !pathFinished)
+        if (pathIndex >= currentPath.Count)
         {
-            pathFinished = true;
             Debug.Log("Path Finished");
-            WaitABit();
+            pathFinished = true;
             return;
         }
         if (currentPath == null)
@@ -56,5 +55,21 @@ public class NPCpathfinding: MonoBehaviour
         currentPath.Clear();
         pathFinished = false;
         moveTarget = pointLocations[Random.Range(0, pointLocations.Count)];
+    }
+
+    public void GoTo(Vector2 location)
+    {
+        currentPath.Clear();
+        pathFinished = false;
+        moveTarget = location;
+    }
+
+    public void GoTo(string location)
+    {
+        Debug.Log("New Goto");
+        moveTarget = new Vector2(4, 3);
+        currentPath = mapManager.FindPath((Vector2)transform.position, moveTarget);
+        pathIndex = 0;
+        pathFinished = false;
     }
 }
