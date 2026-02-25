@@ -73,6 +73,13 @@ public class NPCpathfinding: MonoBehaviour
         pathIndex = 0;
         pathFinished = false;
     }
+    public void GoTo(float locationx, float locationy)
+    {
+        Vector2 location = new Vector2(locationx, locationy);
+        currentPath = mapManager.FindPath((Vector2)transform.position, location);
+        pathIndex = 0;
+        pathFinished = false;
+    }
 
     public void GoTo(string locationStr)
     {
