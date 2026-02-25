@@ -19,9 +19,20 @@ public class NPCpathfinding: MonoBehaviour
 
     void Start()
     {
+        Locations = new Dictionary<string, Vector2>();
         moveTarget = pointLocations[Random.Range(0, pointLocations.Count)];
         mapManager = FindObjectOfType<MapManager>();
         move(moveTarget);
+        for(int i = 0; i < pointLocations.Count; i++)
+        {
+            if (pointLocations == null || pointLocations.Count == 0)
+            {
+                Debug.LogError("pointLocations is null or empty!");
+                return;
+            }
+            Debug.Log("N: " + pointNames[i] + " L: " + pointLocations[i]);
+            Locations.Add(pointNames[i], pointLocations[i]);
+        }
     }
 
     public void move(Vector2 targetPos)
@@ -34,7 +45,6 @@ public class NPCpathfinding: MonoBehaviour
     {
         if (pathIndex >= currentPath.Count)
         {
-            Debug.Log("Path Finished");
             pathFinished = true;
             return;
         }
@@ -51,23 +61,22 @@ public class NPCpathfinding: MonoBehaviour
     IEnumerator WaitABit()
     {
         yield return new WaitForSeconds(3f);
-        Debug.Log("EndSeconds");
-        currentPath.Clear();
-        pathFinished = false;
         moveTarget = pointLocations[Random.Range(0, pointLocations.Count)];
+        currentPath = mapManager.FindPath((Vector2)transform.position, moveTarget);
+        pathIndex = 0;
+        pathFinished = false;
     }
 
     public void GoTo(Vector2 location)
     {
-        currentPath.Clear();
+        currentPath = mapManager.FindPath((Vector2)transform.position, location);
+        pathIndex = 0;
         pathFinished = false;
-        moveTarget = location;
     }
 
-    public void GoTo(string location)
+    public void GoTo(string locationStr)
     {
-        Debug.Log("New Goto");
-        moveTarget = new Vector2(4, 3);
+        moveTarget = Locations[locationStr];
         currentPath = mapManager.FindPath((Vector2)transform.position, moveTarget);
         pathIndex = 0;
         pathFinished = false;
