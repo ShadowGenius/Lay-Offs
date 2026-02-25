@@ -1,29 +1,22 @@
+using NUnit.Framework;
 using UnityEngine;
 
-public class Task
+public class Task : Action
 {
-    private enum TaskStatus
-    {
-        NotStarted,
-        InProgress,
-        Completed,
-        Failed // if for example there is a time limit and the player runs out of time
-    }
 
-    private TaskStatus status = TaskStatus.NotStarted;
     private int totalProgressUnits; // refers to how many things you need to do to complete the task, for example this would be 5 if you
                                     // need to deliver 5 papers
     private int currentProgressUnits; // number of progress units already completed
 
-    public Task(int totalProgressUnits) 
+    public Task(Character character, int totalProgressUnits) : base(character, "Basic Task", ActionStatus.NotStarted)
     {
-        this.status = TaskStatus.NotStarted;
         this.totalProgressUnits = totalProgressUnits;
         this.currentProgressUnits = 0;
     }
+
     void BeginTask()
     {
-        status = TaskStatus.InProgress;
+        BeginAction();
     }
 
     void MakeProgress()
@@ -34,6 +27,7 @@ public class Task
     void FailTask()
     {
         // ...
+        status = ActionStatus.Failed;
     }
 
     double PercentComplete()
@@ -49,25 +43,25 @@ public class Task
 
 public class Printing : Task
 {
-    public Printing(int totalProgressUnits) : base(totalProgressUnits)
+    public Printing(Character character, int totalProgressUnits) : base(character, totalProgressUnits)
     {
-
+        title = "Print Papers";
     }
 }
 
 public class Delivery : Task
 {
-    public Delivery(int totalProgressUnits) : base(totalProgressUnits)
+    public Delivery(Character character, int totalProgressUnits) : base(character, totalProgressUnits)
     {
-
+        title = "Deliver Papers";
     }
 }
 
 
 public class ComputerUse : Task
 {
-    public ComputerUse(int totalProgressUnits) : base(totalProgressUnits)
+    public ComputerUse(Character character, int totalProgressUnits) : base(character, totalProgressUnits)
     {
-
+        title = "Use the Computer";
     }
 }

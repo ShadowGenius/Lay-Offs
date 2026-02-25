@@ -39,7 +39,7 @@ public class NPCPersonality
 
     // this class should be used as an attribute for a broader NPC class
     public string name = "Generic Model";
-
+    
     private int basicTaskChance = 50;
     private int untargetedSabotageChance = 10;
     private int targetedActionChance = 40;
@@ -75,21 +75,24 @@ public class NPCPersonality
         return baseHelpChance + (friendlinessToTarget * helpFriendlinessMult);
     }
 
-    public string NextAction(double friendlinessToTarget) // might be a good idea to include the target as a parameter once that is implemented
+    public Action NextAction(Character character, Character target) 
     {
         // strings are just placeholders for the actual actions
-        // probably should return an object that tasks, sabotages, etc inherit from
+        // return the Action object instead
+
+        double friendlinessToTarget = character.FriendlinessTo(target);
 
         double actionRoll = Random.Range(0f, 100f);
-        string action = "";
+        string actionString = "";
+        Action action = null;
 
         if (actionRoll < basicTaskChance)
         {
-            action = "basic task";
+            actionString = "basic task";
 
         } else if (actionRoll < basicTaskChance + untargetedSabotageChance)
         {
-            action = "untargeted sabotage";
+            actionString = "untargeted sabotage";
 
         } else if (actionRoll < basicTaskChance + untargetedSabotageChance + targetedActionChance) // should just be 100 
         {
@@ -105,22 +108,22 @@ public class NPCPersonality
                 targetedAction = "help";
             }
 
-            action = targetedAction;
+            actionString = targetedAction;
         }
 
-        if (action == "basic task")
+        if (actionString == "basic task")
         {
             // select a random basic task from a list of basic tasks
 
-        } else if (action == "untargeted sabotage")
+        } else if (actionString == "untargeted sabotage")
         {
             // select random untargeted sabotage
 
-        } else if (action == "targeted sabotage")
+        } else if (actionString == "targeted sabotage")
         {
             // ...
 
-        } else if (action == "help")
+        } else if (actionString == "help")
         {
             // ...
 

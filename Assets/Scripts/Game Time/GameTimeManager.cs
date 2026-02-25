@@ -63,6 +63,7 @@ public class GameTimeManager : MonoBehaviour
             currentHour = latestHour;
             currentMinute = 0;
             PauseTime();
+            StartVoting();
         }
     }
 
@@ -79,6 +80,11 @@ public class GameTimeManager : MonoBehaviour
         timePaused = true;
     }
 
+    public void StartVoting()
+    {
+        // start voting logic
+    }
+
     public void ResumeTime()
     {
         timePaused = false;
@@ -93,8 +99,8 @@ public class GameTimeManager : MonoBehaviour
 
         if (timePaused)
         {
-            AdvanceDay();
-            ResumeTime();
+            // AdvanceDay();
+            // ResumeTime();
         }
     }
 
