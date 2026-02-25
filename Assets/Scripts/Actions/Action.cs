@@ -7,11 +7,79 @@ public class Action
     public string title;
     protected ActionStatus status = ActionStatus.NotStarted;
 
-    public static List<Task> possibleTasks = new List<Task>()
+    public static Task GenerateRandomTask(Character character)
     {
-        new Printing(null, 5),
-        new Delivery(null, 5)
-    };
+        int randomTaskType = Random.Range(0, 3);
+
+        switch (randomTaskType)
+        {
+            case 0:
+                return new Printing(character);
+
+            case 1:
+                return new Delivery(character);
+
+            case 2:
+                return new ComputerUse(character);
+
+        }
+
+        return null; // shouldn't happen
+    }
+
+    public static Help GenerateRandomHelp(Character character, Character target)
+    {
+        int randomTaskType = Random.Range(0, 3);
+
+        switch (randomTaskType)
+        {
+            case 0:
+                return new GiveCupOfWater(character, target);
+
+            case 1:
+                return new PickUpItems(character, target);
+
+            case 2:
+                return new FixComputer(character, target);
+
+        }
+
+        return null; // shouldn't happen
+    }
+
+    public static TargetedSabotage GenerateRandomTargetedSabotage(Character character, Character target)
+    {
+        int randomTaskType = Random.Range(0, 3);
+
+        switch (randomTaskType)
+        {
+            case 0:
+                return new HideFiles(character, target);
+
+            case 1:
+                return new BreakComputer(character, target);
+
+            case 2:
+                return new BumpIntoCharacter(character, target);
+
+        }
+
+        return null; // shouldn't happen
+    }
+
+    public static UntargetedSabotage GenerateRandomUntargetedSabotage(Character character)
+    {
+        int randomTaskType = Random.Range(0, 1);
+
+        switch (randomTaskType)
+        {
+            case 0:
+                return new BreakPrinter(character);
+
+        }
+
+        return null; // shouldn't happen
+    }
 
     public enum ActionStatus
     {

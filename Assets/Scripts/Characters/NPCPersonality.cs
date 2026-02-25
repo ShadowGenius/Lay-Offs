@@ -113,19 +113,19 @@ public class NPCPersonality
 
         if (actionString == "basic task")
         {
-            // select a random basic task from a list of basic tasks
+            action = Action.GenerateRandomTask(character);
 
         } else if (actionString == "untargeted sabotage")
         {
-            // select random untargeted sabotage
+            action = Action.GenerateRandomUntargetedSabotage(character);
 
         } else if (actionString == "targeted sabotage")
         {
-            // ...
+            action = Action.GenerateRandomTargetedSabotage(character, target);
 
         } else if (actionString == "help")
         {
-            // ...
+            action = Action.GenerateRandomHelp(character, target);
 
         }
 
