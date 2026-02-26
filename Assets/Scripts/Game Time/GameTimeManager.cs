@@ -63,6 +63,7 @@ public class GameTimeManager : MonoBehaviour
             currentHour = latestHour;
             currentMinute = 0;
             PauseTime();
+            StartVoting();
         }
     }
 
@@ -72,11 +73,18 @@ public class GameTimeManager : MonoBehaviour
         currentHour = earliestHour;
         currentMinute = 0;
         minutesElapsedToday = 0;
+
+        Debug.Log($"Day {currentDay}, Clock: {clockString}");
     }
 
     public void PauseTime()
     {
         timePaused = true;
+    }
+
+    public void StartVoting()
+    {
+        // start voting logic
     }
 
     public void ResumeTime()
@@ -88,13 +96,12 @@ public class GameTimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log($"Day {currentDay}, Clock: {clockString}");
 
 
         if (timePaused)
         {
-            AdvanceDay();
-            ResumeTime();
+            // AdvanceDay();
+            // ResumeTime();
         }
     }
 
