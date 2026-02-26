@@ -44,15 +44,28 @@ public class VotingManager : MonoBehaviour
             buttons[i].transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = "Employee " + (i + 1) + "\nVotes: " + votes[i];
         }
         int highestVoteIndex = 0;
+        bool isTie = false;
         for(int i = 1; i < votes.Count; i++)
         {
             if(votes[i] > votes[highestVoteIndex])
             {
+                isTie = false;
                 highestVoteIndex = i;
+            }
+            else if(votes[i] == votes[highestVoteIndex])
+            {
+                isTie = true;
             }
         }
         endVoteButton.gameObject.SetActive(false);
-        Debug.Log("Employee " + (highestVoteIndex + 1) + " Voted out");
+        if (!isTie)
+        {
+            Debug.Log("Employee " + (highestVoteIndex + 1) + " Voted out");
+        }
+        else
+        {
+            Debug.Log("Tie, nobody voted out");
+        }
     }
 
     void randomEmployeeVote()
