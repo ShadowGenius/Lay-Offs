@@ -17,15 +17,15 @@ public class NPCPersonalityTest : MonoBehaviour
 
         for (int j = 0; j < personalities.Length; j++)
         {
-            List<string> actions = new List<string>();
+            List<Action> actions = new List<Action>();
 
             Debug.Log($"{personalities[j].name}");
             for (int i = 1; i <= testsPerPersonality; ++i)
             {
-                string action = personalities[j].NextAction(50);
+                //Action action = 
 
-                actions.Add(action);
-                Debug.Log($"Test {i}/{testsPerPersonality}: {action}");
+                //actions.Add(action);
+                //Debug.Log($"Test {i}/{testsPerPersonality}: {action}");
             }
 
             
