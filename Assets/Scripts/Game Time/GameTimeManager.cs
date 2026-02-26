@@ -73,6 +73,8 @@ public class GameTimeManager : MonoBehaviour
         currentHour = earliestHour;
         currentMinute = 0;
         minutesElapsedToday = 0;
+
+        Debug.Log($"Day {currentDay}, Clock: {clockString}");
     }
 
     public void PauseTime()
@@ -94,7 +96,6 @@ public class GameTimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log($"Day {currentDay}, Clock: {clockString}");
 
 
         if (timePaused)

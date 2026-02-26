@@ -8,7 +8,13 @@ public class NPC : Character
     private Action currentAction = null;
     
     [SerializeField] public NPCPersonality personality;
-    // add movement
+
+    // movement script is a different component
+
+    void Start()
+    {
+        personality = NPCPersonality.generic_model; // everyone is a generic colleague for now
+    }
 
     public void AddAction(Action action)
     {
@@ -17,7 +23,6 @@ public class NPC : Character
 
     public void AddRandomAction()
     {
-        // ...
         int index = (int)Random.Range(0f, friendlinessValues.Count);
         Character target = friendlinessValues.ElementAt(index).Key;
         double friendlinessToTarget = friendlinessValues[target];

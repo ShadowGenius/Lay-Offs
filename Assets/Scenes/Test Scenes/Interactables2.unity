@@ -2310,7 +2310,6 @@ GameObject:
   m_Component:
   - component: {fileID: 589978682}
   - component: {fileID: 589978683}
-  - component: {fileID: 589978684}
   m_Layer: 0
   m_Name: Worker Computer_0
   m_TagString: Untagged
@@ -2392,21 +2391,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &589978684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589978681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5451c75301f3a8441a3fce71b38959a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Computer
-  playerObject: {fileID: 1336332656}
-  interactionDistance: 2.2
-  owner: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,7 +2485,6 @@ GameObject:
   m_Component:
   - component: {fileID: 740834620}
   - component: {fileID: 740834621}
-  - component: {fileID: 740834622}
   m_Layer: 0
   m_Name: Worker Computer_0
   m_TagString: Untagged
@@ -2583,21 +2566,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &740834622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740834619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5451c75301f3a8441a3fce71b38959a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Computer
-  playerObject: {fileID: 1336332656}
-  interactionDistance: 2.2
-  owner: {fileID: 1336332662}
 --- !u!1 &748688351
 GameObject:
   m_ObjectHideFlags: 0
@@ -2609,7 +2577,6 @@ GameObject:
   - component: {fileID: 748688352}
   - component: {fileID: 748688354}
   - component: {fileID: 748688353}
-  - component: {fileID: 748688355}
   m_Layer: 0
   m_Name: Water Cooler_0
   m_TagString: Untagged
@@ -2737,20 +2704,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 1
---- !u!114 &748688355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748688351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68d911a0a5e13f549ac3286a69ef8f22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Watercooler
-  playerObject: {fileID: 1336332656}
-  interactionDistance: 2.2
 --- !u!1 &765840035
 GameObject:
   m_ObjectHideFlags: 0
@@ -3623,7 +3576,6 @@ GameObject:
   m_Component:
   - component: {fileID: 840605327}
   - component: {fileID: 840605328}
-  - component: {fileID: 840605329}
   m_Layer: 0
   m_Name: Worker Computer_0
   m_TagString: Untagged
@@ -3705,21 +3657,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &840605329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 840605326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5451c75301f3a8441a3fce71b38959a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Computer
-  playerObject: {fileID: 1336332656}
-  interactionDistance: 2.2
-  owner: {fileID: 0}
 --- !u!1 &850838531
 GameObject:
   m_ObjectHideFlags: 0
@@ -4232,7 +4169,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1050763811}
   - component: {fileID: 1050763810}
-  - component: {fileID: 1050763812}
   m_Layer: 0
   m_Name: Worker Computer_0
   m_TagString: Untagged
@@ -4314,21 +4250,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1365897534}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1050763812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050763809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5451c75301f3a8441a3fce71b38959a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Computer
-  playerObject: {fileID: 1336332656}
-  interactionDistance: 2.2
-  owner: {fileID: 0}
 --- !u!1 &1075599334
 GameObject:
   m_ObjectHideFlags: 0
@@ -5008,17 +4929,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.4, y: 2}
   m_Direction: 0
---- !u!114 &1336332662 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2883680430968232252, guid: a54eb4741292547498e43ac34a9a8f2d, type: 3}
-  m_PrefabInstance: {fileID: 1491359955}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336332656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c20c6f19a532f4745945c213aa6962d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Player
 --- !u!1 &1359960872
 GameObject:
   m_ObjectHideFlags: 0
@@ -7842,7 +7752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Printer
   playerObject: {fileID: 1336332656}
-  interactionDistance: 2.2
+  interactionDistance: 1
 --- !u!1 &1915250249
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,16 +3,15 @@ using UnityEngine;
 public class Computer : ObjectInteraction
 {
     public Character owner;
-    Player player => playerObject.GetComponent<Player>();
     public override void OnPlayerUse()
     {
-
-        Debug.Log("Computer doing computer things");
-
         if (player != owner)
         {
-            Debug.Log("Player trying to use someone else's computer"); // don't let this happen
-            return;
+            Debug.Log($"Player trying to use someone else's computer at desk {gameObject.transform.parent.name}"); // don't let this happen
+            
+        } else
+        {
+            Debug.Log($"Player using their computer {gameObject.transform.parent.name}");
         }
     }
 
@@ -27,12 +26,12 @@ public class Computer : ObjectInteraction
         }
     }
 
-    public override void OnNPCUse()
+    public override void OnNPCUse(NPC npc)
     {
         // ...
     }
 
-    public override void OnNPCSabotage()
+    public override void OnNPCSabotage(NPC npc)
     {
         // ...
     }
