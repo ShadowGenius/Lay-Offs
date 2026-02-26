@@ -12,7 +12,7 @@ public class VotingManager : MonoBehaviour
     void Start()
     {
         employeesNum = votes.Count;
-        endVoteButton.onClick.AddListener(() => EndVote());
+        endVoteButton.onClick.AddListener(() => CloseVote());
         for (int i = 0; i < buttons.Count; i++)
         {
             int buttonIndex = i;
@@ -30,6 +30,7 @@ public class VotingManager : MonoBehaviour
     {
         Debug.Log("Added vote for number " + (buttonIndex + 1));
         votes[buttonIndex] += 1;
+        EndVote();
     }
     
     void EndVote()
@@ -57,7 +58,7 @@ public class VotingManager : MonoBehaviour
                 isTie = true;
             }
         }
-        endVoteButton.gameObject.SetActive(false);
+        endVoteButton.gameObject.SetActive(true);
         if (!isTie)
         {
             Debug.Log("Employee " + (highestVoteIndex + 1) + " Voted out");
@@ -66,6 +67,12 @@ public class VotingManager : MonoBehaviour
         {
             Debug.Log("Tie, nobody voted out");
         }
+    }
+
+    void CloseVote()
+    {
+        endVoteButton.gameObject.SetActive(false);
+        transform.parent.gameObject.SetActive(false);
     }
 
     void randomEmployeeVote()

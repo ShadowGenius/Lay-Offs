@@ -43,13 +43,13 @@ public class NPCpathfinding: MonoBehaviour
 
     private void Update()
     {
+        if (currentPath == null)
+            return;
         if (pathIndex >= currentPath.Count)
         {
             pathFinished = true;
             return;
         }
-        if (currentPath == null)
-            return;
         Vector2 target = currentPath[pathIndex];
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
         if((Vector2)transform.position == target)
