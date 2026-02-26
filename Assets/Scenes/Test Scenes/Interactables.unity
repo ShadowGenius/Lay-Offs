@@ -496,7 +496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 211305070}
   m_Layer: 0
-  m_Name: Worker Desk 1 (2)
+  m_Name: Player Desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2405,7 +2405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
-  interactionDistance: 2.2
+  interactionDistance: 1.5
   owner: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
@@ -2596,7 +2596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
-  interactionDistance: 2.2
+  interactionDistance: 1.5
   owner: {fileID: 1336332662}
 --- !u!1 &748688351
 GameObject:
@@ -3718,7 +3718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
-  interactionDistance: 2.2
+  interactionDistance: 1.5
   owner: {fileID: 0}
 --- !u!1 &850838531
 GameObject:
@@ -4327,7 +4327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
-  interactionDistance: 2.2
+  interactionDistance: 1.5
   owner: {fileID: 0}
 --- !u!1 &1075599334
 GameObject:
