@@ -9,7 +9,7 @@ public class Printer : ObjectInteraction
         Debug.Log("Printer doing printer things");
     }
 
-    public override void OnNPCUse()
+    public override void OnNPCUse(NPC npc)
     {
         Debug.Log("NPC using printer");
     }
@@ -19,7 +19,7 @@ public class Printer : ObjectInteraction
         Debug.Log("Player sabotaging printer");
     }
 
-    public override void OnNPCSabotage()
+    public override void OnNPCSabotage(NPC npc)
     {
         Debug.Log("NPC sabotaging printer");
     }

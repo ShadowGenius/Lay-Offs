@@ -8,7 +8,13 @@ public class NPC : Character
     private Action currentAction = null;
     
     [SerializeField] public NPCPersonality personality;
-    // add movement
+
+    // movement script is a different component
+
+    void Start()
+    {
+        personality = NPCPersonality.generic_model; // everyone is a generic colleague for now
+    }
 
     public void AddAction(Action action)
     {

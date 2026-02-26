@@ -3,7 +3,6 @@ using UnityEngine;
 public class Computer : ObjectInteraction
 {
     public Character owner;
-    Player player => playerObject.GetComponent<Player>();
     public override void OnPlayerUse()
     {
 
@@ -27,12 +26,12 @@ public class Computer : ObjectInteraction
         }
     }
 
-    public override void OnNPCUse()
+    public override void OnNPCUse(NPC npc)
     {
         // ...
     }
 
-    public override void OnNPCSabotage()
+    public override void OnNPCSabotage(NPC npc)
     {
         // ...
     }
