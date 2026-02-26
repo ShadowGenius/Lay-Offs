@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7262624749968297353}
   - component: {fileID: 8094045239586987153}
   - component: {fileID: -615619926345521315}
+  - component: {fileID: 2883680430968232252}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -133,3 +134,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2883680430968232252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2684370189070757366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20c6f19a532f4745945c213aa6962d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player
+  name: Joe Schmoe Doe
+  gender: unknown
+  movement: {fileID: 8094045239586987153}

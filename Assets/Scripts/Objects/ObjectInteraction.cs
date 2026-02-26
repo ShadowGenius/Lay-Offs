@@ -17,14 +17,14 @@ public class ObjectInteraction : MonoBehaviour
         Interact();
     }
 
-    public bool IsWithinInteractionDistance()
+    public bool PlayerWithinInteractionDistance()
     {
         return Vector2.Distance(transform.position, playerObject.transform.position) <= interactionDistance;
     }
 
     public void Interact()
     {
-        if (IsWithinInteractionDistance() && Input.GetKeyDown(KeyCode.E))
+        if (PlayerWithinInteractionDistance() && Input.GetKeyDown(KeyCode.E))
         {
             OnPlayerUse();
         }

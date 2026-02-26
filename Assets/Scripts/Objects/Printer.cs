@@ -8,4 +8,19 @@ public class Printer : ObjectInteraction
 
         Debug.Log("Printer doing printer things");
     }
+
+    public override void OnNPCUse()
+    {
+        Debug.Log("NPC using printer");
+    }
+
+    public override void OnPlayerSabotage()
+    {
+        Debug.Log("Player sabotaging printer");
+    }
+
+    public override void OnNPCSabotage()
+    {
+        Debug.Log("NPC sabotaging printer");
+    }
 }
