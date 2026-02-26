@@ -8,8 +8,10 @@ public class VotingManager : MonoBehaviour
     public List<int> votes;
     public List<Button> buttons;
     public Button endVoteButton;
+    public int employeesNum;
     void Start()
     {
+        employeesNum = votes.Count;
         endVoteButton.onClick.AddListener(() => EndVote());
         for (int i = 0; i < buttons.Count; i++)
         {
@@ -32,6 +34,10 @@ public class VotingManager : MonoBehaviour
     
     void EndVote()
     {
+        for(int i = 0; i < employeesNum; i++)
+        {
+            randomEmployeeVote();
+        }
         for (int i = 0; i < buttons.Count; i++)
         {
             buttons[i].gameObject.SetActive(false);
@@ -47,5 +53,12 @@ public class VotingManager : MonoBehaviour
         }
         endVoteButton.gameObject.SetActive(false);
         Debug.Log("Employee " + (highestVoteIndex + 1) + " Voted out");
+    }
+
+    void randomEmployeeVote()
+    {
+        int voteNum = Random.Range(0, employeesNum);
+        Debug.Log("Random voted " + voteNum);
+        votes[voteNum]+= 1;
     }
 }
