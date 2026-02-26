@@ -8,7 +8,6 @@ public class NPC : Character
     private Action currentAction = null;
     
     [SerializeField] public NPCPersonality personality;
-    [SerializeField] public int j;
     // add movement
 
     public void AddAction(Action action)
