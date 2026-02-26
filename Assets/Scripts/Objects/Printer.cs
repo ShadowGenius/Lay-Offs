@@ -7,6 +7,15 @@ public class Printer : ObjectInteraction
     {
 
         Debug.Log("Printer doing printer things");
+
+        Printing printingTask = player.playerActions.Find(action => action is Printing) as Printing;
+        
+        if (printingTask != null)
+        {
+            printingTask.MakeProgress();
+
+            Debug.Log($"Player made progress on printing ({printingTask.PercentComplete()}% complete)");
+        }
     }
 
     public override void OnNPCUse(NPC npc)

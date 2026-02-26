@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using UnityEngine;
 
 public class Task : Action
@@ -18,23 +19,36 @@ public class Task : Action
         this.currentProgressUnits = 0;
     }
 
-    void BeginTask()
+    public void BeginTask()
     {
         BeginAction();
     }
 
-    void MakeProgress()
+    public bool MakeProgress()
     {
-        // ...
+        if (status == ActionStatus.Completed || status == ActionStatus.Failed)
+        {
+            return false; 
+        }
+
+        status = ActionStatus.InProgress;
+
+        currentProgressUnits = Math.Min(currentProgressUnits + 1, totalProgressUnits);
+
+        if (currentProgressUnits >= totalProgressUnits)
+        {
+            status = ActionStatus.Completed;
+        }
+
+        return true;
     }
 
-    void FailTask()
+    public void FailTask()
     {
-        // ...
         status = ActionStatus.Failed;
     }
 
-    double PercentComplete()
+    public double PercentComplete()
     {
         if (totalProgressUnits == 0)
         {

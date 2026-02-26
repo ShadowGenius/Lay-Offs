@@ -23,7 +23,6 @@ public class NPC : Character
 
     public void AddRandomAction()
     {
-        // ...
         int index = (int)Random.Range(0f, friendlinessValues.Count);
         Character target = friendlinessValues.ElementAt(index).Key;
         double friendlinessToTarget = friendlinessValues[target];

@@ -1,9 +1,10 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObjectInteraction : MonoBehaviour
 {
     [SerializeField] public GameObject playerObject;
-    [SerializeField] public float interactionDistance = 1f;
+    [SerializeField] public float interactionDistance = 2.2f;
 
     protected Player player => playerObject.GetComponent<Player>();
 
@@ -30,7 +31,12 @@ public class ObjectInteraction : MonoBehaviour
         {
             OnPlayerUse();
 
+            Debug.Log($"Player interaction at distance {Vector2.Distance(transform.position, playerObject.transform.position)}");
+
             // handle sabotaging later
+        } else if (Input.GetKeyDown(KeyCode.E))
+        {
+            // Debug.Log($"Player likely too far (distance = {Vector2.Distance(transform.position, playerObject.transform.position)}) from this {GetType()}");
         }
     }
 
