@@ -43,7 +43,7 @@ public class GameTimeManager : MonoBehaviour
     public void AdvanceTime()
     {
         // should be called every second, advances one minute
-        Debug.Log(currentMinute);
+        //Debug.Log(currentMinute);
         if (timePaused)
         {
             return;
@@ -65,10 +65,6 @@ public class GameTimeManager : MonoBehaviour
             PauseTime();
             StartVoting();
         }
-        if(currentMinute > 5)
-        {
-            StartVoting();
-        }
     }
 
     public void AdvanceDay()
@@ -78,7 +74,7 @@ public class GameTimeManager : MonoBehaviour
         currentMinute = 0;
         minutesElapsedToday = 0;
 
-        Debug.Log($"Day {currentDay}, Clock: {clockString}");
+        //Debug.Log($"Day {currentDay}, Clock: {clockString}");
     }
 
     public void PauseTime()

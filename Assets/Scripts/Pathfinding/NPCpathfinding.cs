@@ -22,12 +22,12 @@ public class NPCpathfinding: MonoBehaviour
         Locations = new Dictionary<string, Vector2>();
         moveTarget = pointLocations[Random.Range(0, pointLocations.Count)];
         mapManager = FindObjectOfType<MapManager>();
+        Debug.Log("Npc move to " + moveTarget);
         move(moveTarget);
         for(int i = 0; i < pointLocations.Count; i++)
         {
             if (pointLocations == null || pointLocations.Count == 0)
             {
-                Debug.LogError("pointLocations is null or empty!");
                 return;
             }
             Debug.Log("N: " + pointNames[i] + " L: " + pointLocations[i]);
@@ -38,18 +38,25 @@ public class NPCpathfinding: MonoBehaviour
     public void move(Vector2 targetPos)
     {
         currentPath = mapManager.FindPath((Vector2)transform.position, targetPos);
+        Debug.Log("Current path " + currentPath);
         pathIndex = 0;
     }
 
     private void Update()
     {
         if (currentPath == null)
+        {
+            Debug.Log("null");
             return;
+        }
         if (pathIndex >= currentPath.Count)
         {
+            Debug.Log("finished");
             pathFinished = true;
             return;
         }
+
+        Debug.Log("continue");
         Vector2 target = currentPath[pathIndex];
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
         if((Vector2)transform.position == target)
