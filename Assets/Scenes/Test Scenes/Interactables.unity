@@ -5915,6 +5915,7 @@ GameObject:
   - component: {fileID: 783425377}
   - component: {fileID: 783425379}
   - component: {fileID: 783425380}
+  - component: {fileID: 783425381}
   m_Layer: 0
   m_Name: L Desk_0
   m_TagString: Untagged
@@ -6088,6 +6089,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5, y: 3.4}
   m_EdgeRadius: 0
+--- !u!114 &783425381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783425376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1caccb59f8c33e748b833620ffc680ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ManagerDesk
+  playerObject: {fileID: 1336332656}
+  interactionDistance: 3.6
 --- !u!1 &799627289
 GameObject:
   m_ObjectHideFlags: 0
