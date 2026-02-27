@@ -8,7 +8,7 @@ public class Printer : ObjectInteraction
 
         Debug.Log("Printer doing printer things");
 
-        Printing printingTask = player.playerActions.Find(action => action is Printing) as Printing;
+        Printing printingTask = player.playerActions.Find(action => action is Printing && action.IsNotFinished()) as Printing;
         
         if (printingTask != null)
         {
