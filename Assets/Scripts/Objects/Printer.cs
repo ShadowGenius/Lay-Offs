@@ -1,7 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class Printer : ObjectInteraction
 {
+    private bool isBroken = false;
+    private bool isRunning = false;
+    private int printingTime = 5;
+
     // communal printer, no one owns it (since it is related to untargeted sabotage)
     public override void OnPlayerUse()
     {
@@ -10,8 +15,9 @@ public class Printer : ObjectInteraction
 
         Printing printingTask = player.playerActions.Find(action => action is Printing && action.IsNotFinished()) as Printing;
         
-        if (printingTask != null)
+        if (printingTask != null && canBeUsed())
         {
+            StartCoroutine(runPrinting());
             printingTask.MakeProgress();
 
             Debug.Log($"Player made progress on printing ({printingTask.PercentComplete()}% complete)");
@@ -21,15 +27,42 @@ public class Printer : ObjectInteraction
     public override void OnNPCUse(NPC npc)
     {
         Debug.Log("NPC using printer");
+        if (canBeUsed())
+        {
+            StartCoroutine(runPrinting());
+            Debug.Log("NPC used printer");
+        }
     }
 
     public override void OnPlayerSabotage()
     {
         Debug.Log("Player sabotaging printer");
+        isBroken = true;
     }
 
     public override void OnNPCSabotage(NPC npc)
     {
         Debug.Log("NPC sabotaging printer");
+        isBroken = true;
+    }
+
+    public bool canBeUsed()
+    {
+        if (isRunning)
+        {
+            Debug.Log("Printer is running");
+        }
+        else if (isBroken)
+        {
+            Debug.Log("Printer is broken");
+        }
+        return !isRunning && !isBroken;
+    }
+
+    private IEnumerator runPrinting()
+    {
+        isRunning = true;
+        yield return new WaitForSeconds(printingTime);
+        isRunning = false;
     }
 }
