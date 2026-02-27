@@ -31,10 +31,17 @@ public class ObjectInteraction : MonoBehaviour
         {
             OnPlayerUse();
 
-            Debug.Log($"Player interaction at distance {Vector2.Distance(transform.position, playerObject.transform.position)}");
+            Debug.Log($"Player use at distance {Vector2.Distance(transform.position, playerObject.transform.position)}");
 
             // handle sabotaging later
-        } else if (Input.GetKeyDown(KeyCode.E))
+        }
+        else if (PlayerWithinInteractionDistance() && Input.GetKeyDown(KeyCode.F))
+        {
+            OnPlayerSabotage();
+
+            Debug.Log($"Player sabotage at distance {Vector2.Distance(transform.position, playerObject.transform.position)}");
+        }
+        else if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.F))
         {
             // Debug.Log($"Player likely too far (distance = {Vector2.Distance(transform.position, playerObject.transform.position)}) from this {GetType()}");
         }
