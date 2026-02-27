@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Tilemaps;
 public class MapManager : MonoBehaviour
 {
 
@@ -11,8 +12,9 @@ public class MapManager : MonoBehaviour
     [SerializeField] private float cellWidth = 1f;
 
     [SerializeField] private bool visualizeGrid;
+    [SerializeField] private Tilemap wallTiles;
 
-    private Dictionary<Vector2, Cell> cells;
+    private Dictionary<Vector2Int, Cell> cells;
 
     private void Awake()
     {
@@ -21,17 +23,18 @@ public class MapManager : MonoBehaviour
 
     private void GenerateGrid()
     {
-        cells = new Dictionary<Vector2, Cell>();
+        cells = new Dictionary<Vector2Int, Cell>();
 
         for (float x = 0; x < gridWidth; x += cellWidth)
         {
             for (float y = 0; y < gridHeight; y += cellHeight)
             {
-                Vector2 pos = new Vector2(x, y);
+                Vector2 wpos = new Vector2(x, y);
+                Vector2Int pos = findGridPos(wpos);
                 cells.Add(pos, new Cell(pos));
             }
         }
-        cells[new Vector2(2, 0)].isWall = true;
+        /*cells[new Vector2(2, 0)].isWall = true;
         cells[new Vector2(2, 1)].isWall = true;
         cells[new Vector2(2, 2)].isWall = true;
         cells[new Vector2(2, 3)].isWall = true;
@@ -42,20 +45,22 @@ public class MapManager : MonoBehaviour
         cells[new Vector2(2, 8)].isWall = true;
         cells[new Vector2(4, 9)].isWall = true;
         cells[new Vector2(4, 8)].isWall = true;
-        cells[new Vector2(4, 7)].isWall = true;
+        cells[new Vector2(4, 7)].isWall = true;*/
     }
-    public List<Vector2> FindPath(Vector2 startPos, Vector2 endPos)
+    public List<Vector2> FindPath(Vector2 startPosWorld, Vector2 endPosWorld)
     {
-        Dictionary<Vector2, Path> pathNodes = new Dictionary<Vector2, Path>();
+        Vector2Int startPos = findGridPos(startPosWorld);
+        Vector2Int endPos = findGridPos(endPosWorld);
+        Dictionary<Vector2Int, Path> pathNodes = new Dictionary<Vector2Int, Path>();
         
         foreach (var kvp in cells)
         {
             pathNodes.Add(kvp.Key, new Path(kvp.Key));
         }
 
-        List<Vector2> searchedCells = new List<Vector2>();
-        List<Vector2> cellsToSearch = new List<Vector2> { startPos };
-        List<Vector2> finalPath = new List<Vector2>();
+        List<Vector2Int> searchedCells = new List<Vector2Int>();
+        List<Vector2Int> cellsToSearch = new List<Vector2Int> { startPos };
+        List<Vector2Int> finalPath = new List<Vector2Int>();
 
         Path startNode = pathNodes[startPos];
         startNode.gCost = 0;
@@ -64,9 +69,9 @@ public class MapManager : MonoBehaviour
 
         while (cellsToSearch.Count > 0)
         {
-            Vector2 currentCell = cellsToSearch[0];
+            Vector2Int currentCell = cellsToSearch[0];
 
-            foreach (Vector2 pos in cellsToSearch)
+            foreach (Vector2Int pos in cellsToSearch)
             {
                 Path c = pathNodes[pos];
                 Path best = pathNodes[currentCell];
@@ -82,16 +87,17 @@ public class MapManager : MonoBehaviour
             if (currentCell == endPos)
             {
                 Path pathNode = pathNodes[endPos];
-
+                List<Vector2> npcPath = new List<Vector2>();
                 while (pathNode.position != startPos)
                 {
-                    finalPath.Add(pathNode.position);
+                    Vector3 world = wallTiles.GetCellCenterWorld(new Vector3Int(pathNode.position.x, pathNode.position.y, 0));
+                    npcPath.Add(world);
                     pathNode = pathNodes[pathNode.connection];
                 }
-
-                finalPath.Add(startPos);
-                finalPath.Reverse();
-                return finalPath;
+                Vector3 startPosW = wallTiles.GetCellCenterWorld(new Vector3Int(startPos.x, startPos.y, 0));
+                npcPath.Add(startPos);
+                npcPath.Reverse();
+                return npcPath;
             }
             SearchCellNeighbors(currentCell, endPos, pathNodes, cellsToSearch, searchedCells);
         }
@@ -99,13 +105,14 @@ public class MapManager : MonoBehaviour
     }
 
 
-    private void SearchCellNeighbors(Vector2 cellPos, Vector2 endPos, Dictionary<Vector2, Path> pathNodes, List<Vector2> cellsToSearch, List<Vector2> searchedCells)
+    private void SearchCellNeighbors(Vector2Int cellPos, Vector2 endPos, Dictionary<Vector2Int, Path> pathNodes, List<Vector2Int> cellsToSearch, List<Vector2Int> searchedCells)
     {
         for (float x = cellPos.x - cellWidth; x <= cellWidth + cellPos.x; x += cellWidth)
         {
             for (float y = cellPos.y - cellHeight; y <= cellHeight + cellPos.y; y += cellHeight)
             {
-                Vector2 neighborPos = new Vector2(x, y);
+                Vector2 neighborPosWorld = new Vector2(x, y);
+                Vector2Int neighborPos = findGridPos(neighborPosWorld);
                 if (neighborPos == cellPos)
                 {
                     continue;
@@ -114,7 +121,7 @@ public class MapManager : MonoBehaviour
                 {
                     continue;
                 }
-                if(cells[neighborPos].isWall)
+                if (isWall(neighborPos))
                 {
                     continue;
                 }
@@ -150,7 +157,7 @@ public class MapManager : MonoBehaviour
         {
             return;
         }
-        foreach (KeyValuePair<Vector2, Cell> kvp in cells)
+        foreach (KeyValuePair<Vector2Int, Cell> kvp in cells)
         {
             if (!kvp.Value.isWall)
             {
@@ -186,16 +193,27 @@ public class MapManager : MonoBehaviour
     }
     private class Path
     {
-        public Vector2 position;
+        public Vector2Int position;
         public int fCost = int.MaxValue;
         public int gCost = int.MaxValue;
         public int hCost = int.MaxValue;
-        public Vector2 connection;
+        public Vector2Int connection;
         public bool isWall;
 
-        public Path(Vector2 pos)
+        public Path(Vector2Int pos)
         {
             position = pos;
         }
+    }
+
+    private Vector2Int findGridPos(Vector2 pos)
+    {
+        Vector3Int cell = wallTiles.WorldToCell(pos);
+        return new Vector2Int(cell.x, cell.y);
+    }
+
+    private bool isWall(Vector2Int pos)
+    {
+        return wallTiles.HasTile(new Vector3Int(pos.x, pos.y, 0));
     }
 }

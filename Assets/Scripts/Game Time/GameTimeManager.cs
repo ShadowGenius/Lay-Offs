@@ -6,7 +6,7 @@ public class GameTimeManager : MonoBehaviour
 {
     [SerializeField] public int earliestHour = 9;
     [SerializeField] public int latestHour = 17;
-
+    [SerializeField] public GameObject VotingUI;
     [SerializeField] public float realSecondsPerMinute = 1f;
 
     private int currentDay = 1;
@@ -43,7 +43,7 @@ public class GameTimeManager : MonoBehaviour
     public void AdvanceTime()
     {
         // should be called every second, advances one minute
-
+        Debug.Log(currentMinute);
         if (timePaused)
         {
             return;
@@ -63,6 +63,10 @@ public class GameTimeManager : MonoBehaviour
             currentHour = latestHour;
             currentMinute = 0;
             PauseTime();
+            StartVoting();
+        }
+        if(currentMinute > 5)
+        {
             StartVoting();
         }
     }
@@ -85,6 +89,7 @@ public class GameTimeManager : MonoBehaviour
     public void StartVoting()
     {
         // start voting logic
+        VotingUI.SetActive(true);
     }
 
     public void ResumeTime()
