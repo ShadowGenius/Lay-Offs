@@ -7,6 +7,7 @@ public class Player : Character
 {
     [SerializeField] private PlayerMovement movement;
     [SerializeField] private TextMeshProUGUI taskListText = null;
+    [SerializeField] private TextMeshProUGUI heldItemText = null;
 
     public List<Task> playerActions = new List<Task>();
 
@@ -43,5 +44,7 @@ public class Player : Character
         if (allComplete) {
             AssignRandomTasks();
         }
+
+        heldItemText.text = "Current held item: " + heldItem.ToString();
     }
 }

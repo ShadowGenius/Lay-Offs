@@ -14,13 +14,17 @@ public class Printer : ObjectInteraction
         Debug.Log("Printer doing printer things");
 
         Printing printingTask = player.playerActions.Find(action => action is Printing && action.IsNotFinished()) as Printing;
-        
-        if (printingTask != null && canBeUsed())
+
+        if (canBeUsed() && player.isHandEmpty())
         {
             StartCoroutine(runPrinting());
-            printingTask.MakeProgress();
+            player.heldItem = Character.Item.Paper;
+            if (printingTask != null)
+            {
+                printingTask.MakeProgress();
 
-            Debug.Log($"Player made progress on printing ({printingTask.PercentComplete()}% complete)");
+                Debug.Log($"Player made progress on printing ({printingTask.PercentComplete()}% complete)");
+            }
         }
     }
 

@@ -10,6 +10,15 @@ public class Character : MonoBehaviour
 
     private int taskPoints;
 
+    public enum Item
+    {
+        None,
+        Water,
+        Paper
+    }
+
+    public Item heldItem = Item.None;
+
     public bool hasWater = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -54,5 +63,15 @@ public class Character : MonoBehaviour
         {
             return 0.0; // this path should not happen
         }
+    }
+
+    public bool isHandEmpty()
+    {
+        if (heldItem == Item.None)
+        {
+            return true;
+        }
+        Debug.Log("Hands are full");
+        return false;
     }
 }

@@ -10,9 +10,10 @@ public class ManagerDesk : ObjectInteraction
 
         Delivery deliveryTask = player.playerActions.Find(action => action is Delivery && action.IsNotFinished()) as Delivery;
         
-        if (deliveryTask != null)
+        if (deliveryTask != null && player.heldItem == Character.Item.Paper)
         {
             deliveryTask.MakeProgress();
+            player.heldItem = Character.Item.None;
 
             Debug.Log($"Player made progress on delivery ({deliveryTask.PercentComplete()}% complete)");
         }
