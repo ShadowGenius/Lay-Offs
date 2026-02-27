@@ -12,6 +12,14 @@ public class Computer : ObjectInteraction
         } else
         {
             Debug.Log($"Player using their computer {gameObject.transform.parent.name}");
+
+            ComputerUse computerTask = player.playerActions.Find(action => action is ComputerUse && action.IsNotFinished()) as ComputerUse;
+
+            if (computerTask != null)
+            {
+                computerTask.MakeProgress();
+                Debug.Log($"Player made progress on computer use ({computerTask.PercentComplete()}% complete)");
+            }
         }
     }
 

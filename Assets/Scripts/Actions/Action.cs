@@ -89,6 +89,10 @@ public class Action
         Failed // if for example there is a time limit and the player runs out of time, only applicable to certain types of actions
     }
 
+    public bool IsNotFinished()
+    {
+        return status != ActionStatus.Completed && status != ActionStatus.Failed;
+    }
     public Action(Character character, string title, ActionStatus status)
     {
         this.character = character;
