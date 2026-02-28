@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class GameTimeManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameTimeManager : MonoBehaviour
     [SerializeField] public int latestHour = 17;
     [SerializeField] public GameObject VotingUI;
     [SerializeField] public float realSecondsPerMinute = 1f;
+    [SerializeField] public TextMeshProUGUI timeText = null;
 
     private int currentDay = 1;
     private int currentHour; // goes from 9 to 17
@@ -44,6 +46,7 @@ public class GameTimeManager : MonoBehaviour
     {
         // should be called every second, advances one minute
         //Debug.Log(currentMinute);
+        // Debug.Log($"Current minute: {currentMinute}");
         if (timePaused)
         {
             return;
@@ -65,6 +68,10 @@ public class GameTimeManager : MonoBehaviour
             currentMinute = 0;
             PauseTime();
             StartVoting();
+        }
+        else
+        {
+            timeText.text = GetCurrentTimeString();
         }
     }
 

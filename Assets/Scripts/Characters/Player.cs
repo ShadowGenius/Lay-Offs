@@ -1,12 +1,15 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : Character
 {
     [SerializeField] private PlayerMovement movement;
+    [SerializeField] private TextMeshProUGUI taskListText = null;
+    [SerializeField] private TextMeshProUGUI heldItemText = null;
 
-    public List<Action> playerActions = new List<Action>();
+    public List<Task> playerActions = new List<Task>();
 
     private void AssignRandomTasks(int count = 3)
     {
@@ -17,11 +20,34 @@ public class Player : Character
     }
     void Start()
     {
-        AssignRandomTasks();
+        // AssignRandomTasks();
+        playerActions.Add(new Printing(this));
+        playerActions.Add(new Delivery(this));
+        playerActions.Add(new ComputerUse(this));
 
         for (int i = 0; i < playerActions.Count; i++)
         {
             Debug.Log($"Task {i + 1}: {playerActions[i].title}");
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        taskListText.text = "TASKS\n";
+        bool allComplete = true;
+        for (int i = 0; i < playerActions.Count; i++)
+        {
+            taskListText.text += $"{i + 1}. {playerActions[i].title} ({playerActions[i].PercentComplete()}%)\n";
+            if (playerActions[i].PercentComplete() != 100)
+            {
+                allComplete = false;
+            }
+        }
+        if (allComplete) {
+            AssignRandomTasks();
+        }
+
+        heldItemText.text = "Current held item: " + heldItem.ToString();
     }
 }
