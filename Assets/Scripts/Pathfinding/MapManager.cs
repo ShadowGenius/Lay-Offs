@@ -32,11 +32,11 @@ public class MapManager : MonoBehaviour
                 Vector2 wpos = new Vector2(x, y);
                 Vector2Int pos = findGridPosReg(wpos);
                 cells.Add(pos, new Cell(pos));
-                Debug.Log(pos);
+                //Debug.Log(pos);
                 
             }
         }
-        Debug.Log($"Generated grid with {cells.Count} cells.");
+        //Debug.Log($"Generated grid with {cells.Count} cells.");
         /*cells[new Vector2(2, 0)].isWall = true;
         cells[new Vector2(2, 1)].isWall = true;
         cells[new Vector2(2, 2)].isWall = true;
@@ -52,7 +52,7 @@ public class MapManager : MonoBehaviour
     }
     public List<Vector2> FindPath(Vector2 startPosWorld, Vector2 endPosWorld)
     {
-        Debug.Log("StartPosWorld gotten" + startPosWorld);
+        //Debug.Log("StartPosWorld gotten" + startPosWorld);
         Vector2Int startPos = findGridPos(startPosWorld);
         Vector2Int endPos = findGridPos(endPosWorld);
         Dictionary<Vector2Int, Path> pathNodes = new Dictionary<Vector2Int, Path>();
@@ -69,7 +69,7 @@ public class MapManager : MonoBehaviour
         }*/
         if (!pathNodes.ContainsKey(startPos))
         {
-            Debug.Log($"Start position {startPos} does not exist in the grid.");
+            //Debug.Log($"Start position {startPos} does not exist in the grid.");
             return null;
         }
         List<Vector2Int> searchedCells = new List<Vector2Int>();
@@ -112,12 +112,12 @@ public class MapManager : MonoBehaviour
                 Vector3 startPosW = wallTiles.GetCellCenterWorld(new Vector3Int(startPos.x, startPos.y, 0));
                 npcPath.Add(startPosW);
                 npcPath.Reverse();
-                Debug.Log("MM returns good");
+                //Debug.Log("MM returns good");
                 return npcPath;
             }
             SearchCellNeighbors(currentCell, endPos, pathNodes, cellsToSearch, searchedCells);
         }
-        Debug.Log("MM returns null");
+        //Debug.Log("MM returns null");
         return null;
     }
 

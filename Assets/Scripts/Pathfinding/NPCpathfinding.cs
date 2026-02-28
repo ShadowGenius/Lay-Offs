@@ -53,6 +53,7 @@ public class NPCpathfinding: MonoBehaviour
         {
             Debug.Log("finished");
             pathFinished = true;
+            StartCoroutine(WaitABit());
             return;
         }
 
@@ -67,8 +68,13 @@ public class NPCpathfinding: MonoBehaviour
 
     IEnumerator WaitABit()
     {
+        Debug.Log("New Path selected");
         yield return new WaitForSeconds(3f);
-        moveTarget = pointLocations[Random.Range(0, pointLocations.Count)];
+        Vector2 oldTarget = moveTarget;
+        while (oldTarget == moveTarget)
+        {
+            moveTarget = pointLocations[Random.Range(0, pointLocations.Count)];
+        }
         currentPath = mapManager.FindPath((Vector2)transform.position, moveTarget);
         pathIndex = 0;
         pathFinished = false;
