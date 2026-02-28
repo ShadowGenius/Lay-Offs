@@ -21,7 +21,6 @@ public class VotingManager : MonoBehaviour
         {
             int buttonIndex = i;
             buttons[i].onClick.AddListener(() => OnVote(buttonIndex));
-            votes[buttonIndex] = 0;
         }
         for (int i = 0; i < buttons.Count; i++)
         {
