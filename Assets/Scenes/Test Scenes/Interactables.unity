@@ -920,7 +920,7 @@ MonoBehaviour:
   latestHour: 17
   VotingUI: {fileID: 1719159797}
   realSecondsPerMinute: 1
-  timeText: {fileID: 0}
+  timeText: {fileID: 1084265308}
 --- !u!224 &280588491
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6855,7 +6855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa27983f58ffaa4418ca849668dbb89b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrashCan
-  playerObject: {fileID: 0}
+  playerObject: {fileID: 1336332656}
   interactionDistance: 2.2
 --- !u!1 &851232911
 GameObject:

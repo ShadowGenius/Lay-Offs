@@ -6,7 +6,7 @@ using TMPro;
 public class GameTimeManager : MonoBehaviour
 {
     [SerializeField] public int earliestHour = 9;
-    [SerializeField] public int latestHour = 17;
+    [SerializeField] public int latestHour = 12;
     [SerializeField] public GameObject VotingUI;
     [SerializeField] public float realSecondsPerMinute = 1f;
     [SerializeField] public TextMeshProUGUI timeText = null;
@@ -55,11 +55,10 @@ public class GameTimeManager : MonoBehaviour
         ++minutesElapsedToday;
         ++currentMinute;
 
-        if (currentMinute >= 10)
+        if (currentMinute >= 60)
         {
             currentMinute = 0;
             currentHour += 1;
-            StartVoting();
         }
 
         if (currentHour >= latestHour)
