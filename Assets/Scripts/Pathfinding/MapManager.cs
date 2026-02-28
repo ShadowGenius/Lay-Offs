@@ -10,7 +10,7 @@ public class MapManager : MonoBehaviour
     [SerializeField] private int gridWidth = 10;
     [SerializeField] private float cellHeight = 1f;
     [SerializeField] private float cellWidth = 1f;
-
+    [SerializeField] private Vector2 offset = new Vector2(0, 0);
     [SerializeField] private bool visualizeGrid;
     [SerializeField] private Tilemap wallTiles;
 
@@ -30,10 +30,13 @@ public class MapManager : MonoBehaviour
             for (float y = 0; y < gridHeight; y += cellHeight)
             {
                 Vector2 wpos = new Vector2(x, y);
-                Vector2Int pos = findGridPos(wpos);
+                Vector2Int pos = findGridPosReg(wpos);
                 cells.Add(pos, new Cell(pos));
+                //Debug.Log(pos);
+                
             }
         }
+        //Debug.Log($"Generated grid with {cells.Count} cells.");
         /*cells[new Vector2(2, 0)].isWall = true;
         cells[new Vector2(2, 1)].isWall = true;
         cells[new Vector2(2, 2)].isWall = true;
@@ -49,6 +52,7 @@ public class MapManager : MonoBehaviour
     }
     public List<Vector2> FindPath(Vector2 startPosWorld, Vector2 endPosWorld)
     {
+        //Debug.Log("StartPosWorld gotten" + startPosWorld);
         Vector2Int startPos = findGridPos(startPosWorld);
         Vector2Int endPos = findGridPos(endPosWorld);
         Dictionary<Vector2Int, Path> pathNodes = new Dictionary<Vector2Int, Path>();
@@ -58,11 +62,22 @@ public class MapManager : MonoBehaviour
             pathNodes.Add(kvp.Key, new Path(kvp.Key));
         }
 
+        /**if (!pathNodes.ContainsKey(startPos) || !pathNodes.ContainsKey(endPos))
+        {
+            Debug.Log("MM returns null 2");
+            return null;
+        }*/
+        if (!pathNodes.ContainsKey(startPos))
+        {
+            //Debug.Log($"Start position {startPos} does not exist in the grid.");
+            return null;
+        }
         List<Vector2Int> searchedCells = new List<Vector2Int>();
         List<Vector2Int> cellsToSearch = new List<Vector2Int> { startPos };
         List<Vector2Int> finalPath = new List<Vector2Int>();
 
         Path startNode = pathNodes[startPos];
+
         startNode.gCost = 0;
         startNode.hCost = GetDistance(startPos, endPos);
         startNode.fCost = GetDistance(startPos, endPos);
@@ -95,12 +110,14 @@ public class MapManager : MonoBehaviour
                     pathNode = pathNodes[pathNode.connection];
                 }
                 Vector3 startPosW = wallTiles.GetCellCenterWorld(new Vector3Int(startPos.x, startPos.y, 0));
-                npcPath.Add(startPos);
+                npcPath.Add(startPosW);
                 npcPath.Reverse();
+                //Debug.Log("MM returns good");
                 return npcPath;
             }
             SearchCellNeighbors(currentCell, endPos, pathNodes, cellsToSearch, searchedCells);
         }
+        //Debug.Log("MM returns null");
         return null;
     }
 
@@ -207,6 +224,12 @@ public class MapManager : MonoBehaviour
     }
 
     private Vector2Int findGridPos(Vector2 pos)
+    {
+        Vector3Int cell = wallTiles.WorldToCell(pos - offset);
+        return new Vector2Int(cell.x, cell.y);
+    }
+
+    private Vector2Int findGridPosReg(Vector2 pos)
     {
         Vector3Int cell = wallTiles.WorldToCell(pos);
         return new Vector2Int(cell.x, cell.y);

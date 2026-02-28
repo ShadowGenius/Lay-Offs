@@ -80,7 +80,7 @@ public class GameTimeManager : MonoBehaviour
         currentMinute = 0;
         minutesElapsedToday = 0;
 
-        Debug.Log($"Day {currentDay}, Clock: {clockString}");
+        //Debug.Log($"Day {currentDay}, Clock: {clockString}");
     }
 
     public void PauseTime()
