@@ -20,7 +20,10 @@ public class Player : Character
     }
     void Start()
     {
-        AssignRandomTasks();
+        // AssignRandomTasks();
+        playerActions.Add(new Printing(this));
+        playerActions.Add(new Delivery(this));
+        playerActions.Add(new ComputerUse(this));
 
         for (int i = 0; i < playerActions.Count; i++)
         {
@@ -31,7 +34,7 @@ public class Player : Character
     // Update is called once per frame
     void Update()
     {
-        taskListText.text = "";
+        taskListText.text = "TASKS\n";
         bool allComplete = true;
         for (int i = 0; i < playerActions.Count; i++)
         {

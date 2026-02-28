@@ -68,6 +68,10 @@ public class GameTimeManager : MonoBehaviour
             PauseTime();
             StartVoting();
         }
+        else
+        {
+            timeText.text = GetCurrentTimeString();
+        }
     }
 
     public void AdvanceDay()
