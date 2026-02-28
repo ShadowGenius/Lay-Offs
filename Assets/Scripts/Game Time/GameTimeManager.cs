@@ -52,10 +52,11 @@ public class GameTimeManager : MonoBehaviour
         ++minutesElapsedToday;
         ++currentMinute;
 
-        if (currentMinute >= 60)
+        if (currentMinute >= 10)
         {
             currentMinute = 0;
             currentHour += 1;
+            StartVoting();
         }
 
         if (currentHour >= latestHour)

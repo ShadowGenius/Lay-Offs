@@ -13,6 +13,9 @@ public class NPCpathfinding: MonoBehaviour
     private Dictionary<string, Vector2> Locations;
     private Vector2 moveTarget;
     private bool pathFinished;
+    public GameObject child;
+    private float lastX;
+    private float currentX;
 
     private MapManager mapManager;
 
@@ -30,7 +33,7 @@ public class NPCpathfinding: MonoBehaviour
             {
                 return;
             }
-            Debug.Log("N: " + pointNames[i] + " L: " + pointLocations[i]);
+            //Debug.Log("N: " + pointNames[i] + " L: " + pointLocations[i]);
             Locations.Add(pointNames[i], pointLocations[i]);
         }
     }
@@ -38,7 +41,7 @@ public class NPCpathfinding: MonoBehaviour
     public void move(Vector2 targetPos)
     {
         currentPath = mapManager.FindPath((Vector2)transform.position, targetPos);
-        Debug.Log("Current path " + currentPath);
+        //Debug.Log("Current path " + currentPath);
         pathIndex = 0;
     }
 
@@ -60,6 +63,18 @@ public class NPCpathfinding: MonoBehaviour
         Debug.Log("continue");
         Vector2 target = currentPath[pathIndex];
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        currentX = transform.position.x;
+        if(currentX >= lastX)
+        {
+            Debug.Log("Right " + currentX + " bigger than  " + lastX);
+            child.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            Debug.Log("Left " + currentX + " less than  " + lastX);
+            child.GetComponent<SpriteRenderer>().flipX = false;
+        }
+        lastX = currentX;
         if((Vector2)transform.position == target)
         {
             pathIndex++;

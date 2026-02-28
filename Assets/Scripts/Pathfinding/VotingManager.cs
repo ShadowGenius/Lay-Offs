@@ -11,12 +11,22 @@ public class VotingManager : MonoBehaviour
     public int employeesNum;
     void Start()
     {
+        
+    }
+    private void OnEnable()
+    {
         employeesNum = votes.Count;
         endVoteButton.onClick.AddListener(() => CloseVote());
         for (int i = 0; i < buttons.Count; i++)
         {
             int buttonIndex = i;
             buttons[i].onClick.AddListener(() => OnVote(buttonIndex));
+            votes[buttonIndex] = 0;
+        }
+        for (int i = 0; i < buttons.Count; i++)
+        {
+            buttons[i].gameObject.SetActive(true);
+            buttons[i].transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = "Employee " + (i + 1);
         }
     }
 
@@ -25,7 +35,16 @@ public class VotingManager : MonoBehaviour
     {
         
     }
-
+    void StartVoting()
+    {
+        employeesNum = votes.Count;
+        endVoteButton.onClick.AddListener(() => CloseVote());
+        for (int i = 0; i < buttons.Count; i++)
+        {
+            int buttonIndex = i;
+            buttons[i].onClick.AddListener(() => OnVote(buttonIndex));
+        }
+    }
     void OnVote(int buttonIndex)
     {
         Debug.Log("Added vote for number " + (buttonIndex + 1));
