@@ -19,8 +19,6 @@ public class Character : MonoBehaviour
 
     public Item heldItem = Item.None;
 
-    public bool hasWater = false;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
