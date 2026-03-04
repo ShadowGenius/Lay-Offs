@@ -55,7 +55,7 @@ public class GameTimeManager : MonoBehaviour
         ++minutesElapsedToday;
         ++currentMinute;
 
-        if (currentMinute >= 10)
+        if (currentMinute >= 60)
         {
             currentMinute = 0;
             currentHour += 1;

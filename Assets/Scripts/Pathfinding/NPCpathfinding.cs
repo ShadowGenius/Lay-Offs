@@ -24,6 +24,7 @@ public class NPCpathfinding: MonoBehaviour
     {
         Locations = new Dictionary<string, Vector2>();
         moveTarget = pointLocations[Random.Range(0, pointLocations.Count)];
+        moveTarget = pointLocations[1];
         mapManager = FindObjectOfType<MapManager>();
         //Debug.Log("Npc move to " + moveTarget);
         move(moveTarget);
@@ -49,7 +50,7 @@ public class NPCpathfinding: MonoBehaviour
     {
         if (currentPath == null)
         {
-            Debug.Log("null");
+            Debug.Log("null," + " Trying to get to " + moveTarget);
             return;
         }
         if (pathIndex >= currentPath.Count)
