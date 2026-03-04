@@ -25,7 +25,7 @@ public class NPCpathfinding: MonoBehaviour
         Locations = new Dictionary<string, Vector2>();
         moveTarget = pointLocations[Random.Range(0, pointLocations.Count)];
         mapManager = FindObjectOfType<MapManager>();
-        Debug.Log("Npc move to " + moveTarget);
+        //Debug.Log("Npc move to " + moveTarget);
         move(moveTarget);
         for(int i = 0; i < pointLocations.Count; i++)
         {
@@ -54,24 +54,24 @@ public class NPCpathfinding: MonoBehaviour
         }
         if (pathIndex >= currentPath.Count)
         {
-            Debug.Log("finished");
+            //Debug.Log("finished");
             pathFinished = true;
             StartCoroutine(WaitABit());
             return;
         }
 
-        Debug.Log("continue");
+        //Debug.Log("continue");
         Vector2 target = currentPath[pathIndex];
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
         currentX = transform.position.x;
         if(currentX >= lastX)
         {
-            Debug.Log("Right " + currentX + " bigger than  " + lastX);
+            //Debug.Log("Right " + currentX + " bigger than  " + lastX);
             child.GetComponent<SpriteRenderer>().flipX = true;
         }
         else
         {
-            Debug.Log("Left " + currentX + " less than  " + lastX);
+            //Debug.Log("Left " + currentX + " less than  " + lastX);
             child.GetComponent<SpriteRenderer>().flipX = false;
         }
         lastX = currentX;

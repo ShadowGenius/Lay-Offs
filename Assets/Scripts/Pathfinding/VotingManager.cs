@@ -11,22 +11,23 @@ public class VotingManager : MonoBehaviour
     public int employeesNum;
     void Start()
     {
-        
-    }
-    private void OnEnable()
-    {
-        employeesNum = votes.Count;
         endVoteButton.onClick.AddListener(() => CloseVote());
         for (int i = 0; i < buttons.Count; i++)
         {
             int buttonIndex = i;
             buttons[i].onClick.AddListener(() => OnVote(buttonIndex));
         }
+    }
+    private void OnEnable()
+    {
+        employeesNum = votes.Count;
         for (int i = 0; i < buttons.Count; i++)
         {
+            votes[i] = 0;
             buttons[i].gameObject.SetActive(true);
             buttons[i].transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = "Employee " + (i + 1);
         }
+        endVoteButton.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -57,15 +58,13 @@ public class VotingManager : MonoBehaviour
         {
             randomEmployeeVote();
         }
+        int highestVoteIndex = 0;
+        bool isTie = false;
         for (int i = 0; i < buttons.Count; i++)
         {
             buttons[i].gameObject.SetActive(false);
             buttons[i].transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = "Employee " + (i + 1) + "\nVotes: " + votes[i];
-        }
-        int highestVoteIndex = 0;
-        bool isTie = false;
-        for(int i = 1; i < votes.Count; i++)
-        {
+            
             if(votes[i] > votes[highestVoteIndex])
             {
                 isTie = false;
