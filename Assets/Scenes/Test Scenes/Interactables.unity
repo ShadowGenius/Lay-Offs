@@ -516,11 +516,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapManager
   gridHeight: 30
-  gridWidth: 30
+  gridWidth: 50
   cellHeight: 1
   cellWidth: 1
   offset: {x: 0, y: 0}
-  visualizeGrid: 1
+  visualizeGrid: 0
   wallTiles: {fileID: 367361757}
 --- !u!4 &177657023
 Transform:

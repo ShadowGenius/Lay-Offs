@@ -24,7 +24,6 @@ public class NPCpathfinding: MonoBehaviour
     {
         Locations = new Dictionary<string, Vector2>();
         moveTarget = pointLocations[Random.Range(0, pointLocations.Count)];
-        moveTarget = pointLocations[1];
         mapManager = FindObjectOfType<MapManager>();
         //Debug.Log("Npc move to " + moveTarget);
         move(moveTarget);
