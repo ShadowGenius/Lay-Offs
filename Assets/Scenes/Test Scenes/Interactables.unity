@@ -5278,7 +5278,6 @@ GameObject:
   m_Component:
   - component: {fileID: 589978682}
   - component: {fileID: 589978683}
-  - component: {fileID: 589978684}
   m_Layer: 0
   m_Name: Worker Computer_0
   m_TagString: Untagged
@@ -5360,21 +5359,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &589978684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589978681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5451c75301f3a8441a3fce71b38959a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Computer
-  playerObject: {fileID: 1336332656}
-  interactionDistance: 1.5
-  owner: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -5469,7 +5453,6 @@ GameObject:
   m_Component:
   - component: {fileID: 740834620}
   - component: {fileID: 740834621}
-  - component: {fileID: 740834622}
   m_Layer: 0
   m_Name: Worker Computer_0
   m_TagString: Untagged
@@ -5551,21 +5534,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &740834622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740834619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5451c75301f3a8441a3fce71b38959a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Computer
-  playerObject: {fileID: 1336332656}
-  interactionDistance: 1.5
-  owner: {fileID: 1336332662}
 --- !u!1 &748688351
 GameObject:
   m_ObjectHideFlags: 0
@@ -6611,7 +6579,6 @@ GameObject:
   m_Component:
   - component: {fileID: 840605327}
   - component: {fileID: 840605328}
-  - component: {fileID: 840605329}
   m_Layer: 0
   m_Name: Worker Computer_0
   m_TagString: Untagged
@@ -6693,21 +6660,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &840605329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 840605326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5451c75301f3a8441a3fce71b38959a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Computer
-  playerObject: {fileID: 1336332656}
-  interactionDistance: 1.5
-  owner: {fileID: 0}
 --- !u!1 &850838531
 GameObject:
   m_ObjectHideFlags: 0
@@ -7659,7 +7611,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1050763811}
   - component: {fileID: 1050763810}
-  - component: {fileID: 1050763812}
   m_Layer: 0
   m_Name: Worker Computer_0
   m_TagString: Untagged
@@ -7741,21 +7692,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1365897534}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1050763812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050763809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5451c75301f3a8441a3fce71b38959a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Computer
-  playerObject: {fileID: 1336332656}
-  interactionDistance: 1.5
-  owner: {fileID: 0}
 --- !u!1 &1075599334
 GameObject:
   m_ObjectHideFlags: 0
@@ -9858,6 +9794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1561491765}
   - component: {fileID: 1561491766}
+  - component: {fileID: 1561491767}
   m_Layer: 0
   m_Name: Chair (Back)_0
   m_TagString: Untagged
@@ -9939,6 +9876,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 1
+--- !u!114 &1561491767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561491764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5451c75301f3a8441a3fce71b38959a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Computer
+  playerObject: {fileID: 1336332656}
+  interactionDistance: 1.5
+  owner: {fileID: 1336332662}
 --- !u!1 &1564731137
 GameObject:
   m_ObjectHideFlags: 0
@@ -10433,6 +10385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1605808551}
   - component: {fileID: 1605808552}
+  - component: {fileID: 1605808553}
   m_Layer: 0
   m_Name: Chair (Back)_0
   m_TagString: Untagged
@@ -10514,6 +10467,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 1
+--- !u!114 &1605808553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605808550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5451c75301f3a8441a3fce71b38959a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Computer
+  playerObject: {fileID: 1336332656}
+  interactionDistance: 1.5
+  owner: {fileID: 0}
 --- !u!1 &1610840467
 GameObject:
   m_ObjectHideFlags: 0
@@ -10662,6 +10630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1620457900}
   - component: {fileID: 1620457901}
+  - component: {fileID: 1620457902}
   m_Layer: 0
   m_Name: Chair (Back)_0
   m_TagString: Untagged
@@ -10743,6 +10712,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 1
+--- !u!114 &1620457902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620457899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5451c75301f3a8441a3fce71b38959a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Computer
+  playerObject: {fileID: 1336332656}
+  interactionDistance: 1.5
+  owner: {fileID: 0}
 --- !u!1 &1644830808
 GameObject:
   m_ObjectHideFlags: 0
@@ -10891,6 +10875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1667020528}
   - component: {fileID: 1667020527}
+  - component: {fileID: 1667020529}
   m_Layer: 0
   m_Name: Chair (Back)_0
   m_TagString: Untagged
@@ -10972,6 +10957,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1365897534}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1667020529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667020526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5451c75301f3a8441a3fce71b38959a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Computer
+  playerObject: {fileID: 1336332656}
+  interactionDistance: 1.5
+  owner: {fileID: 0}
 --- !u!1 &1684786730
 GameObject:
   m_ObjectHideFlags: 0
