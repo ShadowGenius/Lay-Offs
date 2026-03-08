@@ -48,6 +48,6 @@ public class Player : Character
             AssignRandomTasks();
         }
 
-        heldItemText.text = "Current held item: " + heldItem.ToString();
+        heldItemText.text = "Current held item:\n" + heldItem.ToString();
     }
 }
