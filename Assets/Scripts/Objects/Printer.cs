@@ -6,6 +6,9 @@ public class Printer : ObjectInteraction
     private bool isBroken = false;
     private bool isRunning = false;
     private int printingTime = 5;
+    private int fixingTime = 5;
+    [SerializeField] private AudioClip printingSFX = null;
+    [SerializeField] private AudioClip explodeSFX = null;
 
     // communal printer, no one owns it (since it is related to untargeted sabotage)
     public override void OnPlayerUse()
@@ -17,14 +20,18 @@ public class Printer : ObjectInteraction
 
         if (canBeUsed() && player.isHandEmpty())
         {
-            StartCoroutine(runPrinting());
-            player.heldItem = Character.Item.Paper;
-            if (printingTask != null)
-            {
-                printingTask.MakeProgress();
+            StartCoroutine(runPrinting(player, printingTask));
+            //player.heldItem = Character.Item.Paper;
+            //if (printingTask != null)
+            //{
+            //    printingTask.MakeProgress();
 
                 Debug.Log($"Player made progress on printing ({printingTask.PercentComplete()}% complete)");
-            }
+            //}
+        }
+        else if (isBroken)
+        {
+            StartCoroutine(runFixing());
         }
     }
 
@@ -33,7 +40,7 @@ public class Printer : ObjectInteraction
         Debug.Log("NPC using printer");
         if (canBeUsed())
         {
-            StartCoroutine(runPrinting());
+            StartCoroutine(runPrinting(npc));
             Debug.Log("NPC used printer");
         }
     }
@@ -41,6 +48,7 @@ public class Printer : ObjectInteraction
     public override void OnPlayerSabotage()
     {
         Debug.Log("Player sabotaging printer");
+        SFXManager.instance.PlaySFX(explodeSFX, transform);
         isBroken = true;
     }
 
@@ -63,10 +71,22 @@ public class Printer : ObjectInteraction
         return !isRunning && !isBroken;
     }
 
-    private IEnumerator runPrinting()
+    private IEnumerator runPrinting(Character ch, Printing printingTask = null)
     {
+        SFXManager.instance.PlaySFX(printingSFX, transform);
         isRunning = true;
         yield return new WaitForSeconds(printingTime);
+        ch.heldItem = Character.Item.Paper;
+        if (printingTask != null)
+        {
+            printingTask.MakeProgress();
+        }
         isRunning = false;
+    }
+
+    private IEnumerator runFixing()
+    {
+        yield return new WaitForSeconds(fixingTime);
+        isBroken = false;
     }
 }
