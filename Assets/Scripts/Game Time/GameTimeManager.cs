@@ -59,7 +59,6 @@ public class GameTimeManager : MonoBehaviour
         {
             currentMinute = 0;
             currentHour += 1;
-            StartVoting();
         }
 
         if (currentHour >= latestHour)
