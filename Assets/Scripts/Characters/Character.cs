@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    [SerializeField] public static double defaultFriendliness = 50f;
+
     [SerializeField] public string name;
     [SerializeField] public string gender;
     public Dictionary<Character, double> friendlinessValues = new Dictionary<Character, double>();
@@ -51,6 +53,21 @@ public class Character : MonoBehaviour
         }
     }
 
+    public void IncreaseFriendliness(Character character, double increment)
+    {
+        // not necessary for Player class
+
+        if (friendlinessValues.ContainsKey(character))
+        {
+            friendlinessValues[character] = Math.Clamp(friendlinessValues[character] + increment, 0, 100);
+
+        }
+        else
+        {
+            friendlinessValues.Add(character, Math.Clamp(defaultFriendliness + increment, 0, 100));
+        }
+    }
+
     public double FriendlinessTo(Character target)
     {
         if (friendlinessValues.ContainsKey(target))
@@ -59,7 +76,8 @@ public class Character : MonoBehaviour
         }
         else
         {
-            return 0.0; // this path should not happen
+            UpdateFriendliness(target, defaultFriendliness);
+            return defaultFriendliness;
         }
     }
 
