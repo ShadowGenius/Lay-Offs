@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2613675148061811226}
   m_Layer: 0
   m_Name: NPC
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   name: Jonathan Doe
   gender: male
-  j: 0
+  heldItem: 0
 --- !u!114 &2613675148061811226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,3 +123,4 @@ MonoBehaviour:
   speed: 3
   pointNames: []
   pointLocations: []
+  child: {fileID: 0}

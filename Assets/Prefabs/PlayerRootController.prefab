@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 3687615718777897928}
   m_Layer: 0
   m_Name: PlayerRootController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,8 +182,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   name: Joe Schmoe Doe
   gender: unknown
-  hasWater: 0
+  heldItem: 0
   movement: {fileID: 8394425730548959704}
+  taskListText: {fileID: 0}
+  heldItemText: {fileID: 0}
+  npcInteractionDistance: 2.2
 --- !u!70 &3687615718777897928
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
