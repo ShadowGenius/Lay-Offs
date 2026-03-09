@@ -16,14 +16,22 @@ public class NPCpathfinding: MonoBehaviour
     public GameObject child;
     private float lastX;
     private float currentX;
-
+    private string currentTask;
+    private List<string> taskList;
     private MapManager mapManager;
 
 
     void Start()
     {
         Locations = new Dictionary<string, Vector2>();
-        moveTarget = pointLocations[Random.Range(0, pointLocations.Count)];
+        for (int i = 0; i < pointLocations.Count; i++)
+        {
+            Locations.Add(pointNames[i], pointLocations[i]);
+        }
+        InitializeTasks();
+        currentTask = taskList[0];
+        taskList.RemoveAt(0);
+        moveTarget = Locations[currentTask];
         mapManager = FindObjectOfType<MapManager>();
         //Debug.Log("Npc move to " + moveTarget);
         move(moveTarget);
@@ -34,7 +42,6 @@ public class NPCpathfinding: MonoBehaviour
                 return;
             }
             //Debug.Log("N: " + pointNames[i] + " L: " + pointLocations[i]);
-            Locations.Add(pointNames[i], pointLocations[i]);
         }
     }
 
@@ -83,13 +90,20 @@ public class NPCpathfinding: MonoBehaviour
 
     IEnumerator WaitABit()
     {
-        Debug.Log("New Path selected");
         yield return new WaitForSeconds(3f);
-        Vector2 oldTarget = moveTarget;
+        /*Vector2 oldTarget = moveTarget;
         while (oldTarget == moveTarget)
         {
             moveTarget = pointLocations[Random.Range(0, pointLocations.Count)];
+        }*/
+        if(taskList.Count == 0)
+        {
+            InitializeTasks();
         }
+        currentTask = taskList[0];
+        taskList.RemoveAt(0);
+        moveTarget = Locations[currentTask];
+        Debug.Log("Employee going to " + currentTask);
         currentPath = mapManager.FindPath((Vector2)transform.position, moveTarget);
         pathIndex = 0;
         pathFinished = false;
@@ -115,5 +129,19 @@ public class NPCpathfinding: MonoBehaviour
         currentPath = mapManager.FindPath((Vector2)transform.position, moveTarget);
         pathIndex = 0;
         pathFinished = false;
+    }
+
+    public void InitializeTasks()
+    {
+        Debug.Log("Initializetasks");
+        List<string> tempTasks = new List<string>();
+        taskList = new List<string>();
+        tempTasks.AddRange(pointNames);
+        for(int i = 0; i < pointNames.Count; i++)
+        {
+            int removeIndex = Random.Range(0, tempTasks.Count);
+            taskList.Add(tempTasks[removeIndex]);
+            tempTasks.RemoveAt(removeIndex);
+        }
     }
 }
