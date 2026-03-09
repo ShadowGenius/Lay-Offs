@@ -8,13 +8,17 @@ public class Computer : ObjectInteraction
     private bool isRunning = false;
     private int usingTime = 5;
 
+    [SerializeField] GameObject smokePrefab;
+    [SerializeField] Transform smokePoint;
+    private GameObject smokeInstance;
+
     public override void OnPlayerUse()
     {
         if (player != owner)
         {
             Debug.Log($"Player trying to use someone else's computer at desk {gameObject.transform.parent.name}"); // don't let this happen
-            
-        } else
+        }
+        else
         {
             Debug.Log($"Player using their computer {gameObject.transform.parent.name}");
 
@@ -33,6 +37,12 @@ public class Computer : ObjectInteraction
             Debug.Log("Player fixing computer");
             StartCoroutine(runUsing());
             isBroken = false;
+
+            if (smokeInstance != null)
+            {
+                Destroy(smokeInstance);
+                smokeInstance = null;
+            }
         }
     }
 
@@ -45,18 +55,35 @@ public class Computer : ObjectInteraction
             Debug.Log("Player trying to sabotage own computer"); // don't let this happen
             return;
         }
-        isBroken = true;
+
+        if (!isBroken)
+        {
+            isBroken = true;
+
+            if (smokePrefab != null && smokePoint != null && smokeInstance == null)
+            {
+                smokeInstance = Instantiate(smokePrefab, smokePoint.position, Quaternion.identity);
+            }
+        }
+        else
+        {
+            isBroken = false;
+
+            if (smokeInstance != null)
+            {
+                Destroy(smokeInstance);
+                smokeInstance = null;
+            }
+        }
     }
 
     public override void OnNPCUse(NPC npc)
     {
-        
-        Debug.Log($"Player using their computer {gameObject.transform.parent.name}");
+        Debug.Log($"NPC using computer {gameObject.transform.parent.name}");
 
         if (canBeUsed())
         {
             StartCoroutine(runUsing());
-            //computerTask.MakeProgress();
             Debug.Log($"NPC made progress on computer use");
         }
 
@@ -65,13 +92,38 @@ public class Computer : ObjectInteraction
             Debug.Log("NPC fixing computer");
             StartCoroutine(runUsing());
             isBroken = false;
+
+            if (smokeInstance != null)
+            {
+                Destroy(smokeInstance);
+                smokeInstance = null;
+            }
         }
     }
 
     public override void OnNPCSabotage(NPC npc)
     {
         Debug.Log("NPC trying to sabotage a computer");
-        isBroken = true;
+
+        if (!isBroken)
+        {
+            isBroken = true;
+
+            if (smokePrefab != null && smokePoint != null && smokeInstance == null)
+            {
+                smokeInstance = Instantiate(smokePrefab, smokePoint.position, Quaternion.identity);
+            }
+        }
+        else
+        {
+            isBroken = false;
+
+            if (smokeInstance != null)
+            {
+                Destroy(smokeInstance);
+                smokeInstance = null;
+            }
+        }
     }
 
     public bool canBeUsed()
@@ -84,6 +136,7 @@ public class Computer : ObjectInteraction
         {
             Debug.Log("Computer is broken");
         }
+
         return !isRunning && !isBroken;
     }
 
