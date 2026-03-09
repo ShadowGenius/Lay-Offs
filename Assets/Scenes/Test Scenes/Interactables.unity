@@ -348,6 +348,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 1
+--- !u!1 &51581509 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
+  m_PrefabInstance: {fileID: 1828673683}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &83960218
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +491,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 799627290}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &153015713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
+  m_PrefabInstance: {fileID: 1043751762}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &177657020
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,11 +526,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapManager
   gridHeight: 30
-  gridWidth: 30
+  gridWidth: 50
   cellHeight: 1
   cellWidth: 1
   offset: {x: 0, y: 0}
-  visualizeGrid: 1
+  visualizeGrid: 0
   wallTiles: {fileID: 367361757}
 --- !u!4 &177657023
 Transform:
@@ -1212,6 +1222,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1915250250}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &302284797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
+  m_PrefabInstance: {fileID: 5843515202048902231}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &307300321
 GameObject:
   m_ObjectHideFlags: 0
@@ -8646,6 +8661,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5936322753854506291, guid: 72d15751be49ee744b4b91d446fa4494, type: 3}
+      propertyPath: employees.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936322753854506291, guid: 72d15751be49ee744b4b91d446fa4494, type: 3}
+      propertyPath: 'employees.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1336332656}
+    - target: {fileID: 5936322753854506291, guid: 72d15751be49ee744b4b91d446fa4494, type: 3}
+      propertyPath: 'employees.Array.data[1]'
+      value: 
+      objectReference: {fileID: 302284797}
+    - target: {fileID: 5936322753854506291, guid: 72d15751be49ee744b4b91d446fa4494, type: 3}
+      propertyPath: 'employees.Array.data[2]'
+      value: 
+      objectReference: {fileID: 153015713}
+    - target: {fileID: 5936322753854506291, guid: 72d15751be49ee744b4b91d446fa4494, type: 3}
+      propertyPath: 'employees.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1340117122}
+    - target: {fileID: 5936322753854506291, guid: 72d15751be49ee744b4b91d446fa4494, type: 3}
+      propertyPath: 'employees.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1700301407}
+    - target: {fileID: 5936322753854506291, guid: 72d15751be49ee744b4b91d446fa4494, type: 3}
+      propertyPath: 'employees.Array.data[5]'
+      value: 
+      objectReference: {fileID: 51581509}
     - target: {fileID: 7998397683878375047, guid: 72d15751be49ee744b4b91d446fa4494, type: 3}
       propertyPath: m_Name
       value: VotingUI
@@ -8855,6 +8898,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20c6f19a532f4745945c213aa6962d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+--- !u!1 &1340117122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
+  m_PrefabInstance: {fileID: 319486995}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1359960872
 GameObject:
   m_ObjectHideFlags: 0
@@ -11146,6 +11194,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1075599335}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1700301407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
+  m_PrefabInstance: {fileID: 1090087167}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1710290813 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1435507793421972632, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}

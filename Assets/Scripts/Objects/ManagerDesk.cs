@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ManagerDesk : ObjectInteraction
 {
+    [SerializeField] private AudioClip deliverySFX = null;
+
     // communal printer, no one owns it (since it is related to untargeted sabotage)
     public override void OnPlayerUse()
     {
@@ -13,6 +15,7 @@ public class ManagerDesk : ObjectInteraction
         if (deliveryTask != null && player.heldItem == Character.Item.Paper)
         {
             deliveryTask.MakeProgress();
+            SFXManager.instance.PlaySFX(deliverySFX, transform);
             player.heldItem = Character.Item.None;
 
             Debug.Log($"Player made progress on delivery ({deliveryTask.PercentComplete()}% complete)");

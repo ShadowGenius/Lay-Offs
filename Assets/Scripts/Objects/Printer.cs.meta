@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: 1408dd5dda39afc4da5447cebd177990
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - playerObject: {instanceID: 0}
+  - printingSFX: {fileID: 8300000, guid: e552262b7a430144299332653dd4132d, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
