@@ -34,4 +34,10 @@ public class SFXManager : MonoBehaviour
         float len = src.clip.length;
         Destroy(src.gameObject, len);
     }
+
+    public void PlayRandomSFX(AudioClip[] audioClips, Transform spawnTransform, float volume = 1.0f)
+    {
+        int rand = Random.Range(0, audioClips.Length);
+        PlaySFX(audioClips[rand], spawnTransform, volume);
+    }
 }

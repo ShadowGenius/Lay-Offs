@@ -5372,6 +5372,12 @@ MonoBehaviour:
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
   owner: {fileID: 0}
+  usingSFX:
+  - {fileID: 8300000, guid: 8de37bbca484b2f48ac80dedfca963ef, type: 3}
+  - {fileID: 8300000, guid: e23c48b4941d25043b67c573f41ec5c9, type: 3}
+  - {fileID: 8300000, guid: 8fba65bae8981d545af6871292895eb4, type: 3}
+  - {fileID: 8300000, guid: 7172283bd73c73e48af3ab88d64e94c5, type: 3}
+  - {fileID: 8300000, guid: 5c38f055de8f84a4f9e2dad2bbc60d1f, type: 3}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -5563,6 +5569,12 @@ MonoBehaviour:
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
   owner: {fileID: 1336332662}
+  usingSFX:
+  - {fileID: 8300000, guid: 8de37bbca484b2f48ac80dedfca963ef, type: 3}
+  - {fileID: 8300000, guid: e23c48b4941d25043b67c573f41ec5c9, type: 3}
+  - {fileID: 8300000, guid: 8fba65bae8981d545af6871292895eb4, type: 3}
+  - {fileID: 8300000, guid: 7172283bd73c73e48af3ab88d64e94c5, type: 3}
+  - {fileID: 8300000, guid: 5c38f055de8f84a4f9e2dad2bbc60d1f, type: 3}
 --- !u!1 &748688351
 GameObject:
   m_ObjectHideFlags: 0
@@ -6197,6 +6209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ManagerDesk
   playerObject: {fileID: 1336332656}
   interactionDistance: 3.6
+  deliverySFX: {fileID: 8300000, guid: 92f5ae291ea43ec408ea132b91f52b76, type: 3}
 --- !u!1 &799627289
 GameObject:
   m_ObjectHideFlags: 0
@@ -6705,6 +6718,12 @@ MonoBehaviour:
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
   owner: {fileID: 0}
+  usingSFX:
+  - {fileID: 8300000, guid: 8de37bbca484b2f48ac80dedfca963ef, type: 3}
+  - {fileID: 8300000, guid: e23c48b4941d25043b67c573f41ec5c9, type: 3}
+  - {fileID: 8300000, guid: 8fba65bae8981d545af6871292895eb4, type: 3}
+  - {fileID: 8300000, guid: 7172283bd73c73e48af3ab88d64e94c5, type: 3}
+  - {fileID: 8300000, guid: 5c38f055de8f84a4f9e2dad2bbc60d1f, type: 3}
 --- !u!1 &850838531
 GameObject:
   m_ObjectHideFlags: 0
@@ -7824,6 +7843,12 @@ MonoBehaviour:
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
   owner: {fileID: 0}
+  usingSFX:
+  - {fileID: 8300000, guid: 8de37bbca484b2f48ac80dedfca963ef, type: 3}
+  - {fileID: 8300000, guid: e23c48b4941d25043b67c573f41ec5c9, type: 3}
+  - {fileID: 8300000, guid: 8fba65bae8981d545af6871292895eb4, type: 3}
+  - {fileID: 8300000, guid: 7172283bd73c73e48af3ab88d64e94c5, type: 3}
+  - {fileID: 8300000, guid: 5c38f055de8f84a4f9e2dad2bbc60d1f, type: 3}
 --- !u!1 &1075599334
 GameObject:
   m_ObjectHideFlags: 0

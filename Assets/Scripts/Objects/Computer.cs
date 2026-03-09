@@ -7,6 +7,7 @@ public class Computer : ObjectInteraction
     private bool isBroken = false;
     private bool isRunning = false;
     private int usingTime = 5;
+    [SerializeField] private AudioClip[] usingSFX;
 
     public override void OnPlayerUse()
     {
@@ -16,6 +17,7 @@ public class Computer : ObjectInteraction
             
         } else
         {
+            SFXManager.instance.PlayRandomSFX(usingSFX, transform);
             Debug.Log($"Player using their computer {gameObject.transform.parent.name}");
 
             ComputerUse computerTask = player.playerActions.Find(action => action is ComputerUse && action.IsNotFinished()) as ComputerUse;
