@@ -927,7 +927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameTimeManager
   earliestHour: 9
-  latestHour: 17
+  latestHour: 10
   VotingUI: {fileID: 1719159797}
   realSecondsPerMinute: 1
   timeText: {fileID: 1084265308}
