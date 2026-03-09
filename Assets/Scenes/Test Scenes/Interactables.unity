@@ -6183,6 +6183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ManagerDesk
   playerObject: {fileID: 1336332656}
   interactionDistance: 3.6
+  deliverySFX: {fileID: 0}
 --- !u!1 &799627289
 GameObject:
   m_ObjectHideFlags: 0
@@ -8662,6 +8663,34 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5936322753854506291, guid: 72d15751be49ee744b4b91d446fa4494, type: 3}
+      propertyPath: alive.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936322753854506291, guid: 72d15751be49ee744b4b91d446fa4494, type: 3}
+      propertyPath: 'alive.Array.data[0]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936322753854506291, guid: 72d15751be49ee744b4b91d446fa4494, type: 3}
+      propertyPath: 'alive.Array.data[1]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936322753854506291, guid: 72d15751be49ee744b4b91d446fa4494, type: 3}
+      propertyPath: 'alive.Array.data[2]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936322753854506291, guid: 72d15751be49ee744b4b91d446fa4494, type: 3}
+      propertyPath: 'alive.Array.data[3]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936322753854506291, guid: 72d15751be49ee744b4b91d446fa4494, type: 3}
+      propertyPath: 'alive.Array.data[4]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936322753854506291, guid: 72d15751be49ee744b4b91d446fa4494, type: 3}
+      propertyPath: 'alive.Array.data[5]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936322753854506291, guid: 72d15751be49ee744b4b91d446fa4494, type: 3}
       propertyPath: employees.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -9939,6 +9968,7 @@ MonoBehaviour:
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
   owner: {fileID: 1336332662}
+  usingSFX: []
 --- !u!1 &1564731137
 GameObject:
   m_ObjectHideFlags: 0
@@ -10530,6 +10560,7 @@ MonoBehaviour:
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
   owner: {fileID: 0}
+  usingSFX: []
 --- !u!1 &1610840467
 GameObject:
   m_ObjectHideFlags: 0
@@ -10775,6 +10806,7 @@ MonoBehaviour:
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
   owner: {fileID: 0}
+  usingSFX: []
 --- !u!1 &1644830808
 GameObject:
   m_ObjectHideFlags: 0
@@ -11020,6 +11052,7 @@ MonoBehaviour:
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
   owner: {fileID: 0}
+  usingSFX: []
 --- !u!1 &1684786730
 GameObject:
   m_ObjectHideFlags: 0
@@ -12105,6 +12138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Printer
   playerObject: {fileID: 1336332656}
   interactionDistance: 2.2
+  printingSFX: {fileID: 0}
+  explodeSFX: {fileID: 0}
 --- !u!1 &1915250249
 GameObject:
   m_ObjectHideFlags: 0
