@@ -2,46 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NPCpathfinding: MonoBehaviour
 {
+    [SerializeField] NPC personality;
     public float speed = 3f;
     private List<Vector2> currentPath;
     private int pathIndex;
-    public List<string> pointNames;
-    public List<Vector2> pointLocations;
+    public List<OfficeTask> officeTasks;
     private Dictionary<string, Vector2> Locations;
     private Vector2 moveTarget;
     private bool pathFinished;
     public GameObject child;
     private float lastX;
     private float currentX;
-    private string currentTask;
-    private List<string> taskList;
+    private OfficeTask currentTask;
     private MapManager mapManager;
+    [SerializeField] MapManager pathfindingMap;
+    [SerializeField] private List<OfficeTask> taskList;
 
 
     void Start()
     {
-        Locations = new Dictionary<string, Vector2>();
-        for (int i = 0; i < pointLocations.Count; i++)
-        {
-            Locations.Add(pointNames[i], pointLocations[i]);
-        }
+        personality = gameObject.GetComponent<NPC>();
+        officeTasks = pathfindingMap.TaskList;
         InitializeTasks();
         currentTask = taskList[0];
         taskList.RemoveAt(0);
-        moveTarget = Locations[currentTask];
+        moveTarget = currentTask.taskLocation;
         mapManager = FindObjectOfType<MapManager>();
         //Debug.Log("Npc move to " + moveTarget);
         move(moveTarget);
-        for(int i = 0; i < pointLocations.Count; i++)
+        for(int i = 0; i < officeTasks.Count; i++)
         {
-            if (pointLocations == null || pointLocations.Count == 0)
+            if (officeTasks == null || officeTasks.Count == 0)
             {
                 return;
             }
-            //Debug.Log("N: " + pointNames[i] + " L: " + pointLocations[i]);
         }
     }
 
@@ -54,6 +52,10 @@ public class NPCpathfinding: MonoBehaviour
 
     private void Update()
     {
+        if(pathFinished)
+        {
+            return;
+        }
         if (currentPath == null)
         {
             Debug.Log("null," + " Trying to get to " + moveTarget);
@@ -91,18 +93,42 @@ public class NPCpathfinding: MonoBehaviour
     IEnumerator WaitABit()
     {
         yield return new WaitForSeconds(3f);
-        /*Vector2 oldTarget = moveTarget;
-        while (oldTarget == moveTarget)
+
+        bool taskIncomplete = false;
+        if (currentTask.taskActive == false)
         {
-            moveTarget = pointLocations[Random.Range(0, pointLocations.Count)];
-        }*/
+            Debug.Log(gameObject.name + " can't do their task!");
+            taskIncomplete = true;
+        }
         if(taskList.Count == 0)
         {
             InitializeTasks();
         }
+        if (taskIncomplete)
+        {
+            taskList.Remove(currentTask);
+            taskList.Add(currentTask);
+        }
+        else if (Random.Range(0.0f, 0.1f) < personality.sabatogeChance)
+        {
+            int taskIndex = -1;
+            int i = 0;
+            while (taskIndex == -1)
+            {
+                Debug.Log("TASK" + taskIndex);
+                if (currentTask.taskName == taskList[i].taskName)
+                {
+                    taskIndex = i;
+                }
+                i++;
+            }
+            pathfindingMap.TaskList[taskIndex].taskActive = false;
+            Debug.Log("SABATOGE");
+        }
+
         currentTask = taskList[0];
         taskList.RemoveAt(0);
-        moveTarget = Locations[currentTask];
+        moveTarget = currentTask.taskLocation;
         Debug.Log("Employee going to " + currentTask);
         currentPath = mapManager.FindPath((Vector2)transform.position, moveTarget);
         pathIndex = 0;
@@ -134,14 +160,20 @@ public class NPCpathfinding: MonoBehaviour
     public void InitializeTasks()
     {
         Debug.Log("Initializetasks");
-        List<string> tempTasks = new List<string>();
-        taskList = new List<string>();
-        tempTasks.AddRange(pointNames);
-        for(int i = 0; i < pointNames.Count; i++)
+        List<OfficeTask> tempTasks = new List<OfficeTask>();
+        taskList = new List<OfficeTask>();
+        for(int i = 0; i < officeTasks.Count; i++)
+        {
+            tempTasks.Add(officeTasks[i]);
+        }
+        for(int i = 0; i < officeTasks.Count; i++)
         {
             int removeIndex = Random.Range(0, tempTasks.Count);
             taskList.Add(tempTasks[removeIndex]);
             tempTasks.RemoveAt(removeIndex);
         }
+        /*taskList.Add(pointNames[0]);
+        taskList.Add(pointNames[1]);
+        taskList.Add(pointNames[2]);*/
     }
 }

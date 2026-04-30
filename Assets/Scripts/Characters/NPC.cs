@@ -9,6 +9,8 @@ public class NPC : Character
     
     [SerializeField] public NPCPersonality personality;
 
+    public float sabatogeChance = 0; // On a scale of 0.0 - 1.0 how likely an employee is to sabatoge a task.
+
     private bool givenWater = false; // whether or not this NPC has been given water by the player
 
     // movement script is a different component

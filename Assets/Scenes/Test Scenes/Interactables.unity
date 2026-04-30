@@ -532,6 +532,31 @@ MonoBehaviour:
   offset: {x: 0, y: 0}
   visualizeGrid: 0
   wallTiles: {fileID: 367361757}
+  TaskList:
+  - taskName: Boss
+    taskLocation: {x: 23, y: 4}
+    taskObject: {fileID: 783425376}
+    taskActive: 0
+  - taskName: Printer
+    taskLocation: {x: 44, y: 23}
+    taskObject: {fileID: 1880856697}
+    taskActive: 1
+  - taskName: Water Cooler
+    taskLocation: {x: 22, y: 22}
+    taskObject: {fileID: 748688351}
+    taskActive: 1
+  - taskName: Desk
+    taskLocation: {x: 29, y: 7}
+    taskObject: {fileID: 1561491764}
+    taskActive: 1
+  - taskName: Sink
+    taskLocation: {x: 45, y: 8}
+    taskObject: {fileID: 0}
+    taskActive: 1
+  - taskName: Meeting
+    taskLocation: {x: 29, y: 22}
+    taskObject: {fileID: 0}
+    taskActive: 1
 --- !u!4 &177657023
 Transform:
   m_ObjectHideFlags: 0
@@ -1389,6 +1414,10 @@ PrefabInstance:
       propertyPath: child
       value: 
       objectReference: {fileID: 754953790}
+    - target: {fileID: 4783021519752424870, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
+      propertyPath: pathfindingMap
+      value: 
+      objectReference: {fileID: 177657021}
     - target: {fileID: 4783021519752424870, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: pointNames.Array.size
       value: 6
@@ -7492,6 +7521,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6154700760267896952, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
+      propertyPath: sabatogeChance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 21250375460515247, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7508,6 +7541,10 @@ PrefabInstance:
       propertyPath: child
       value: 
       objectReference: {fileID: 242586886}
+    - target: {fileID: 4783021519752424870, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
+      propertyPath: pathfindingMap
+      value: 
+      objectReference: {fileID: 177657021}
     - target: {fileID: 4783021519752424870, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: pointNames.Array.size
       value: 6
@@ -8043,6 +8080,10 @@ PrefabInstance:
       propertyPath: child
       value: 
       objectReference: {fileID: 1710290813}
+    - target: {fileID: 4783021519752424870, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
+      propertyPath: pathfindingMap
+      value: 
+      objectReference: {fileID: 177657021}
     - target: {fileID: 4783021519752424870, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: pointNames.Array.size
       value: 6
@@ -11227,11 +11268,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1075599335}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1700301407 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
-  m_PrefabInstance: {fileID: 1090087167}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1710290813 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1435507793421972632, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
@@ -11568,6 +11604,10 @@ PrefabInstance:
       propertyPath: child
       value: 
       objectReference: {fileID: 2134637197}
+    - target: {fileID: 4783021519752424870, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
+      propertyPath: pathfindingMap
+      value: 
+      objectReference: {fileID: 177657021}
     - target: {fileID: 4783021519752424870, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: pointNames.Array.size
       value: 6
@@ -12786,6 +12826,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6154700760267896952, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
+      propertyPath: sabatogeChance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 21250375460515247, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -12803,8 +12847,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1151479185}
     - target: {fileID: 4783021519752424870, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
+      propertyPath: pathfindingMap
+      value: 
+      objectReference: {fileID: 177657021}
+    - target: {fileID: 4783021519752424870, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: pointNames.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4783021519752424870, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
+      propertyPath: officetasks.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4783021519752424870, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: 'pointNames.Array.data[0]'
