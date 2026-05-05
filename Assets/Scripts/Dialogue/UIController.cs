@@ -5,20 +5,32 @@ public class UIController : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueUI;
     [SerializeField] private Text lineText;
+    [SerializeField] private GameObject interactUI;
     private DialogueNode node;
     private int lineIndex;
+    public bool prompt = true;
+    
 
     void Start()
     {
         dialogueUI.SetActive(false);
+        interactUI.SetActive(false);
     }
 
     void Update()
     {
-        if(dialogueUI && Input.GetKeyDown(KeyCode.F))
+
+        if(dialogueUI && Input.GetKeyDown(KeyCode.F) && prompt == false)
         {
             NextSentence();
         }
+    }
+
+    public void StartPrompt(DialogueNode dialogueNode)
+    {
+        interactUI.SetActive(true);
+        node = dialogueNode;
+        prompt = true;
     }
     public void StartDialogue(DialogueNode dialogueNode)
     {

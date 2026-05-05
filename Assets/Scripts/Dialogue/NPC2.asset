@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25aba6c86bba94fe2b5ecf94c5dbf318, type: 3}
-  m_Name: dialoguetest
+  m_Name: NPC2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   lines:
-  - 'line 1
+  - 'I am NPC2
 
     F: next line'
-  - 'line 2
+  - 'Good afternoon
 
-    F: next line'
+    F: close conversation'
