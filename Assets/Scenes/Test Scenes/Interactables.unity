@@ -537,26 +537,32 @@ MonoBehaviour:
     taskLocation: {x: 23, y: 4}
     taskObject: {fileID: 783425376}
     taskActive: 0
+    taskIndex: 0
   - taskName: Printer
     taskLocation: {x: 44, y: 23}
     taskObject: {fileID: 1880856697}
     taskActive: 1
+    taskIndex: 1
   - taskName: Water Cooler
     taskLocation: {x: 22, y: 22}
     taskObject: {fileID: 748688351}
     taskActive: 1
+    taskIndex: 2
   - taskName: Desk
     taskLocation: {x: 29, y: 7}
     taskObject: {fileID: 1561491764}
     taskActive: 1
+    taskIndex: 3
   - taskName: Sink
     taskLocation: {x: 45, y: 8}
     taskObject: {fileID: 0}
     taskActive: 1
+    taskIndex: 4
   - taskName: Meeting
     taskLocation: {x: 29, y: 22}
     taskObject: {fileID: 0}
     taskActive: 1
+    taskIndex: 5
 --- !u!4 &177657023
 Transform:
   m_ObjectHideFlags: 0
