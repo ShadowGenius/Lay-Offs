@@ -3,6 +3,8 @@ using UnityEngine;
 public class TrashCan : ObjectInteraction
 {
     // communal printer, no one owns it (since it is related to untargeted sabotage)
+
+    [SerializeField] Transform holdPoint;
     public override void OnPlayerUse()
     {
 
@@ -10,6 +12,13 @@ public class TrashCan : ObjectInteraction
 
         if (!player.isHandEmpty())
         {
+            if (holdPoint != null)
+            {
+                foreach (Transform child in holdPoint)
+                {
+                    Destroy(child.gameObject);
+                }
+            }
             player.heldItem = Character.Item.None;
 
             Debug.Log($"Player threw something into the trash");
