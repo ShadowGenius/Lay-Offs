@@ -19,3 +19,7 @@ MonoBehaviour:
   - 'Good evening
 
     F: close dialogue'
+  speakerName: NPC 3
+  hasChoice: 0
+  choices: []
+  nextNode: {fileID: 0}

@@ -19,3 +19,7 @@ MonoBehaviour:
   - 'Good morning
 
     F: end conversation'
+  speakerName: NPC 1
+  hasChoice: 0
+  choices: []
+  nextNode: {fileID: 0}
