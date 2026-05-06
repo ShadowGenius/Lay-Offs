@@ -8,6 +8,7 @@ public class OfficeTask
     public Vector2 taskLocation;
     public GameObject taskObject;
     public bool taskActive = true;
+    public int taskIndex;
 }
 
 
