@@ -18,7 +18,7 @@ public class NPCpathfinding: MonoBehaviour
     public GameObject child;
     private float lastX;
     private float currentX;
-    private bool active;
+    private bool active = true;
     private OfficeTask currentTask;
     private MapManager mapManager;
     [SerializeField] MapManager pathfindingMap;
@@ -111,7 +111,7 @@ public class NPCpathfinding: MonoBehaviour
         bool taskIncomplete = false;
         if (pathfindingMap.TaskList[currentTask.taskIndex].taskActive == false)
         {
-            Debug.Log(gameObject.name + " can't do their task! " + currentTask.taskName);
+            //Debug.Log(gameObject.name + " can't do their task! " + currentTask.taskName);
             taskIncomplete = true;
         }
         //If the employee has finished their tasks, just give them new tasks for the moment. May be changed later.
@@ -128,18 +128,20 @@ public class NPCpathfinding: MonoBehaviour
             }
             taskList.Add(currentTask);
         }
-        else
+        else //Task was completed
         {
             //Run the OnNPCUse function from the script of the object we're interacting with.
-            currentTask.taskObject.GetComponent<ObjectInteraction>().OnNPCUse(personality);
+            if(currentTask.taskObject && currentTask.taskObject.GetComponent<ObjectInteraction>())
+                currentTask.taskObject.GetComponent<ObjectInteraction>().OnNPCUse(personality);
 
             //Run a chance for the npc to sabatoge the task making it inactive for everyone else.
             if (Random.Range(0.0f, 0.1f) < personality.sabatogeChance)
             {
                 int taskIndex = currentTask.taskIndex;
                 pathfindingMap.TaskList[taskIndex].taskActive = false;
-                Debug.Log(gameObject.name + " SABOTAGED " + currentTask.taskName + " and it is now " + pathfindingMap.TaskList[taskIndex].taskActive);
-                currentTask.taskObject.GetComponent<ObjectInteraction>().OnNPCSabotage(personality);
+                //Debug.Log(gameObject.name + " SABOTAGED " + currentTask.taskName + " and it is now " + pathfindingMap.TaskList[taskIndex].taskActive);
+                if (currentTask.taskObject && currentTask.taskObject.GetComponent<ObjectInteraction>())
+                    currentTask.taskObject.GetComponent<ObjectInteraction>().OnNPCSabotage(personality);
             }
         }
         //Start the process of setting a new task as the current task and resetting their movement variables such as pathIndex and pathFinished so the npc knows to start moving again
@@ -193,19 +195,30 @@ public class NPCpathfinding: MonoBehaviour
             taskList.Add(tempTasks[removeIndex]);
             tempTasks.RemoveAt(removeIndex);
         }
-        /*taskList.Add(pointNames[0]);
-        taskList.Add(pointNames[1]);
-        taskList.Add(pointNames[2]);*/
     }
     
     //Teleports the NPC. For use by other scripts. Two functions so you can either pass a vector3 or 3 floats.
-    public void teleport(Vector3 pos)
+    //SetInactive is an optional parameter that lets you stop the npc from just walking away after you teleport them.
+    public void teleport(Vector3 pos, bool setInactive = false)
     {
         transform.position = pos;
+        if(setInactive)
+        {
+            active = false;
+        }
     }
 
-    public void teleport(float x, float y, float z)
+    public void teleport(float x, float y, float z, bool setInactive = false)
     {
         transform.position = new Vector3(x, y, z);
+        if (setInactive)
+        {
+            active = false;
+        }
+    }
+
+    public void setInactive(bool inactive)
+    {
+        active = !inactive;
     }
 }
