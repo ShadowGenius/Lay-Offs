@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class OtherNPC : MonoBehaviour
@@ -11,24 +12,37 @@ public class OtherNPC : MonoBehaviour
 
     public bool startDialogue = false;
     private float speed;
+    public bool playerNear = false;
 
 
     void Start()
     {
         speed = nPCpathfinding.speed;
+        interactUI.SetActive(false);
     }
 
     void Update()
     {
-        if(Vector3.Distance(playerTransform.position, transform.position) <= interactionDistance)
+        if (interactUI)
         {
+            Debug.Log("interact shown");
+        }
+        float distance = Vector3.Distance(playerTransform.position, transform.position);
+        if(distance <= interactionDistance)
+        {
+            playerNear = true;
+            nPCpathfinding.speed = 0f;
             if (startDialogue == false)
             {
                 startDialogue = true;
-                nPCpathfinding.speed = 0f;
-                interactUI.SetActive(true);
-                if(interactUI && Input.GetKeyDown(KeyCode.E) && uIController.prompt == true)
+                if(uIController.prompt == true)
                 {
+                    interactUI.SetActive(true);
+                }
+                
+                if(Input.GetKeyDown(KeyCode.E) && uIController.prompt == true)
+                {
+                    interactUI.SetActive(false);
                     uIController.StartDialogue(dialogueNode);
                     uIController.prompt = false;
                 }
@@ -37,9 +51,10 @@ public class OtherNPC : MonoBehaviour
         }
         else
         {
-            startDialogue = false;
+            playerNear = false;
             interactUI.SetActive(false);
             nPCpathfinding.speed = speed;
+            uIController.prompt = true;
         }
     }
 }

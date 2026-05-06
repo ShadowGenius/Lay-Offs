@@ -377,12 +377,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OtherNPC
   playerTransform: {fileID: 1336332657}
-  interactionDistance: 3
+  interactionDistance: 2
   dialogueNode: {fileID: 11400000, guid: 24469333b4bb944d3acab8bfeca1e623, type: 2}
   uIController: {fileID: 590887969}
   interactUI: {fileID: 1337664801}
   nPCpathfinding: {fileID: 51581511}
   startDialogue: 0
+  playerNear: 0
 --- !u!1 &72114322
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,12 +627,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OtherNPC
   playerTransform: {fileID: 1336332657}
-  interactionDistance: 3
+  interactionDistance: 2
   dialogueNode: {fileID: 11400000, guid: aabffd0cb01e840718057c57a7c93d97, type: 2}
   uIController: {fileID: 590887969}
   interactUI: {fileID: 1337664801}
   nPCpathfinding: {fileID: 153015715}
   startDialogue: 0
+  playerNear: 0
 --- !u!1 &177657020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,12 +1389,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OtherNPC
   playerTransform: {fileID: 1336332657}
-  interactionDistance: 3
+  interactionDistance: 2
   dialogueNode: {fileID: 11400000, guid: 2c54fdf6990de4cfd85add01b289d1b6, type: 2}
   uIController: {fileID: 590887969}
   interactUI: {fileID: 1337664801}
   nPCpathfinding: {fileID: 302284799}
   startDialogue: 0
+  playerNear: 0
 --- !u!1 &307300321
 GameObject:
   m_ObjectHideFlags: 0
@@ -5574,7 +5577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIController
   dialogueUI: {fileID: 72114322}
   lineText: {fileID: 1408004932}
-  interactUI: {fileID: 1337664801}
+  prompt: 1
 --- !u!4 &590887970
 Transform:
   m_ObjectHideFlags: 0
@@ -7587,7 +7590,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &971397430
 RectTransform:
@@ -9185,9 +9188,9 @@ RectTransform:
   - {fileID: 1362689877}
   m_Father: {fileID: 971397430}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -191, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 111, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1337664803
@@ -9301,12 +9304,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OtherNPC
   playerTransform: {fileID: 1336332657}
-  interactionDistance: 3
+  interactionDistance: 2
   dialogueNode: {fileID: 11400000, guid: 37c04065ed68842e29df663cb9399fca, type: 2}
   uIController: {fileID: 590887969}
   interactUI: {fileID: 1337664801}
   nPCpathfinding: {fileID: 1340117124}
   startDialogue: 0
+  playerNear: 0
 --- !u!1 &1359960872
 GameObject:
   m_ObjectHideFlags: 0
@@ -11847,12 +11851,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OtherNPC
   playerTransform: {fileID: 1336332657}
-  interactionDistance: 3
+  interactionDistance: 2
   dialogueNode: {fileID: 11400000, guid: 224e15632262c4bd482deafac3008b23, type: 2}
   uIController: {fileID: 590887969}
   interactUI: {fileID: 1337664801}
   nPCpathfinding: {fileID: 1700301409}
   startDialogue: 0
+  playerNear: 0
 --- !u!1 &1710290813 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1435507793421972632, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
