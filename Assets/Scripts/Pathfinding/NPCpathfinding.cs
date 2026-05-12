@@ -103,7 +103,7 @@ public class NPCpathfinding: MonoBehaviour
         currentTask = taskList[0];
         taskList.RemoveAt(0);
         moveTarget = Locations[currentTask];
-        Debug.Log("Employee going to " + currentTask);
+        // Debug.Log("Employee going to " + currentTask);
         currentPath = mapManager.FindPath((Vector2)transform.position, moveTarget);
         pathIndex = 0;
         pathFinished = false;
@@ -133,7 +133,7 @@ public class NPCpathfinding: MonoBehaviour
 
     public void InitializeTasks()
     {
-        Debug.Log("Initializetasks");
+        // Debug.Log("Initializetasks");
         List<string> tempTasks = new List<string>();
         taskList = new List<string>();
         tempTasks.AddRange(pointNames);

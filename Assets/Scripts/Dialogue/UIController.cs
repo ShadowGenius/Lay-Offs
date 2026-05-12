@@ -23,7 +23,7 @@ public class UIController : MonoBehaviour
     void Update()
     {
 
-        if(dialogueUI && Input.GetKeyDown(KeyCode.F) && prompt == false)
+        if(dialogueUI && dialogueUI.activeSelf && Input.GetKeyDown(KeyCode.F) && prompt == false)
         {
             NextSentence();
         }
@@ -45,6 +45,11 @@ public class UIController : MonoBehaviour
             return;
         }
         lineText.text = node.lines[lineIndex];
+    }
+
+    public void HideDialogue()
+    {
+        dialogueUI.SetActive(false);
     }
 
     public void ShowChoice(DialogueNode dialogueNode)
