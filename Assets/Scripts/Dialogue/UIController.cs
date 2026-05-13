@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,8 @@ public class UIController : MonoBehaviour
     void Start()
     {
         dialogueUI.SetActive(false);
+        choice1.SetActive(false);
+        choice2.SetActive(false);
     }
 
     void Update()
@@ -40,39 +43,48 @@ public class UIController : MonoBehaviour
     {
         lineIndex += 1;
         if (lineIndex >= node.lines.Length)
-        {
+        {   
+            if (node.hasChoice == true)
+            {
+                ShowChoice();
+                return;
+            }
+
+            if (node.nextNode != null)
+            {
+                StartDialogue(node.nextNode);
+                return;
+            }
+
+
             dialogueUI.SetActive(false);
             return;
+            
         }
         lineText.text = node.lines[lineIndex];
     }
 
-    public void HideDialogue()
-    {
-        dialogueUI.SetActive(false);
-    }
-
-    public void ShowChoice(DialogueNode dialogueNode)
+    public void ShowChoice()
     {
         choice1.SetActive(true);
         choice2.SetActive(true);
-        choice1Text.text = dialogueNode.choices[0].label;
-        choice2Text.text = dialogueNode.choices[1].label;
-        NextSentence();
+        choice1Text.text = node.choices[0].label;
+        choice2Text.text = node.choices[0].label;
     }
 
-/*
-    public void Chosen(DialogueNode dialogueNode ,int id)
+    public void Choose(int id)
     {
         choice1.SetActive(false);
         choice2.SetActive(false);
-        if (id == 0)
+        DialogueNode nextNode = node.choices[id].nextNode;
+        if (nextNode!= null)
         {
-            StartDialogue(dialogueNode);
+            StartDialogue(nextNode);
         }
-        if (id == 1)
+        else
         {
-            StartDialogue(dialogueNode);
+            dialogueUI.SetActive(false);
+            prompt = true;
         }
-    }*/
+    }
 }
