@@ -20,6 +20,10 @@ MonoBehaviour:
 
     F: close dialogue'
   speakerName: NPC 3
-  hasChoice: 0
-  choices: []
+  hasChoice: 1
+  choices:
+  - label: Good night
+    nextNode: {fileID: 11400000, guid: e512da251b21e40bfb80695997ff4000, type: 2}
+  - label: Hi
+    nextNode: {fileID: 11400000, guid: 9b4f9ff08d64a48df8cb81268c66c906, type: 2}
   nextNode: {fileID: 0}

@@ -30,6 +30,18 @@ public class UIController : MonoBehaviour
         {
             NextSentence();
         }
+
+        if (choice1.activeSelf && choice2.activeSelf)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                Choose(0);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                Choose(1);
+            }
+        }
     }
     public void StartDialogue(DialogueNode dialogueNode)
     {
@@ -37,6 +49,11 @@ public class UIController : MonoBehaviour
         node = dialogueNode;
         dialogueUI.SetActive(true);
         lineText.text = node.lines[0];
+    }
+
+    public void HideDialogue()
+    {
+        dialogueUI.SetActive(false);
     }
 
     public void NextSentence()
@@ -69,13 +86,14 @@ public class UIController : MonoBehaviour
         choice1.SetActive(true);
         choice2.SetActive(true);
         choice1Text.text = node.choices[0].label;
-        choice2Text.text = node.choices[0].label;
+        choice2Text.text = node.choices[1].label;
     }
+
 
     public void Choose(int id)
     {
-        choice1.SetActive(false);
-        choice2.SetActive(false);
+        Debug.Log($"press {id}");
+        
         DialogueNode nextNode = node.choices[id].nextNode;
         if (nextNode!= null)
         {
@@ -86,5 +104,7 @@ public class UIController : MonoBehaviour
             dialogueUI.SetActive(false);
             prompt = true;
         }
+        choice1.SetActive(false);
+        choice2.SetActive(false);
     }
 }

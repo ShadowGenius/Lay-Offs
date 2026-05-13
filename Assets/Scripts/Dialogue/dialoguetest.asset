@@ -19,3 +19,11 @@ MonoBehaviour:
   - 'line 2
 
     F: next line'
+  speakerName: 
+  hasChoice: 1
+  choices:
+  - label: I want to talk to NPC 1
+    nextNode: {fileID: 11400000, guid: 2c54fdf6990de4cfd85add01b289d1b6, type: 2}
+  - label: I want to talke to NPC 2
+    nextNode: {fileID: 11400000, guid: aabffd0cb01e840718057c57a7c93d97, type: 2}
+  nextNode: {fileID: 0}
