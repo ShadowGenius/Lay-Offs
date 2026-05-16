@@ -10,6 +10,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private Text choice1Text;
     [SerializeField] private GameObject choice2;
     [SerializeField] private Text choice2Text;
+    [SerializeField] private Text nameText;
     private DialogueNode node;
     private int lineIndex;
 
@@ -45,6 +46,8 @@ public class UIController : MonoBehaviour
     }
     public void StartDialogue(DialogueNode dialogueNode)
     {
+        nameText.text = node.speakerName;
+        
         lineIndex = 0;
         node = dialogueNode;
         dialogueUI.SetActive(true);
