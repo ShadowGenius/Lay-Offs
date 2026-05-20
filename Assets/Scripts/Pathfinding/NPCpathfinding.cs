@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class NPCpathfinding: MonoBehaviour
+public class NPCpathfinding : MonoBehaviour
 {
     //A bunch of variables are initialized here. I tried to make the names clear enough but if you're confused about any of them feel free to ask.
     [SerializeField] NPC personality;
@@ -12,6 +12,7 @@ public class NPCpathfinding: MonoBehaviour
     private List<Vector2> currentPath;
     private int pathIndex;
     public List<OfficeTask> officeTasks;
+    private List<OfficeTask> sabatogableTasks;
     private Dictionary<string, Vector2> Locations;
     private Vector2 moveTarget;
     private bool pathFinished;
@@ -23,13 +24,26 @@ public class NPCpathfinding: MonoBehaviour
     private MapManager mapManager;
     [SerializeField] MapManager pathfindingMap;
     [SerializeField] private List<OfficeTask> taskList;
+    private GameObject[] coworkers;
 
 
     void Start()
     {
+        coworkers = GameObject.FindGameObjectsWithTag("NPC");
         //Adding a bunch of things to the variables when the game starts. Stuff I didn't want to have to do in the inspector window which would've cluttered it.
         personality = gameObject.GetComponent<NPC>();
         officeTasks = pathfindingMap.TaskList;
+        //Grab a list of sabatogable tasks.
+        //I forget what this did, nvm I'm changing it I remember now
+        sabatogableTasks = new List<OfficeTask>();
+        for (int i = 0; i < officeTasks.Count; i++)
+        {
+            //Debug.Log(officeTasks[i].taskName + " " + officeTasks[i].isSabotagable);
+            if (officeTasks[i].isSabotagable == true)
+            {
+                sabatogableTasks.Add(officeTasks[i]);
+            }
+        }
         InitializeTasks();
         currentTask = taskList[0];
         taskList.RemoveAt(0);
@@ -37,14 +51,7 @@ public class NPCpathfinding: MonoBehaviour
         mapManager = FindObjectOfType<MapManager>();
         //Debug.Log("Npc move to " + moveTarget);
         move(moveTarget);
-        //I forget what this did
-        for(int i = 0; i < officeTasks.Count; i++)
-        {
-            if (officeTasks == null || officeTasks.Count == 0)
-            {
-                return;
-            }
-        }
+
     }
     //This function grabs a list of the fastest position from where they are to wherever they're trying to get to and stores it in currentPath.
     //It also resets the pathIndex so the script knows it's at the beginning of a new path.
@@ -68,7 +75,7 @@ public class NPCpathfinding: MonoBehaviour
             //Used for testing, if the currentPath variable doesn't have anything in it then something went wrong when getting the path.
             if (currentPath == null)
             {
-                Debug.Log("null," + " Trying to get to " + moveTarget);
+                //Debug.Log("null," + " Trying to get to " + moveTarget);
                 return;
             }
             //The NPC has reached their destination and has run out of elements in the pathIndex list.
@@ -109,13 +116,29 @@ public class NPCpathfinding: MonoBehaviour
 
         //Checks to see if the task is currently active. Checks the task from the original TasksScript script since that has the most recent information about the task availability.
         bool taskIncomplete = false;
-        if (pathfindingMap.TaskList[currentTask.taskIndex].taskActive == false)
+        if (currentTask.willSabatoge == true)
+        {
+            int taskIndex = currentTask.taskIndex;
+            if (pathfindingMap.TaskList[taskIndex].taskActive == true)
+            {
+                pathfindingMap.TaskList[taskIndex].taskActive = false;
+                if (currentTask.taskObject && currentTask.taskObject.GetComponent<ObjectInteraction>())
+                    currentTask.taskObject.GetComponent<ObjectInteraction>().OnNPCSabotage(personality);
+            }
+        }
+        else if (pathfindingMap.TaskList[currentTask.taskIndex].taskActive == false)
         {
             //Debug.Log(gameObject.name + " can't do their task! " + currentTask.taskName);
             taskIncomplete = true;
         }
+        else
+        {
+            //Run the OnNPCUse function from the script of the object we're interacting with.
+            if (currentTask.taskObject && currentTask.taskObject.GetComponent<ObjectInteraction>())
+                currentTask.taskObject.GetComponent<ObjectInteraction>().OnNPCUse(personality);
+        }
         //If the employee has finished their tasks, just give them new tasks for the moment. May be changed later.
-        if(taskList.Count == 0)
+        if (taskList.Count == 0)
         {
             InitializeTasks();
         }
@@ -128,22 +151,6 @@ public class NPCpathfinding: MonoBehaviour
             }
             taskList.Add(currentTask);
         }
-        else //Task was completed
-        {
-            //Run the OnNPCUse function from the script of the object we're interacting with.
-            if(currentTask.taskObject && currentTask.taskObject.GetComponent<ObjectInteraction>())
-                currentTask.taskObject.GetComponent<ObjectInteraction>().OnNPCUse(personality);
-
-            //Run a chance for the npc to sabatoge the task making it inactive for everyone else.
-            if (Random.Range(0.0f, 0.1f) < personality.sabatogeChance)
-            {
-                int taskIndex = currentTask.taskIndex;
-                pathfindingMap.TaskList[taskIndex].taskActive = false;
-                //Debug.Log(gameObject.name + " SABOTAGED " + currentTask.taskName + " and it is now " + pathfindingMap.TaskList[taskIndex].taskActive);
-                if (currentTask.taskObject && currentTask.taskObject.GetComponent<ObjectInteraction>())
-                    currentTask.taskObject.GetComponent<ObjectInteraction>().OnNPCSabotage(personality);
-            }
-        }
         //Start the process of setting a new task as the current task and resetting their movement variables such as pathIndex and pathFinished so the npc knows to start moving again
         currentTask = taskList[0];
         taskList.RemoveAt(0);
@@ -153,7 +160,7 @@ public class NPCpathfinding: MonoBehaviour
         pathIndex = 0;
         pathFinished = false;
     }
-    
+
     //Several GoTo functions that do the same thing but with different parameters to make it easier on coders.
     //It looks like they do the exact same thing as move? I'm not really sure why I did that.
     public void GoTo(Vector2 location)
@@ -177,32 +184,43 @@ public class NPCpathfinding: MonoBehaviour
         pathIndex = 0;
         pathFinished = false;
     }
-    
+
     public void InitializeTasks()
     {
         //Debug.Log("Initializetasks");
         //Grab a temporary list of all the tasks.
         List<OfficeTask> tempTasks = new List<OfficeTask>();
         taskList = new List<OfficeTask>();
-        for(int i = 0; i < officeTasks.Count; i++)
+        for (int i = 0; i < officeTasks.Count; i++)
         {
             tempTasks.Add(officeTasks[i]);
         }
         //Add the tasks to the list of tasks the employee personally has. Currently it just adds all of them but we can change that if we want to.
-        for(int i = 0; i < officeTasks.Count; i++)
+        for (int i = 0; i < officeTasks.Count; i++)
         {
             int removeIndex = Random.Range(0, tempTasks.Count);
             taskList.Add(tempTasks[removeIndex]);
             tempTasks.RemoveAt(removeIndex);
         }
+        //Debug.Log(taskList);
+        //Run a chance for the npc to add a sabatoge task that will disable the task for everyone else. Places it in the first half of their tasks but not at the very start.
+        if (Random.Range(0.0f, 0.1f) < personality.sabatogeChance)
+        {
+            //Debug.Log("SABATOGING TIME " + gameObject.name);
+            //Debug.Log("SABATOGABLE " + sabatogableTasks);
+            OfficeTask taskToSabatoge = sabatogableTasks[Random.Range(0, sabatogableTasks.Count - 1)];
+            //Debug.Log(gameObject.name + " WILL SABATOGE " + taskToSabatoge.taskName);
+            taskToSabatoge.willSabatoge = true;
+            taskList.Insert(Random.Range(1, taskList.Count / 2), taskToSabatoge);
+        }
     }
-    
+
     //Teleports the NPC. For use by other scripts. Two functions so you can either pass a vector3 or 3 floats.
     //SetInactive is an optional parameter that lets you stop the npc from just walking away after you teleport them.
     public void teleport(Vector3 pos, bool setInactive = false)
     {
         transform.position = pos;
-        if(setInactive)
+        if (setInactive)
         {
             active = false;
         }
@@ -221,4 +239,5 @@ public class NPCpathfinding: MonoBehaviour
     {
         active = !inactive;
     }
+
 }
