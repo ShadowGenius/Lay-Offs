@@ -9682,6 +9682,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20c6f19a532f4745945c213aa6962d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+--- !u!95 &1336332663
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336332656}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe1c5cea4ae3943ebb8ad81d71573985, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1340117122 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
@@ -10616,6 +10638,10 @@ PrefabInstance:
       propertyPath: visual
       value: 
       objectReference: {fileID: 1860776610}
+    - target: {fileID: 8094045239586987153, guid: a54eb4741292547498e43ac34a9a8f2d, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1336332663}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -10626,6 +10652,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2684370189070757366, guid: a54eb4741292547498e43ac34a9a8f2d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1336332661}
+    - targetCorrespondingSourceObject: {fileID: 2684370189070757366, guid: a54eb4741292547498e43ac34a9a8f2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1336332663}
   m_SourcePrefab: {fileID: 100100000, guid: a54eb4741292547498e43ac34a9a8f2d, type: 3}
 --- !u!1 &1532249192
 GameObject:

@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     public float speed = 6f;
+    public Animator animator;
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
@@ -21,6 +23,16 @@ public class PlayerMovement : MonoBehaviour
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
         moveInput = moveInput.normalized;
+
+        if (moveInput != Vector2.zero)
+        {
+            animator.SetBool("IsWalking", true);
+            Debug.Log("True");
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }
 
         // Flip visuals only
         if (moveInput.x > 0)
