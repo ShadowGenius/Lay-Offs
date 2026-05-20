@@ -6,6 +6,9 @@ public class ObjectInteraction : MonoBehaviour
     [SerializeField] public GameObject playerObject;
     [SerializeField] public float interactionDistance = 2.2f;
 
+    [SerializeField] protected GameObject spellFieldPrefab;
+    protected GameObject spellFieldInstance;
+
     protected Player player => playerObject.GetComponent<Player>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

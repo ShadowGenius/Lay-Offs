@@ -5,6 +5,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     public float speed = 6f;
 
+    private float speedModifier = 1f;
+
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private SpriteRenderer[] renderers;
@@ -22,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
         moveInput.y = Input.GetAxisRaw("Vertical");
         moveInput = moveInput.normalized;
 
+        speedModifier = Input.GetKey(KeyCode.LeftShift) ? 1.5f : 1f;
+
         // Flip visuals only
         if (moveInput.x > 0)
             Flip(true);
@@ -32,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         // Apply physics at fixed timestep
-        rb.linearVelocity = moveInput * speed;
+        rb.linearVelocity = moveInput * speed * speedModifier;
     }
 
     void Flip(bool flip)

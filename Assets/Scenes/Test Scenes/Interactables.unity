@@ -6172,6 +6172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Watercooler
   playerObject: {fileID: 1336332656}
   interactionDistance: 2.2
+  spellFieldPrefab: {fileID: 0}
 --- !u!1 &754953790 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1435507793421972632, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
@@ -6654,6 +6655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ManagerDesk
   playerObject: {fileID: 1336332656}
   interactionDistance: 3.6
+  spellFieldPrefab: {fileID: 0}
   deliverySFX: {fileID: 8300000, guid: 92f5ae291ea43ec408ea132b91f52b76, type: 3}
   deskPaperPrefab: {fileID: 2570435056851777824, guid: dff546b871c85294bbae1cfddbfe7fd5, type: 3}
   deskPaperPoint: {fileID: 425662361}
@@ -7303,6 +7305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrashCan
   playerObject: {fileID: 1336332656}
   interactionDistance: 2.2
+  spellFieldPrefab: {fileID: 0}
   holdPoint: {fileID: 1438484072}
 --- !u!1 &851232911
 GameObject:
@@ -10768,6 +10771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
   interactionDistance: 1
+  spellFieldPrefab: {fileID: 0}
   owner: {fileID: 1336332662}
   usingSFX:
   - {fileID: 8300000, guid: 8de37bbca484b2f48ac80dedfca963ef, type: 3}
@@ -11369,6 +11373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
+  spellFieldPrefab: {fileID: 0}
   owner: {fileID: 0}
   usingSFX:
   - {fileID: 8300000, guid: 8de37bbca484b2f48ac80dedfca963ef, type: 3}
@@ -11623,6 +11628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
+  spellFieldPrefab: {fileID: 0}
   owner: {fileID: 0}
   usingSFX:
   - {fileID: 8300000, guid: 8de37bbca484b2f48ac80dedfca963ef, type: 3}
@@ -11877,6 +11883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
+  spellFieldPrefab: {fileID: 0}
   owner: {fileID: 0}
   usingSFX:
   - {fileID: 8300000, guid: 8de37bbca484b2f48ac80dedfca963ef, type: 3}
@@ -13053,6 +13060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Printer
   playerObject: {fileID: 1336332656}
   interactionDistance: 2.2
+  spellFieldPrefab: {fileID: 5585875284270315937, guid: 35a5931a08761aa4c8184e4b22eaf32d, type: 3}
   paperPrefab: {fileID: 2570435056851777824, guid: dff546b871c85294bbae1cfddbfe7fd5, type: 3}
   holdPoint: {fileID: 1438484072}
   smokePrefab: {fileID: 735905426477565535, guid: 4db47d536070a0c4dae2fe0bf5d8f16c, type: 3}

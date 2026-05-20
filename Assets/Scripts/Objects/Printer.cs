@@ -60,6 +60,11 @@ public class Printer : ObjectInteraction
                 smokeInstance.transform.localPosition = Vector3.zero;
                 smokeInstance.transform.localScale = new Vector3(4, 4, 1);
             }
+
+            spellFieldInstance = Instantiate(spellFieldPrefab, transform);
+            FriendlinessEvent detector = spellFieldInstance.GetComponent<FriendlinessEvent>();
+            detector.ApplyFriendliness(player, -25);
+            spellFieldInstance = null;
         }
         else
         {

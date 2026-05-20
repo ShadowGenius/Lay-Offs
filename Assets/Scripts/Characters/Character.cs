@@ -66,6 +66,7 @@ public class Character : MonoBehaviour
         {
             friendlinessValues.Add(character, Math.Clamp(defaultFriendliness + increment, 0, 100));
         }
+        Debug.Log($"{name} updated friendliness towards {character.name}: {friendlinessValues[character]}");
     }
 
     public double FriendlinessTo(Character target)
