@@ -4,26 +4,24 @@ public class Watercooler : ObjectInteraction
 {
     public override void OnPlayerUse()
     {
-        if (!player.isHandEmpty())
-        {
-            Debug.Log("Player is holding too much for water");
-            return;
-        }
-        player.heldItem = Character.Item.Water;
-
-        Debug.Log("Player now has water");
+        use(player);
     }
 
     public override void OnNPCUse(NPC npc)
     {
-        if (!npc.isHandEmpty())
+        use(npc);
+    }
+
+    public void use(Character ch)
+    {
+        if (!ch.isHandEmpty())
         {
-            Debug.Log("NPC is holding too much for water");
+            Debug.Log($"{ch.name} is holding too much for water");
             return;
         }
-        npc.heldItem = Character.Item.Water;
+        ch.heldItem = Character.Item.Water;
 
-        Debug.Log($"{npc.name} now has water");
+        Debug.Log($"{ch.name} now has water");
     }
 
     // sabotages are not relevant (for now)

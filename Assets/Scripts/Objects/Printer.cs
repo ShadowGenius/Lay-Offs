@@ -21,35 +21,27 @@ public class Printer : ObjectInteraction
     // communal printer, no one owns it (since it is related to untargeted sabotage)
     public override void OnPlayerUse()
     {
-
-        Debug.Log("Printer doing printer things");
-
         Printing printingTask = player.playerActions.Find(action => action is Printing && action.IsNotFinished()) as Printing;
-
-        if (canBeUsed() && player.isHandEmpty())
-        {
-            StartCoroutine(runPrinting(player, printingTask));
-            //player.heldItem = Character.Item.Paper;
-            //if (printingTask != null)
-            //{
-            //    printingTask.MakeProgress();
-
-                Debug.Log($"Player made progress on printing ({printingTask.PercentComplete()}% complete)");
-            //}
-        }
-        else if (isBroken)
-        {
-            StartCoroutine(runFixing());
-        }
+        use(player, printingTask);
     }
 
     public override void OnNPCUse(NPC npc)
     {
-        Debug.Log("NPC using printer");
-        if (canBeUsed())
+        use(npc);
+    }
+
+    public void use(Character ch, Printing printingTask = null)
+    {
+        Debug.Log("Printer doing printer things");
+
+        if (canBeUsed() && ch.isHandEmpty())
         {
-            StartCoroutine(runPrinting(npc));
-            Debug.Log("NPC used printer");
+            StartCoroutine(runPrinting(ch, printingTask));
+            Debug.Log($"{ch.name} used printer");
+        }
+        else if (isBroken)
+        {
+            StartCoroutine(runFixing());
         }
     }
 
@@ -124,10 +116,10 @@ public class Printer : ObjectInteraction
     private IEnumerator runPrinting(Character ch, Printing printingTask = null)
     {
 
-        GameObject paper = Instantiate(paperPrefab, holdPoint);
-        paper.transform.localPosition = new Vector3(0, 1, 0);
-        paper.transform.localScale = new Vector3((float)1.2, (float)1.2, 1);
-        SFXManager.instance.PlaySFX(printingSFX, transform);
+        //GameObject paper = Instantiate(paperPrefab, holdPoint);
+        //paper.transform.localPosition = new Vector3(0, 1, 0);
+        //paper.transform.localScale = new Vector3((float)1.2, (float)1.2, 1);
+        //SFXManager.instance.PlaySFX(printingSFX, transform);
         isRunning = true;
         yield return new WaitForSeconds(printingTime);
         ch.heldItem = Character.Item.Paper;
