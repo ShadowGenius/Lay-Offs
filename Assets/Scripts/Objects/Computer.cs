@@ -12,6 +12,7 @@ public class Computer : ObjectInteraction
     [SerializeField] GameObject smokePrefab;
     [SerializeField] Transform smokePoint;
     private GameObject smokeInstance;
+    [SerializeField] private AudioClip explodeSFX = null;
 
     public override void OnPlayerUse()
     {
@@ -60,6 +61,7 @@ public class Computer : ObjectInteraction
 
         if (!isBroken)
         {
+            SFXManager.instance.PlaySFX(explodeSFX, transform);
             isBroken = true;
 
             if (smokePrefab != null && smokePoint != null && smokeInstance == null)
