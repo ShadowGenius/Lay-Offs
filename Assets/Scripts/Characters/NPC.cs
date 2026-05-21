@@ -18,6 +18,14 @@ public class NPC : Character
     void Start()
     {
         personality = NPCPersonality.generic_model; // everyone is a generic colleague for now
+        tasksCompleted = 0;
+        GameObject[] npcs = GameObject.FindGameObjectsWithTag("NPC");
+        List<Character> characters = new List<Character>();
+        friendlinessValues.Add(GameObject.FindGameObjectWithTag("Player").GetComponent<Character>(), 0.0);
+        for (int i = 0; i < npcs.Length; i++)
+        {
+            friendlinessValues.Add(npcs[i].GetComponent<Character>(), 0.0);
+        }
     }
     
     public void AddAction(Action action)
