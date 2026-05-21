@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     public float speed = 6f;
+    public Animator animator;
 
     private float speedModifier = 1f;
 
@@ -25,6 +27,15 @@ public class PlayerMovement : MonoBehaviour
         moveInput = moveInput.normalized;
 
         speedModifier = Input.GetKey(KeyCode.LeftShift) ? 1.5f : 1f;
+        if (moveInput != Vector2.zero)
+        {
+            animator.SetBool("IsWalking", true);
+            Debug.Log("True");
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }
 
         // Flip visuals only
         if (moveInput.x > 0)
