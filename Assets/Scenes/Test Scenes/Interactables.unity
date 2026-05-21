@@ -7610,6 +7610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 916729265}
   - component: {fileID: 916729266}
+  - component: {fileID: 916729267}
   m_Layer: 0
   m_Name: whole-c1a_0
   m_TagString: Untagged
@@ -7679,7 +7680,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1673341787
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: -648438032824972072, guid: 48a1f36f0bbc6d94cbc71fc48ea6ce15, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7691,6 +7692,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 1
+--- !u!95 &916729267
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916729264}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe1c5cea4ae3943ebb8ad81d71573985, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &943895592
 GameObject:
   m_ObjectHideFlags: 0
@@ -10609,6 +10632,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7262624749968297353, guid: a54eb4741292547498e43ac34a9a8f2d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262624749968297353, guid: a54eb4741292547498e43ac34a9a8f2d, type: 3}
       propertyPath: m_SortingLayerID
       value: 564832887
       objectReference: {fileID: 0}
@@ -10616,6 +10643,10 @@ PrefabInstance:
       propertyPath: visual
       value: 
       objectReference: {fileID: 1860776610}
+    - target: {fileID: 8094045239586987153, guid: a54eb4741292547498e43ac34a9a8f2d, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 916729267}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
