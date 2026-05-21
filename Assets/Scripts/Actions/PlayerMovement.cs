@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         // Apply physics at fixed timestep
-        rb.linearVelocity = moveInput * speed * speedModifier;
+        rb.linearVelocity = speed * speedModifier * moveInput;
     }
 
     void Flip(bool flip)
