@@ -13,6 +13,7 @@ public class MapManager : MonoBehaviour
     [SerializeField] private Vector2 offset = new Vector2(0, 0);
     [SerializeField] private bool visualizeGrid;
     [SerializeField] private Tilemap wallTiles;
+    [SerializeField] public List<OfficeTask> TaskList;
 
     private Dictionary<Vector2Int, Cell> cells;
 

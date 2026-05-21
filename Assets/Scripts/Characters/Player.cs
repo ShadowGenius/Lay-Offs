@@ -39,7 +39,7 @@ public class Player : Character
 
         for (int i = 0; i < playerActions.Count; i++)
         {
-            Debug.Log($"Task {i + 1}: {playerActions[i].title}");
+            //Debug.Log($"Task {i + 1}: {playerActions[i].title}");
         }
 
         GetNPCS();

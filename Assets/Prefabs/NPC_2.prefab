@@ -197,18 +197,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dba31f6d08ab1194a884acf9eb16ae85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCpathfinding
+  personality: {fileID: 0}
   speed: 3
-  pointNames:
-  - Zero
-  - Printer
-  - WaterCooler
-  - Desk
-  pointLocations:
-  - {x: 3, y: 3}
-  - {x: 44, y: 23}
-  - {x: 22, y: 22}
-  - {x: 29, y: 7}
+  officeTasks: []
   child: {fileID: 0}
+  pathfindingMap: {fileID: 0}
+  taskList: []
 --- !u!114 &-6154700760267896952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,3 +218,4 @@ MonoBehaviour:
   name: 
   gender: 
   heldItem: 0
+  sabatogeChance: 0
