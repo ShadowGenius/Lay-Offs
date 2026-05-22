@@ -1,0 +1,2210 @@
+fileFormatVersion: 2
+guid: 6ccfce25b1fbb4e529cf2e2753731da4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1541624892340173157
+    second: Blonde Lady Walk Spritesheet_0
+  - first:
+      213: 5147173248793770199
+    second: Blonde Lady Walk Spritesheet_1
+  - first:
+      213: -6221209781981672355
+    second: Blonde Lady Walk Spritesheet_2
+  - first:
+      213: 3805226980456064458
+    second: Blonde Lady Walk Spritesheet_3
+  - first:
+      213: -4261004266934637652
+    second: Blonde Lady Walk Spritesheet_4
+  - first:
+      213: -8168391406269881083
+    second: Blonde Lady Walk Spritesheet_5
+  - first:
+      213: -1207553018056185209
+    second: Blonde Lady Walk Spritesheet_6
+  - first:
+      213: 3877503135416873044
+    second: Blonde Lady Walk Spritesheet_7
+  - first:
+      213: -3455158807294644734
+    second: Blonde Lady Walk Spritesheet_8
+  - first:
+      213: 2428618160459248331
+    second: Blonde Lady Walk Spritesheet_9
+  - first:
+      213: 7794062987291759918
+    second: Blonde Lady Walk Spritesheet_10
+  - first:
+      213: 2365672067535057916
+    second: Blonde Lady Walk Spritesheet_11
+  - first:
+      213: -7499910960458070969
+    second: Blonde Lady Walk Spritesheet_12
+  - first:
+      213: 3790101646214745779
+    second: Blonde Lady Walk Spritesheet_13
+  - first:
+      213: -8894992475370136385
+    second: Blonde Lady Walk Spritesheet_14
+  - first:
+      213: -1523232586732346411
+    second: Blonde Lady Walk Spritesheet_15
+  - first:
+      213: 5141931575146299208
+    second: Blonde Lady Walk Spritesheet_16
+  - first:
+      213: -5985465289241984073
+    second: Blonde Lady Walk Spritesheet_17
+  - first:
+      213: -2540930871579944941
+    second: Blonde Lady Walk Spritesheet_18
+  - first:
+      213: -6170396730271486922
+    second: Blonde Lady Walk Spritesheet_19
+  - first:
+      213: -5344412333856552737
+    second: Blonde Lady Walk Spritesheet_20
+  - first:
+      213: -8192362177817089104
+    second: Blonde Lady Walk Spritesheet_21
+  - first:
+      213: -1648353290354623024
+    second: Blonde Lady Walk Spritesheet_22
+  - first:
+      213: -4821270002566651848
+    second: Blonde Lady Walk Spritesheet_23
+  - first:
+      213: 2179900352015172179
+    second: Blonde Lady Walk Spritesheet_24
+  - first:
+      213: -6356764865856828498
+    second: Blonde Lady Walk Spritesheet_25
+  - first:
+      213: 7062656953648642658
+    second: Blonde Lady Walk Spritesheet_26
+  - first:
+      213: 3219803860291379639
+    second: Blonde Lady Walk Spritesheet_27
+  - first:
+      213: 215792896526224210
+    second: Blonde Lady Walk Spritesheet_28
+  - first:
+      213: -4839030990505403227
+    second: Blonde Lady Walk Spritesheet_29
+  - first:
+      213: -7766524566787347071
+    second: Blonde Lady Walk Spritesheet_30
+  - first:
+      213: 8983644412779262916
+    second: Blonde Lady Walk Spritesheet_31
+  - first:
+      213: -8780701184378150697
+    second: Blonde Lady Walk Spritesheet_32
+  - first:
+      213: -2668027369811532112
+    second: Blonde Lady Walk Spritesheet_33
+  - first:
+      213: -7255516179475642024
+    second: Blonde Lady Walk Spritesheet_34
+  - first:
+      213: -6557737435124988977
+    second: Blonde Lady Walk Spritesheet_35
+  - first:
+      213: 3001056552785099265
+    second: Blonde Lady Walk Spritesheet_36
+  - first:
+      213: 5344647033226273823
+    second: Blonde Lady Walk Spritesheet_37
+  - first:
+      213: 6156085851336714722
+    second: Blonde Lady Walk Spritesheet_38
+  - first:
+      213: -635460948719872247
+    second: Blonde Lady Walk Spritesheet_39
+  - first:
+      213: -8532533963926787609
+    second: Blonde Lady Walk Spritesheet_40
+  - first:
+      213: -7277621629687457989
+    second: Blonde Lady Walk Spritesheet_41
+  - first:
+      213: -8931078579793439037
+    second: Blonde Lady Walk Spritesheet_42
+  - first:
+      213: 6301808182596401810
+    second: Blonde Lady Walk Spritesheet_43
+  - first:
+      213: -3098883338887321255
+    second: Blonde Lady Walk Spritesheet_44
+  - first:
+      213: -3447586707206394520
+    second: Blonde Lady Walk Spritesheet_45
+  - first:
+      213: -2202930449182160093
+    second: Blonde Lady Walk Spritesheet_46
+  - first:
+      213: 1662862907990307064
+    second: Blonde Lady Walk Spritesheet_47
+  - first:
+      213: -2168935099110708675
+    second: Blonde Lady Walk Spritesheet_48
+  - first:
+      213: -5382759155680753131
+    second: Blonde Lady Walk Spritesheet_49
+  - first:
+      213: -1519228797508958745
+    second: Blonde Lady Walk Spritesheet_50
+  - first:
+      213: -8787551292625317029
+    second: Blonde Lady Walk Spritesheet_51
+  - first:
+      213: 3903838054111517320
+    second: Blonde Lady Walk Spritesheet_52
+  - first:
+      213: 5387078600223693510
+    second: Blonde Lady Walk Spritesheet_53
+  - first:
+      213: 6854093843436183350
+    second: Blonde Lady Walk Spritesheet_54
+  - first:
+      213: 253809460858760392
+    second: Blonde Lady Walk Spritesheet_55
+  - first:
+      213: -1730449858466657318
+    second: Blonde Lady Walk Spritesheet_56
+  - first:
+      213: -6760365144235991190
+    second: Blonde Lady Walk Spritesheet_57
+  - first:
+      213: -6567370079799352548
+    second: Blonde Lady Walk Spritesheet_58
+  - first:
+      213: 444466912200999782
+    second: Blonde Lady Walk Spritesheet_59
+  - first:
+      213: 7726164692994805142
+    second: Blonde Lady Walk Spritesheet_60
+  - first:
+      213: 3021313383320417895
+    second: Blonde Lady Walk Spritesheet_61
+  - first:
+      213: -2431900929024291929
+    second: Blonde Lady Walk Spritesheet_62
+  - first:
+      213: -7225136625573009169
+    second: Blonde Lady Walk Spritesheet_63
+  - first:
+      213: -5101798342381066805
+    second: Blonde Lady Walk Spritesheet_64
+  - first:
+      213: -4032666520538939374
+    second: Blonde Lady Walk Spritesheet_65
+  - first:
+      213: 2678915297208249584
+    second: Blonde Lady Walk Spritesheet_66
+  - first:
+      213: -3579541592673325006
+    second: Blonde Lady Walk Spritesheet_67
+  - first:
+      213: 8450621609872168278
+    second: Blonde Lady Walk Spritesheet_68
+  - first:
+      213: 4573460978349999512
+    second: Blonde Lady Walk Spritesheet_69
+  - first:
+      213: -1859828563948536044
+    second: Blonde Lady Walk Spritesheet_70
+  - first:
+      213: 3390847201469146850
+    second: Blonde Lady Walk Spritesheet_71
+  - first:
+      213: 1619713894040920717
+    second: Blonde Lady Walk Spritesheet_72
+  - first:
+      213: -7573335871710837298
+    second: Blonde Lady Walk Spritesheet_73
+  - first:
+      213: 8590825826523626339
+    second: Blonde Lady Walk Spritesheet_74
+  - first:
+      213: -1909532173702881615
+    second: Blonde Lady Walk Spritesheet_75
+  - first:
+      213: 5682076344196292291
+    second: Blonde Lady Walk Spritesheet_76
+  - first:
+      213: -3494091492519081601
+    second: Blonde Lady Walk Spritesheet_77
+  - first:
+      213: -7756589417779869184
+    second: Blonde Lady Walk Spritesheet_78
+  - first:
+      213: 8817709739691655863
+    second: Blonde Lady Walk Spritesheet_79
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 240
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 10819
+        width: 471
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b960a2b045c0b9ae0800000000000000
+      internalID: -1541624892340173157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 10817
+        width: 471
+        height: 684
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d8feb38cce6e6740800000000000000
+      internalID: 5147173248793770199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 2945
+        y: 10817
+        width: 471
+        height: 684
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5c0cc72aa2d9a9a0800000000000000
+      internalID: -6221209781981672355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 4226
+        y: 10818
+        width: 470
+        height: 683
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac5e0db17c1eec430800000000000000
+      internalID: 3805226980456064458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 5505
+        y: 10819
+        width: 471
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cabefeae13fddd4c0800000000000000
+      internalID: -4261004266934637652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 10098
+        width: 471
+        height: 683
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5052ee24b4b04ae80800000000000000
+      internalID: -8168391406269881083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 10098
+        width: 470
+        height: 683
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78a6f4f8de8ed3fe0800000000000000
+      internalID: -1207553018056185209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 2946
+        y: 10098
+        width: 470
+        height: 683
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4507cf9ce88afc530800000000000000
+      internalID: 3877503135416873044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 4226
+        y: 10097
+        width: 470
+        height: 684
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20ee3a8fe5fcc00d0800000000000000
+      internalID: -3455158807294644734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 5506
+        y: 10098
+        width: 470
+        height: 683
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc27c3d795f24b120800000000000000
+      internalID: 2428618160459248331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 9378
+        width: 470
+        height: 683
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e259b820ef21a2c60800000000000000
+      internalID: 7794062987291759918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 9378
+        width: 470
+        height: 683
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf3bd78263e84d020800000000000000
+      internalID: 2365672067535057916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 2946
+        y: 9378
+        width: 470
+        height: 683
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74486dab7b6fae790800000000000000
+      internalID: -7499910960458070969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 4226
+        y: 9378
+        width: 470
+        height: 684
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bec04dcd55299430800000000000000
+      internalID: 3790101646214745779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 5506
+        y: 9378
+        width: 471
+        height: 684
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbc5ac9a873ae8480800000000000000
+      internalID: -8894992475370136385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 8658
+        width: 470
+        height: 684
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d3e48568046cdae0800000000000000
+      internalID: -1523232586732346411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 8658
+        width: 471
+        height: 683
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84fb5f3468fcb5740800000000000000
+      internalID: 5141931575146299208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 2946
+        y: 8657
+        width: 471
+        height: 684
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b30d43280b5feca0800000000000000
+      internalID: -5985465289241984073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 4226
+        y: 8657
+        width: 471
+        height: 685
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31857a0b5dcccbcd0800000000000000
+      internalID: -2540930871579944941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 5506
+        y: 8659
+        width: 471
+        height: 683
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63cafe0bdd85e5aa0800000000000000
+      internalID: -6170396730271486922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 7936
+        width: 471
+        height: 686
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd8834b5c45d4d5b0800000000000000
+      internalID: -5344412333856552737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 7933
+        width: 471
+        height: 688
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bbedd71102ee4e80800000000000000
+      internalID: -8192362177817089104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 2946
+        y: 7932
+        width: 470
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ddf0107a6fdf19e0800000000000000
+      internalID: -1648353290354623024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 4226
+        y: 7932
+        width: 471
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 830a4c21a78671db0800000000000000
+      internalID: -4821270002566651848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 5506
+        y: 7932
+        width: 471
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3520d9f02df804e10800000000000000
+      internalID: 2179900352015172179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 7212
+        width: 470
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eab8be9b80c38c7a0800000000000000
+      internalID: -6356764865856828498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 7213
+        width: 470
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26a7bac6419930260800000000000000
+      internalID: 7062656953648642658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 2946
+        y: 7213
+        width: 470
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b1691b3d8a0fac20800000000000000
+      internalID: 3219803860291379639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 4226
+        y: 7214
+        width: 470
+        height: 687
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25b8f7efe76aef200800000000000000
+      internalID: 215792896526224210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 5506
+        y: 7214
+        width: 470
+        height: 687
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ac91d1d3fe48dcb0800000000000000
+      internalID: -4839030990505403227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 6494
+        width: 470
+        height: 687
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18dab492e03c73490800000000000000
+      internalID: -7766524566787347071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 6493
+        width: 471
+        height: 688
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c3712cfef05cac70800000000000000
+      internalID: 8983644412779262916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 2946
+        y: 6493
+        width: 470
+        height: 688
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d0e9428bcea42680800000000000000
+      internalID: -8780701184378150697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 4225
+        y: 6493
+        width: 471
+        height: 688
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b62d533e3349fad0800000000000000
+      internalID: -2668027369811532112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 5505
+        y: 6492
+        width: 471
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8594144e97a3f4b90800000000000000
+      internalID: -7255516179475642024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 5772
+        width: 471
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc308111c8c3ef4a0800000000000000
+      internalID: -6557737435124988977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 5772
+        width: 470
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10a3d93d805e5a920800000000000000
+      internalID: 3001056552785099265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 2945
+        y: 5774
+        width: 471
+        height: 687
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f142c49d8200c2a40800000000000000
+      internalID: 5344647033226273823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 4225
+        y: 5776
+        width: 470
+        height: 685
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e9abb7277fce6550800000000000000
+      internalID: 6156085851336714722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 5505
+        y: 5779
+        width: 471
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9075bea42a36e27f0800000000000000
+      internalID: -635460948719872247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 5057
+        width: 470
+        height: 684
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e9203e2199569980800000000000000
+      internalID: -8532533963926787609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 5057
+        width: 470
+        height: 684
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3797c0bfa1b00b90800000000000000
+      internalID: -7277621629687457989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 2945
+        y: 5058
+        width: 470
+        height: 683
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c6df4eb95f6e0480800000000000000
+      internalID: -8931078579793439037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 4225
+        y: 5058
+        width: 470
+        height: 683
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29afe465725847750800000000000000
+      internalID: 6301808182596401810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 5505
+        y: 5058
+        width: 470
+        height: 683
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 959ae39950e8ef4d0800000000000000
+      internalID: -3098883338887321255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 4338
+        width: 471
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86daa98e726b720d0800000000000000
+      internalID: -3447586707206394520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 4338
+        width: 470
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32b0b979d6e9d61e0800000000000000
+      internalID: -2202930449182160093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 4337
+        width: 471
+        height: 683
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f07fec210da31710800000000000000
+      internalID: 1662862907990307064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 4224
+        y: 4338
+        width: 471
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3a21a4d40566e1e0800000000000000
+      internalID: -2168935099110708675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 5504
+        y: 4338
+        width: 471
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51aca2621199c45b0800000000000000
+      internalID: -5382759155680753131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 3618
+        width: 471
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e54fe7357d9aeae0800000000000000
+      internalID: -1519228797508958745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 3618
+        width: 470
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b531b8568a85c0680800000000000000
+      internalID: -8787551292625317029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_52
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 3618
+        width: 471
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88a18fbd6083d2630800000000000000
+      internalID: 3903838054111517320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_53
+      rect:
+        serializedVersion: 2
+        x: 4224
+        y: 3618
+        width: 471
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ca1177e17fb2ca40800000000000000
+      internalID: 5387078600223693510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_54
+      rect:
+        serializedVersion: 2
+        x: 5504
+        y: 3619
+        width: 471
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63f943b3902ae1f50800000000000000
+      internalID: 6854093843436183350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_55
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2898
+        width: 471
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ccae132c56b58300800000000000000
+      internalID: 253809460858760392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_56
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 2898
+        width: 471
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb4874a5053cf7e0800000000000000
+      internalID: -1730449858466657318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_57
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 2897
+        width: 471
+        height: 683
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6f91e128bb5e22a0800000000000000
+      internalID: -6760365144235991190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_58
+      rect:
+        serializedVersion: 2
+        x: 4224
+        y: 2897
+        width: 471
+        height: 683
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c13e70535b30cd4a0800000000000000
+      internalID: -6567370079799352548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_59
+      rect:
+        serializedVersion: 2
+        x: 5504
+        y: 2899
+        width: 471
+        height: 681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 663c7204d401b2600800000000000000
+      internalID: 444466912200999782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_60
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2176
+        width: 471
+        height: 684
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69dce127ad9d83b60800000000000000
+      internalID: 7726164692994805142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_61
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 2173
+        width: 471
+        height: 687
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76672f7b38cdde920800000000000000
+      internalID: 3021313383320417895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_62
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 2172
+        width: 471
+        height: 688
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ab80946df6204ed0800000000000000
+      internalID: -2431900929024291929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_63
+      rect:
+        serializedVersion: 2
+        x: 4224
+        y: 2172
+        width: 471
+        height: 688
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe86e0bf4882bbb90800000000000000
+      internalID: -7225136625573009169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_64
+      rect:
+        serializedVersion: 2
+        x: 5504
+        y: 2172
+        width: 471
+        height: 688
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc523b62075c239b0800000000000000
+      internalID: -5101798342381066805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_65
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1452
+        width: 471
+        height: 688
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2108aa16a271908c0800000000000000
+      internalID: -4032666520538939374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_66
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 1453
+        width: 471
+        height: 687
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fc2571f44b6d2520800000000000000
+      internalID: 2678915297208249584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_67
+      rect:
+        serializedVersion: 2
+        x: 2945
+        y: 1453
+        width: 470
+        height: 687
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23078fdf2e9e25ec0800000000000000
+      internalID: -3579541592673325006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_68
+      rect:
+        serializedVersion: 2
+        x: 4224
+        y: 1454
+        width: 471
+        height: 686
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6559ba3b493a64570800000000000000
+      internalID: 8450621609872168278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_69
+      rect:
+        serializedVersion: 2
+        x: 5504
+        y: 1454
+        width: 471
+        height: 686
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89589a05782387f30800000000000000
+      internalID: 4573460978349999512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_70
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 734
+        width: 471
+        height: 686
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41ff8be56cf8036e0800000000000000
+      internalID: -1859828563948536044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_71
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 733
+        width: 471
+        height: 687
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e622337095be0f20800000000000000
+      internalID: 3390847201469146850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_72
+      rect:
+        serializedVersion: 2
+        x: 2945
+        y: 733
+        width: 470
+        height: 687
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d82e21c74316a7610800000000000000
+      internalID: 1619713894040920717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_73
+      rect:
+        serializedVersion: 2
+        x: 4224
+        y: 733
+        width: 471
+        height: 687
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec5c3f1662b16e690800000000000000
+      internalID: -7573335871710837298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_74
+      rect:
+        serializedVersion: 2
+        x: 5505
+        y: 732
+        width: 470
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36b3135b29eb83770800000000000000
+      internalID: 8590825826523626339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_75
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 12
+        width: 470
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be924bea9aff75e0800000000000000
+      internalID: -1909532173702881615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_76
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 12
+        width: 470
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ce5872845acade40800000000000000
+      internalID: 5682076344196292291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_77
+      rect:
+        serializedVersion: 2
+        x: 2945
+        y: 14
+        width: 470
+        height: 687
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f798fafcc4e728fc0800000000000000
+      internalID: -3494091492519081601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_78
+      rect:
+        serializedVersion: 2
+        x: 4225
+        y: 16
+        width: 470
+        height: 685
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00a4dac450f0b5490800000000000000
+      internalID: -7756589417779869184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blonde Lady Walk Spritesheet_79
+      rect:
+        serializedVersion: 2
+        x: 5505
+        y: 19
+        width: 471
+        height: 682
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b2c2de3a4cce5a70800000000000000
+      internalID: 8817709739691655863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Blonde Lady Walk Spritesheet_0: -1541624892340173157
+      Blonde Lady Walk Spritesheet_1: 5147173248793770199
+      Blonde Lady Walk Spritesheet_10: 7794062987291759918
+      Blonde Lady Walk Spritesheet_11: 2365672067535057916
+      Blonde Lady Walk Spritesheet_12: -7499910960458070969
+      Blonde Lady Walk Spritesheet_13: 3790101646214745779
+      Blonde Lady Walk Spritesheet_14: -8894992475370136385
+      Blonde Lady Walk Spritesheet_15: -1523232586732346411
+      Blonde Lady Walk Spritesheet_16: 5141931575146299208
+      Blonde Lady Walk Spritesheet_17: -5985465289241984073
+      Blonde Lady Walk Spritesheet_18: -2540930871579944941
+      Blonde Lady Walk Spritesheet_19: -6170396730271486922
+      Blonde Lady Walk Spritesheet_2: -6221209781981672355
+      Blonde Lady Walk Spritesheet_20: -5344412333856552737
+      Blonde Lady Walk Spritesheet_21: -8192362177817089104
+      Blonde Lady Walk Spritesheet_22: -1648353290354623024
+      Blonde Lady Walk Spritesheet_23: -4821270002566651848
+      Blonde Lady Walk Spritesheet_24: 2179900352015172179
+      Blonde Lady Walk Spritesheet_25: -6356764865856828498
+      Blonde Lady Walk Spritesheet_26: 7062656953648642658
+      Blonde Lady Walk Spritesheet_27: 3219803860291379639
+      Blonde Lady Walk Spritesheet_28: 215792896526224210
+      Blonde Lady Walk Spritesheet_29: -4839030990505403227
+      Blonde Lady Walk Spritesheet_3: 3805226980456064458
+      Blonde Lady Walk Spritesheet_30: -7766524566787347071
+      Blonde Lady Walk Spritesheet_31: 8983644412779262916
+      Blonde Lady Walk Spritesheet_32: -8780701184378150697
+      Blonde Lady Walk Spritesheet_33: -2668027369811532112
+      Blonde Lady Walk Spritesheet_34: -7255516179475642024
+      Blonde Lady Walk Spritesheet_35: -6557737435124988977
+      Blonde Lady Walk Spritesheet_36: 3001056552785099265
+      Blonde Lady Walk Spritesheet_37: 5344647033226273823
+      Blonde Lady Walk Spritesheet_38: 6156085851336714722
+      Blonde Lady Walk Spritesheet_39: -635460948719872247
+      Blonde Lady Walk Spritesheet_4: -4261004266934637652
+      Blonde Lady Walk Spritesheet_40: -8532533963926787609
+      Blonde Lady Walk Spritesheet_41: -7277621629687457989
+      Blonde Lady Walk Spritesheet_42: -8931078579793439037
+      Blonde Lady Walk Spritesheet_43: 6301808182596401810
+      Blonde Lady Walk Spritesheet_44: -3098883338887321255
+      Blonde Lady Walk Spritesheet_45: -3447586707206394520
+      Blonde Lady Walk Spritesheet_46: -2202930449182160093
+      Blonde Lady Walk Spritesheet_47: 1662862907990307064
+      Blonde Lady Walk Spritesheet_48: -2168935099110708675
+      Blonde Lady Walk Spritesheet_49: -5382759155680753131
+      Blonde Lady Walk Spritesheet_5: -8168391406269881083
+      Blonde Lady Walk Spritesheet_50: -1519228797508958745
+      Blonde Lady Walk Spritesheet_51: -8787551292625317029
+      Blonde Lady Walk Spritesheet_52: 3903838054111517320
+      Blonde Lady Walk Spritesheet_53: 5387078600223693510
+      Blonde Lady Walk Spritesheet_54: 6854093843436183350
+      Blonde Lady Walk Spritesheet_55: 253809460858760392
+      Blonde Lady Walk Spritesheet_56: -1730449858466657318
+      Blonde Lady Walk Spritesheet_57: -6760365144235991190
+      Blonde Lady Walk Spritesheet_58: -6567370079799352548
+      Blonde Lady Walk Spritesheet_59: 444466912200999782
+      Blonde Lady Walk Spritesheet_6: -1207553018056185209
+      Blonde Lady Walk Spritesheet_60: 7726164692994805142
+      Blonde Lady Walk Spritesheet_61: 3021313383320417895
+      Blonde Lady Walk Spritesheet_62: -2431900929024291929
+      Blonde Lady Walk Spritesheet_63: -7225136625573009169
+      Blonde Lady Walk Spritesheet_64: -5101798342381066805
+      Blonde Lady Walk Spritesheet_65: -4032666520538939374
+      Blonde Lady Walk Spritesheet_66: 2678915297208249584
+      Blonde Lady Walk Spritesheet_67: -3579541592673325006
+      Blonde Lady Walk Spritesheet_68: 8450621609872168278
+      Blonde Lady Walk Spritesheet_69: 4573460978349999512
+      Blonde Lady Walk Spritesheet_7: 3877503135416873044
+      Blonde Lady Walk Spritesheet_70: -1859828563948536044
+      Blonde Lady Walk Spritesheet_71: 3390847201469146850
+      Blonde Lady Walk Spritesheet_72: 1619713894040920717
+      Blonde Lady Walk Spritesheet_73: -7573335871710837298
+      Blonde Lady Walk Spritesheet_74: 8590825826523626339
+      Blonde Lady Walk Spritesheet_75: -1909532173702881615
+      Blonde Lady Walk Spritesheet_76: 5682076344196292291
+      Blonde Lady Walk Spritesheet_77: -3494091492519081601
+      Blonde Lady Walk Spritesheet_78: -7756589417779869184
+      Blonde Lady Walk Spritesheet_79: 8817709739691655863
+      Blonde Lady Walk Spritesheet_8: -3455158807294644734
+      Blonde Lady Walk Spritesheet_9: 2428618160459248331
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
