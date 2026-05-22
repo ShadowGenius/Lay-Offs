@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: NPC1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   lines:
-  - 'I am NPC 1
+  - 'Remember, there are no bad employees, only employees who failed the metrics.
 
-    F: next line'
+    F:
+    next line'
   - 'Good morning
 
     F: end conversation'
-  speakerName: NPC 1
+  speakerName: David
   hasChoice: 1
   choices:
   - label: Good afternoon
