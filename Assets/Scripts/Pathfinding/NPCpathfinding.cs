@@ -129,7 +129,17 @@ public class NPCpathfinding : MonoBehaviour
         else if (pathfindingMap.TaskList[currentTask.taskIndex].taskActive == false)
         {
             //Debug.Log(gameObject.name + " can't do their task! " + currentTask.taskName);
-            taskIncomplete = true;
+            if((Random.Range(0.0f, 0.1f) < personality.fixChance))
+            {
+                currentTask.taskActive = true;
+                if (currentTask.taskObject && currentTask.taskObject.GetComponent<ObjectInteraction>())
+                    currentTask.taskObject.GetComponent<ObjectInteraction>().OnNPCUse(personality);
+
+            }
+            else
+            {
+                taskIncomplete = true;
+            }
         }
         else
         {
