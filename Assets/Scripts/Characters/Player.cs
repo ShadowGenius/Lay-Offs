@@ -125,6 +125,5 @@ public class Player : Character
         }
 
         return nearestNPC;
-        heldItemText.text = "Current held item:\n" + heldItem.ToString();
     }
 }

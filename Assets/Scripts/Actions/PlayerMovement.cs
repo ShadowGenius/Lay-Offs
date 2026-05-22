@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     public float speed = 6f;
     public Animator animator;
+    public const float sprintSpeed = 1.5f;
+    public const float walkSpeed = 1f;
 
     private float speedModifier = 1f;
 
@@ -26,11 +28,10 @@ public class PlayerMovement : MonoBehaviour
         moveInput.y = Input.GetAxisRaw("Vertical");
         moveInput = moveInput.normalized;
 
-        speedModifier = Input.GetKey(KeyCode.LeftShift) ? 1.5f : 1f;
+        speedModifier = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
         if (moveInput != Vector2.zero)
         {
             animator.SetBool("IsWalking", true);
-            Debug.Log("True");
         }
         else
         {

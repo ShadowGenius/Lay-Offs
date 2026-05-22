@@ -16,7 +16,7 @@ public class FriendlinessEvent : MonoBehaviour
         
     }
 
-    public void ApplyFriendliness(Character trustee, double value, float detectionRadius = 5f)
+    public void ApplyToAll(Character trustee, double value, float detectionRadius = 5f)
     {
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, detectionRadius);
 
@@ -24,6 +24,19 @@ public class FriendlinessEvent : MonoBehaviour
         {
             NPC truster = col.GetComponent<NPC>();
             if (truster != null && truster != trustee)
+                truster.IncreaseFriendliness(trustee, value);
+        }
+        Destroy(gameObject);
+    }
+
+    public void ApplyToSpecific(Character trustee, Character truster, double value, float detectionRadius = 5f)
+    {
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, detectionRadius);
+
+        foreach (Collider2D col in hitColliders)
+        {
+            NPC npc = col.GetComponent<NPC>();
+            if (npc != null && npc == truster)
                 truster.IncreaseFriendliness(trustee, value);
         }
         Destroy(gameObject);

@@ -22,32 +22,42 @@ public class Printer : ObjectInteraction
     public override void OnPlayerUse()
     {
         Printing printingTask = player.playerActions.Find(action => action is Printing && action.IsNotFinished()) as Printing;
-        use(player, printingTask);
+        Use(player, printingTask);
     }
 
     public override void OnNPCUse(NPC npc)
     {
-        use(npc);
+        Use(npc);
     }
 
-    public void use(Character ch, Printing printingTask = null)
+    public void Use(Character user, Printing printingTask = null)
     {
         Debug.Log("Printer doing printer things");
 
-        if (canBeUsed() && ch.isHandEmpty())
+        if (canBeUsed() && user.isHandEmpty())
         {
-            StartCoroutine(runPrinting(ch, printingTask));
-            Debug.Log($"{ch.name} used printer");
+            StartCoroutine(runPrinting(user, printingTask));
+            Debug.Log($"{user.name} used printer");
         }
-        else if (isBroken)
-        {
-            StartCoroutine(runFixing());
-        }
+        //else if (isBroken)
+        //{
+        //    StartCoroutine(runFixing());
+        //}
     }
 
     public override void OnPlayerSabotage()
     {
-        Debug.Log("Player sabotaging printer");
+        Sabotage(player);
+    }
+
+    public override void OnNPCSabotage(NPC npc)
+    {
+        Sabotage(npc);
+    }
+
+    private void Sabotage(Character traitor)
+    {
+        Debug.Log($"{traitor.name} sabotaging printer");
 
         if (!isBroken)
         {
@@ -63,48 +73,15 @@ public class Printer : ObjectInteraction
 
             spellFieldInstance = Instantiate(spellFieldPrefab, transform);
             FriendlinessEvent detector = spellFieldInstance.GetComponent<FriendlinessEvent>();
-            detector.ApplyFriendliness(player, -25);
+            detector.ApplyToAll(traitor, -25);
             spellFieldInstance = null;
         }
         else
         {
-            isBroken = false;
-
-            if (smokeInstance != null)
-            {
-                Destroy(smokeInstance);
-                smokeInstance = null;
-            }
+            StartCoroutine(runFixing());
         }
     }
 
-
-    public override void OnNPCSabotage(NPC npc)
-    {
-        Debug.Log("NPC sabotaging printer");
-
-        if (!isBroken)
-        {
-            isBroken = true;
-
-            if (smokePrefab != null && smokePoint != null && smokeInstance == null)
-            {
-                smokeInstance = Instantiate(smokePrefab, smokePoint);
-                smokeInstance.transform.localPosition = Vector3.zero;
-                smokeInstance.transform.localScale = new Vector3(4, 4, 1);
-            }
-        }
-        else
-        {
-            isBroken = false;
-
-            if (smokeInstance != null)
-            {
-                Destroy(smokeInstance);
-                smokeInstance = null;
-            }
-        }
-    }
     public bool canBeUsed()
     {
         if (isRunning)
@@ -126,6 +103,7 @@ public class Printer : ObjectInteraction
         //paper.transform.localScale = new Vector3((float)1.2, (float)1.2, 1);
         //SFXManager.instance.PlaySFX(printingSFX, transform);
         isRunning = true;
+        SFXManager.instance.PlaySFX(printingSFX, transform);
         yield return new WaitForSeconds(printingTime);
         ch.heldItem = Character.Item.Paper;
         if (printingTask != null)
@@ -139,5 +117,11 @@ public class Printer : ObjectInteraction
     {
         yield return new WaitForSeconds(fixingTime);
         isBroken = false;
+
+        if (smokeInstance != null)
+        {
+            Destroy(smokeInstance);
+            smokeInstance = null;
+        }
     }
 }

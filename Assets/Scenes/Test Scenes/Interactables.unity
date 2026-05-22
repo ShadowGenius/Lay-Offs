@@ -662,6 +662,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
   m_PrefabInstance: {fileID: 1043751762}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &153015715 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -6154700760267896952, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
+  m_PrefabInstance: {fileID: 1043751762}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153015713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00c207c11c4ee945921c79a41367cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPC
 --- !u!1 &170511704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,6 +1438,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
   m_PrefabInstance: {fileID: 5843515202048902231}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &302284799 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -6154700760267896952, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
+  m_PrefabInstance: {fileID: 5843515202048902231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302284797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00c207c11c4ee945921c79a41367cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPC
 --- !u!1 &307300321
 GameObject:
   m_ObjectHideFlags: 0
@@ -8209,6 +8231,10 @@ PrefabInstance:
       value: NPC (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: m_TagString
       value: NPC
       objectReference: {fileID: 0}
@@ -9269,6 +9295,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1768816201}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1243238009 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -6154700760267896952, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
+  m_PrefabInstance: {fileID: 1090087167}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00c207c11c4ee945921c79a41367cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPC
 --- !u!1001 &1260141425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11421,7 +11458,7 @@ MonoBehaviour:
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
   spellFieldPrefab: {fileID: 0}
-  owner: {fileID: 0}
+  owner: {fileID: 1243238009}
   usingSFX:
   - {fileID: 8300000, guid: 8de37bbca484b2f48ac80dedfca963ef, type: 3}
   - {fileID: 8300000, guid: e23c48b4941d25043b67c573f41ec5c9, type: 3}
@@ -11676,7 +11713,7 @@ MonoBehaviour:
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
   spellFieldPrefab: {fileID: 0}
-  owner: {fileID: 0}
+  owner: {fileID: 153015715}
   usingSFX:
   - {fileID: 8300000, guid: 8de37bbca484b2f48ac80dedfca963ef, type: 3}
   - {fileID: 8300000, guid: e23c48b4941d25043b67c573f41ec5c9, type: 3}
@@ -11931,7 +11968,7 @@ MonoBehaviour:
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
   spellFieldPrefab: {fileID: 0}
-  owner: {fileID: 0}
+  owner: {fileID: 302284799}
   usingSFX:
   - {fileID: 8300000, guid: 8de37bbca484b2f48ac80dedfca963ef, type: 3}
   - {fileID: 8300000, guid: e23c48b4941d25043b67c573f41ec5c9, type: 3}
@@ -12634,6 +12671,10 @@ PrefabInstance:
     - target: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: m_Name
       value: NPC (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: m_TagString
