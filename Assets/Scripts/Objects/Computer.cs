@@ -90,7 +90,7 @@ public class Computer : ObjectInteraction
             {
                 smokeInstance = Instantiate(smokePrefab, smokePoint.position, Quaternion.identity);
             }
-            owner.IncreaseFriendliness(traitor, -20);
+            owner.IncreaseFriendliness(traitor, BreakComputer.friendlinessPenalty);
         }
         else
         {
@@ -101,7 +101,7 @@ public class Computer : ObjectInteraction
                 Destroy(smokeInstance);
                 smokeInstance = null;
             }
-            owner.IncreaseFriendliness(traitor, 15);
+            owner.IncreaseFriendliness(traitor, FixComputer.friendlinessIncrease);
         }
     }
 

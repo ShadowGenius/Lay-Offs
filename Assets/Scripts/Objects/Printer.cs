@@ -73,7 +73,7 @@ public class Printer : ObjectInteraction
 
             spellFieldInstance = Instantiate(spellFieldPrefab, transform);
             FriendlinessEvent detector = spellFieldInstance.GetComponent<FriendlinessEvent>();
-            detector.ApplyToAll(traitor, -25);
+            detector.ApplyToAll(traitor, BreakPrinter.friendlinessPenalty);
             spellFieldInstance = null;
         }
         else
