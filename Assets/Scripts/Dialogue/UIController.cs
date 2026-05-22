@@ -46,7 +46,7 @@ public class UIController : MonoBehaviour
     }
     public void StartDialogue(DialogueNode dialogueNode)
     {
-        nameText.text = node.speakerName;
+        nameText.text = dialogueNode.speakerName;
         
         lineIndex = 0;
         node = dialogueNode;
