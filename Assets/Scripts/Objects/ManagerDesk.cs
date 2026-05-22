@@ -11,12 +11,21 @@ public class ManagerDesk : ObjectInteraction
     // communal printer, no one owns it (since it is related to untargeted sabotage)
     public override void OnPlayerUse()
     {
-
         Debug.Log("Messing with the manager's desk");
-
         Delivery deliveryTask = player.playerActions.Find(action => action is Delivery && action.IsNotFinished()) as Delivery;
+        use(player, deliveryTask);
+        Debug.Log($"Player made progress on delivery ({deliveryTask.PercentComplete()}% complete)");
+    }
 
-        if (deliveryTask != null && player.heldItem == Character.Item.Paper)
+    public override void OnNPCUse(NPC npc)
+    {
+        Debug.Log("NPC using manager's desk");
+        use(npc);
+    }
+
+    public void use(Character ch, Delivery deliveryTask = null)
+    {
+        if (deliveryTask != null && ch.heldItem == Character.Item.Paper)
         {
             deliveryTask.MakeProgress();
             SFXManager.instance.PlaySFX(deliverySFX, transform);
@@ -26,7 +35,7 @@ public class ManagerDesk : ObjectInteraction
                 Destroy(holdPoint.GetChild(0).gameObject);
             }
 
-            player.heldItem = Character.Item.None;
+            ch.heldItem = Character.Item.None;
 
             if (deskPaperPrefab != null && deskPaperPoint != null)
             {
@@ -35,13 +44,8 @@ public class ManagerDesk : ObjectInteraction
                 deskPaper.transform.localScale = new Vector3(1.3f, 1.3f, 1f);
             }
 
-            Debug.Log($"Player made progress on delivery ({deliveryTask.PercentComplete()}% complete)");
+            Debug.Log($"{ch.name} made progress on delivery ({deliveryTask.PercentComplete()}% complete)");
         }
-    }
-
-    public override void OnNPCUse(NPC npc)
-    {
-        Debug.Log("NPC using manager's desk");
     }
 
     public override void OnPlayerSabotage()
