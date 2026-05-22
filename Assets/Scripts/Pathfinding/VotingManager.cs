@@ -1,7 +1,8 @@
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class VotingManager : MonoBehaviour
 {
@@ -34,7 +35,17 @@ public class VotingManager : MonoBehaviour
             buttons[i].gameObject.SetActive(true);
             if (alive[i] == true)
             {
-                buttons[i].transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = "Employee " + (i + 1);
+                // buttons[i].transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = "Employee " + (i + 1);
+                NPC npc = employees[i].GetComponent<NPC>();
+                if (npc != null)
+                {
+                    buttons[i].transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = npc.name;
+                }
+                else
+                {
+                    Player player = employees[i].GetComponent<Player>();
+                    buttons[i].transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = player.name + " (you!)";
+                }
             }
             else
             {
