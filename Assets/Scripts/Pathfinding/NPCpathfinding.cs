@@ -25,6 +25,7 @@ public class NPCpathfinding : MonoBehaviour
     [SerializeField] MapManager pathfindingMap;
     [SerializeField] private List<OfficeTask> taskList;
     private GameObject[] coworkers;
+    public Vector2 computerLocation;
 
 
     void Start()
@@ -129,7 +130,17 @@ public class NPCpathfinding : MonoBehaviour
         else if (pathfindingMap.TaskList[currentTask.taskIndex].taskActive == false)
         {
             //Debug.Log(gameObject.name + " can't do their task! " + currentTask.taskName);
-            taskIncomplete = true;
+            if((Random.Range(0.0f, 0.1f) < personality.fixChance))
+            {
+                currentTask.taskActive = true;
+                if (currentTask.taskObject && currentTask.taskObject.GetComponent<ObjectInteraction>())
+                    currentTask.taskObject.GetComponent<ObjectInteraction>().OnNPCUse(personality);
+
+            }
+            else
+            {
+                taskIncomplete = true;
+            }
         }
         else
         {
@@ -194,6 +205,10 @@ public class NPCpathfinding : MonoBehaviour
         for (int i = 0; i < officeTasks.Count; i++)
         {
             tempTasks.Add(officeTasks[i]);
+            if(officeTasks[i].taskName == "Desk")
+            {
+                officeTasks[i].taskLocation = computerLocation;
+            }
         }
         //Add the tasks to the list of tasks the employee personally has. Currently it just adds all of them but we can change that if we want to.
         for (int i = 0; i < officeTasks.Count; i++)
