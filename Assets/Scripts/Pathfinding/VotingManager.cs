@@ -92,7 +92,7 @@ public class VotingManager : MonoBehaviour
         for (int i = 0; i < buttons.Count; i++)
         {
             buttons[i].gameObject.SetActive(false);
-            buttons[i].transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = "Employee " + (i + 1) + "\nVotes: " + votes[i];
+            buttons[i].transform.parent.GetComponentInChildren<TextMeshProUGUI>().text += "\nVotes: " + votes[i];
             
             if(votes[i] > votes[highestVoteIndex])
             {
