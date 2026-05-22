@@ -21,41 +21,43 @@ public class Printer : ObjectInteraction
     // communal printer, no one owns it (since it is related to untargeted sabotage)
     public override void OnPlayerUse()
     {
-
-        Debug.Log("Printer doing printer things");
-
         Printing printingTask = player.playerActions.Find(action => action is Printing && action.IsNotFinished()) as Printing;
-
-        if (canBeUsed() && player.isHandEmpty())
-        {
-            StartCoroutine(runPrinting(player, printingTask));
-            //player.heldItem = Character.Item.Paper;
-            //if (printingTask != null)
-            //{
-            //    printingTask.MakeProgress();
-
-                Debug.Log($"Player made progress on printing ({printingTask.PercentComplete()}% complete)");
-            //}
-        }
-        else if (isBroken)
-        {
-            StartCoroutine(runFixing());
-        }
+        Use(player, printingTask);
     }
 
     public override void OnNPCUse(NPC npc)
     {
-        Debug.Log("NPC using printer");
-        if (canBeUsed())
+        Use(npc);
+    }
+
+    public void Use(Character user, Printing printingTask = null)
+    {
+        Debug.Log("Printer doing printer things");
+
+        if (canBeUsed() && user.isHandEmpty())
         {
-            StartCoroutine(runPrinting(npc));
-            Debug.Log("NPC used printer");
+            StartCoroutine(runPrinting(user, printingTask));
+            Debug.Log($"{user.name} used printer");
         }
+        //else if (isBroken)
+        //{
+        //    StartCoroutine(runFixing());
+        //}
     }
 
     public override void OnPlayerSabotage()
     {
-        Debug.Log("Player sabotaging printer");
+        Sabotage(player);
+    }
+
+    public override void OnNPCSabotage(NPC npc)
+    {
+        Sabotage(npc);
+    }
+
+    private void Sabotage(Character traitor)
+    {
+        Debug.Log($"{traitor.name} sabotaging printer");
 
         if (!isBroken)
         {
@@ -68,46 +70,18 @@ public class Printer : ObjectInteraction
                 smokeInstance.transform.localPosition = Vector3.zero;
                 smokeInstance.transform.localScale = new Vector3(4, 4, 1);
             }
+
+            spellFieldInstance = Instantiate(spellFieldPrefab, transform);
+            FriendlinessEvent detector = spellFieldInstance.GetComponent<FriendlinessEvent>();
+            detector.ApplyToAll(traitor, BreakPrinter.friendlinessPenalty);
+            spellFieldInstance = null;
         }
         else
         {
-            isBroken = false;
-
-            if (smokeInstance != null)
-            {
-                Destroy(smokeInstance);
-                smokeInstance = null;
-            }
+            StartCoroutine(runFixing());
         }
     }
 
-
-    public override void OnNPCSabotage(NPC npc)
-    {
-        Debug.Log("NPC sabotaging printer");
-
-        if (!isBroken)
-        {
-            isBroken = true;
-
-            if (smokePrefab != null && smokePoint != null && smokeInstance == null)
-            {
-                smokeInstance = Instantiate(smokePrefab, smokePoint);
-                smokeInstance.transform.localPosition = Vector3.zero;
-                smokeInstance.transform.localScale = new Vector3(4, 4, 1);
-            }
-        }
-        else
-        {
-            isBroken = false;
-
-            if (smokeInstance != null)
-            {
-                Destroy(smokeInstance);
-                smokeInstance = null;
-            }
-        }
-    }
     public bool canBeUsed()
     {
         if (isRunning)
@@ -124,11 +98,12 @@ public class Printer : ObjectInteraction
     private IEnumerator runPrinting(Character ch, Printing printingTask = null)
     {
 
-        GameObject paper = Instantiate(paperPrefab, holdPoint);
-        paper.transform.localPosition = new Vector3(0, 1, 0);
-        paper.transform.localScale = new Vector3((float)1.2, (float)1.2, 1);
-        SFXManager.instance.PlaySFX(printingSFX, transform);
+        //GameObject paper = Instantiate(paperPrefab, holdPoint);
+        //paper.transform.localPosition = new Vector3(0, 1, 0);
+        //paper.transform.localScale = new Vector3((float)1.2, (float)1.2, 1);
+        //SFXManager.instance.PlaySFX(printingSFX, transform);
         isRunning = true;
+        SFXManager.instance.PlaySFX(printingSFX, transform);
         yield return new WaitForSeconds(printingTime);
         ch.heldItem = Character.Item.Paper;
         if (printingTask != null)
@@ -142,5 +117,11 @@ public class Printer : ObjectInteraction
     {
         yield return new WaitForSeconds(fixingTime);
         isBroken = false;
+
+        if (smokeInstance != null)
+        {
+            Destroy(smokeInstance);
+            smokeInstance = null;
+        }
     }
 }

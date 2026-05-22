@@ -9,7 +9,8 @@ public class NPC : Character
     
     [SerializeField] public NPCPersonality personality;
 
-    public float sabatogeChance = 0; // On a scale of 0.0 - 1.0 how likely an employee is to sabatoge a task.
+    public float sabatogeChance = 0.0f; // On a scale of 0.0 - 1.0 how likely an employee is to sabatoge a task.
+    public float fixChance = 1.0f; // On a scale of 0.0 - 1.0 how likely an employee is to fix a sabotaged task when they go to complete it.
 
     private bool givenWater = false; // whether or not this NPC has been given water by the player
 
@@ -18,6 +19,14 @@ public class NPC : Character
     void Start()
     {
         personality = NPCPersonality.generic_model; // everyone is a generic colleague for now
+        tasksCompleted = 0;
+        GameObject[] npcs = GameObject.FindGameObjectsWithTag("NPC");
+        List<Character> characters = new List<Character>();
+        friendlinessValues.Add(GameObject.FindGameObjectWithTag("Player").GetComponent<Character>(), defaultFriendliness);
+        for (int i = 0; i < npcs.Length; i++)
+        {
+            friendlinessValues.Add(npcs[i].GetComponent<Character>(), defaultFriendliness);
+        }
     }
     
     public void AddAction(Action action)

@@ -9,6 +9,7 @@ public class Character : MonoBehaviour
     [SerializeField] public string name;
     [SerializeField] public string gender;
     public Dictionary<Character, double> friendlinessValues = new Dictionary<Character, double>();
+    [HideInInspector] public int tasksCompleted;
 
     private int taskPoints;
 
@@ -24,7 +25,7 @@ public class Character : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        tasksCompleted = 0;
     }
 
     // Update is called once per frame
@@ -66,6 +67,7 @@ public class Character : MonoBehaviour
         {
             friendlinessValues.Add(character, Math.Clamp(defaultFriendliness + increment, 0, 100));
         }
+        Debug.Log($"{name} updated friendliness towards {character.name}: {friendlinessValues[character]}");
     }
 
     public double FriendlinessTo(Character target)

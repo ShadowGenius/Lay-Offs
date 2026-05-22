@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   speed: 6
+  animator: {fileID: 0}
 --- !u!50 &8158113559781918503
 Rigidbody2D:
   serializedVersion: 5
@@ -182,6 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   name: Joe Schmoe Doe
   gender: unknown
+  tasksCompleted: 0
   heldItem: 0
   movement: {fileID: 8394425730548959704}
   taskListText: {fileID: 0}

@@ -1,7 +1,8 @@
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class VotingManager : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class VotingManager : MonoBehaviour
     private int votedOut;
     void Start()
     {
+        GameObject[] employeesArray = GameObject.FindGameObjectsWithTag("NPC");
+        employees = new List<GameObject>(employeesArray);
+        employees.Insert(0, GameObject.FindGameObjectWithTag("Player"));
         endVoteButton.onClick.AddListener(() => CloseVote());
         for (int i = 0; i < buttons.Count; i++)
         {
@@ -31,7 +35,17 @@ public class VotingManager : MonoBehaviour
             buttons[i].gameObject.SetActive(true);
             if (alive[i] == true)
             {
-                buttons[i].transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = "Employee " + (i + 1);
+                // buttons[i].transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = "Employee " + (i + 1);
+                NPC npc = employees[i].GetComponent<NPC>();
+                if (npc != null)
+                {
+                    buttons[i].transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = npc.name;
+                }
+                else
+                {
+                    Player player = employees[i].GetComponent<Player>();
+                    buttons[i].transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = player.name + " (you!)";
+                }
             }
             else
             {
@@ -67,17 +81,18 @@ public class VotingManager : MonoBehaviour
     void EndVote()
     {
         //Player gets a vote so start at 1
-        for(int i = 1; i < employeesNum; i++)
+        for(int i = 1; i < employees.Count; i++)
         {
-            if(alive[i] == true)
-                randomEmployeeVote();
+            if (alive[i] == true)
+                employeeVote(i);
+                //randomEmployeeVote();
         }
         int highestVoteIndex = 0;
         bool isTie = false;
         for (int i = 0; i < buttons.Count; i++)
         {
             buttons[i].gameObject.SetActive(false);
-            buttons[i].transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = "Employee " + (i + 1) + "\nVotes: " + votes[i];
+            buttons[i].transform.parent.GetComponentInChildren<TextMeshProUGUI>().text += "\nVotes: " + votes[i];
             
             if(votes[i] > votes[highestVoteIndex])
             {
@@ -99,8 +114,8 @@ public class VotingManager : MonoBehaviour
         }
         else
         {
-            votedOut = -1;
-            Debug.Log("Tie, nobody voted out");
+            votedOut = bossVote();
+            //Debug.Log("Tie, nobody voted out");
         }
         
         CloseVote();
@@ -111,7 +126,15 @@ public class VotingManager : MonoBehaviour
     {
         endVoteButton.gameObject.SetActive(false);
         transform.parent.gameObject.SetActive(false);
-        if (votedOut != -1)
+        if(votedOut == 0)
+        {
+            GameOver();
+        }
+        else if(employeesAlive() < 2)
+        {
+            GameWon();
+        }
+        else if (votedOut != -1)
             employees[votedOut].gameObject.SetActive(false);
     }
 
@@ -125,5 +148,91 @@ public class VotingManager : MonoBehaviour
         } while (alive[voteNum] == false);
         Debug.Log("Random voted " + voteNum);
         votes[voteNum]+= 1;
+    }
+    void employeeVote(int employeeNum)
+    {
+        //Debug.Log("EMPLOYEE VOTING TEIPOT GIJPOERJHPOIUHPERP");
+        Dictionary<Character, double> employeeRelations = new Dictionary<Character, double>();
+        //Debug.Log("Employee apriufjesiougero: " + employeeNum);
+        employeeRelations = employees[employeeNum].GetComponent<NPC>().friendlinessValues;
+        Debug.Log(employeeRelations.Keys);
+        var enumerator = employeeRelations.Keys.GetEnumerator();
+        if (!enumerator.MoveNext())
+        {
+            Debug.Log("NOTVOTING");
+            return;
+
+        }
+        Character leastChar = enumerator.Current;
+        List<Character> tieChars = new List<Character>();
+        int voteNum = 0;
+        int i = 0;
+        do
+        {
+            //Debug.Log("COMPARING: " + enumerator.Current + " (" + employeeRelations[enumerator.Current] + ") with " + leastChar + " (" + employeeRelations[leastChar] + ")");
+            if (employeeRelations[enumerator.Current] < employeeRelations[leastChar] && alive[i] == true)
+            {
+                leastChar = enumerator.Current;
+                voteNum = i;
+                tieChars.Clear();
+                tieChars.Add(leastChar);
+            }
+            else if(employeeRelations[enumerator.Current] == employeeRelations[leastChar])
+            {
+                tieChars.Add(enumerator.Current);
+            }
+            i++;
+        } while (enumerator.MoveNext());
+        Debug.Log("Employee " + employeeNum + " voted for " + voteNum);
+        if (tieChars.Count > 1)
+        {
+            votes[Random.Range(0, tieChars.Count)] += 1;
+        }
+        else
+        {
+            votes[voteNum] += 1;
+        }
+    }
+
+    int bossVote()
+    {
+        List<Character> characters = new List<Character>();
+        for(int i = 0; i < employees.Count; i++)
+        {
+            characters.Add(employees[i].GetComponent<Character>());
+        }
+        int leastProductiveIndex = 0;
+        for(int i = 1; i < characters.Count; i++)
+        {
+            if(leastProductiveIndex < characters[i].tasksCompleted)
+            {
+                leastProductiveIndex = i;
+            }
+        }
+        Debug.Log("Boss voting for (SLACKER) " + leastProductiveIndex);
+        return leastProductiveIndex;
+    }
+
+    int employeesAlive()
+    {
+        int numAlive = 0;
+        for (int i = 0; i < alive.Count; i++)
+        {
+            if (alive[i] == true)
+            {
+                numAlive++;
+            }
+        }
+        return numAlive;
+    }
+
+    void GameOver()
+    {
+        Debug.Log("GAME OVER");
+    }
+
+    void GameWon()
+    {
+        Debug.Log("GAME WON");
     }
 }

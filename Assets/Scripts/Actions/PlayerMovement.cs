@@ -1,9 +1,15 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     public float speed = 6f;
+    public Animator animator;
+    public const float sprintSpeed = 1.5f;
+    public const float walkSpeed = 1f;
+
+    private float speedModifier = 1f;
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
@@ -22,6 +28,16 @@ public class PlayerMovement : MonoBehaviour
         moveInput.y = Input.GetAxisRaw("Vertical");
         moveInput = moveInput.normalized;
 
+        speedModifier = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
+        if (moveInput != Vector2.zero)
+        {
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }
+
         // Flip visuals only
         if (moveInput.x > 0)
             Flip(true);
@@ -32,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         // Apply physics at fixed timestep
-        rb.linearVelocity = moveInput * speed;
+        rb.linearVelocity = speed * speedModifier * moveInput;
     }
 
     void Flip(bool flip)
