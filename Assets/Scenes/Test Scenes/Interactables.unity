@@ -2027,7 +2027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: m_Name
-      value: Object (2)
+      value: NPC 2
       objectReference: {fileID: 0}
     - target: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: m_TagString
@@ -6182,10 +6182,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
   interactionDistance: 2.2
+  spellFieldPrefab: {fileID: 0}
   owner: {fileID: 0}
   usingSFX: []
   smokePrefab: {fileID: 735905426477565535, guid: 4db47d536070a0c4dae2fe0bf5d8f16c, type: 3}
   smokePoint: {fileID: 2057115961}
+  explodeSFX: {fileID: 0}
 --- !u!1 &589978681
 GameObject:
   m_ObjectHideFlags: 0
@@ -6292,6 +6294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
+  spellFieldPrefab: {fileID: 0}
   owner: {fileID: 0}
   usingSFX:
   - {fileID: 8300000, guid: 8de37bbca484b2f48ac80dedfca963ef, type: 3}
@@ -6301,6 +6304,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5c38f055de8f84a4f9e2dad2bbc60d1f, type: 3}
   smokePrefab: {fileID: 0}
   smokePoint: {fileID: 0}
+  explodeSFX: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -6417,11 +6421,13 @@ RectTransform:
   m_Children:
   - {fileID: 345795646}
   - {fileID: 401518774}
+  - {fileID: 1857809257}
+  - {fileID: 778841468}
   m_Father: {fileID: 971397430}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 109}
+  m_AnchoredPosition: {x: 40, y: 110}
   m_SizeDelta: {x: 450, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &632441602
@@ -6568,6 +6574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
+  spellFieldPrefab: {fileID: 0}
   owner: {fileID: 1336332662}
   usingSFX:
   - {fileID: 8300000, guid: 8de37bbca484b2f48ac80dedfca963ef, type: 3}
@@ -6577,6 +6584,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5c38f055de8f84a4f9e2dad2bbc60d1f, type: 3}
   smokePrefab: {fileID: 0}
   smokePoint: {fileID: 0}
+  explodeSFX: {fileID: 0}
 --- !u!1 &748688351
 GameObject:
   m_ObjectHideFlags: 0
@@ -6730,6 +6738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Watercooler
   playerObject: {fileID: 1336332656}
   interactionDistance: 2.2
+  spellFieldPrefab: {fileID: 0}
 --- !u!1 &754953790 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1435507793421972632, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
@@ -7043,11 +7052,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1839255687}
-  m_Father: {fileID: 971397430}
+  m_Father: {fileID: 632441601}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -319.7171, y: -153.46}
+  m_AnchoredPosition: {x: -125, y: -55}
   m_SizeDelta: {x: 140.5658, y: 51.076}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &778841469
@@ -7345,6 +7354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ManagerDesk
   playerObject: {fileID: 1336332656}
   interactionDistance: 3.6
+  spellFieldPrefab: {fileID: 0}
   deliverySFX: {fileID: 8300000, guid: 92f5ae291ea43ec408ea132b91f52b76, type: 3}
   deskPaperPrefab: {fileID: 2570435056851777824, guid: dff546b871c85294bbae1cfddbfe7fd5, type: 3}
   deskPaperPoint: {fileID: 425662361}
@@ -7856,6 +7866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
+  spellFieldPrefab: {fileID: 0}
   owner: {fileID: 0}
   usingSFX:
   - {fileID: 8300000, guid: 8de37bbca484b2f48ac80dedfca963ef, type: 3}
@@ -7865,6 +7876,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5c38f055de8f84a4f9e2dad2bbc60d1f, type: 3}
   smokePrefab: {fileID: 0}
   smokePoint: {fileID: 0}
+  explodeSFX: {fileID: 0}
 --- !u!1 &850838531
 GameObject:
   m_ObjectHideFlags: 0
@@ -8018,6 +8030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrashCan
   playerObject: {fileID: 1336332656}
   interactionDistance: 2.2
+  spellFieldPrefab: {fileID: 0}
   holdPoint: {fileID: 1438484072}
 --- !u!1 &851232911
 GameObject:
@@ -8552,10 +8565,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -8601,8 +8614,6 @@ RectTransform:
   - {fileID: 1454225716}
   - {fileID: 632441601}
   - {fileID: 1253884154}
-  - {fileID: 1857809257}
-  - {fileID: 778841468}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8910,7 +8921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: m_Name
-      value: Object (1)
+      value: NPC 1
       objectReference: {fileID: 0}
     - target: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: m_TagString
@@ -9030,6 +9041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
+  spellFieldPrefab: {fileID: 0}
   owner: {fileID: 0}
   usingSFX:
   - {fileID: 8300000, guid: 8de37bbca484b2f48ac80dedfca963ef, type: 3}
@@ -9039,6 +9051,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5c38f055de8f84a4f9e2dad2bbc60d1f, type: 3}
   smokePrefab: {fileID: 0}
   smokePoint: {fileID: 0}
+  explodeSFX: {fileID: 0}
 --- !u!1 &1075599334
 GameObject:
   m_ObjectHideFlags: 0
@@ -9480,7 +9493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: m_Name
-      value: Object (3)
+      value: NPC 3
       objectReference: {fileID: 0}
     - target: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: m_TagString
@@ -10039,7 +10052,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -212, y: 0}
+  m_AnchoredPosition: {x: -920, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1253884155
@@ -11351,6 +11364,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -615619926345521315, guid: a54eb4741292547498e43ac34a9a8f2d, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -615619926345521315, guid: a54eb4741292547498e43ac34a9a8f2d, type: 3}
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
@@ -11815,10 +11832,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
+  spellFieldPrefab: {fileID: 0}
   owner: {fileID: 1336332662}
   usingSFX: []
   smokePrefab: {fileID: 0}
   smokePoint: {fileID: 0}
+  explodeSFX: {fileID: 0}
 --- !u!1 &1564731137
 GameObject:
   m_ObjectHideFlags: 0
@@ -12110,10 +12129,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
   interactionDistance: 2.2
+  spellFieldPrefab: {fileID: 0}
   owner: {fileID: 0}
   usingSFX: []
   smokePrefab: {fileID: 735905426477565535, guid: 4db47d536070a0c4dae2fe0bf5d8f16c, type: 3}
   smokePoint: {fileID: 70006559}
+  explodeSFX: {fileID: 0}
 --- !u!1 &1575415212
 GameObject:
   m_ObjectHideFlags: 0
@@ -12338,10 +12359,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
   interactionDistance: 2.2
+  spellFieldPrefab: {fileID: 0}
   owner: {fileID: 1336332662}
   usingSFX: []
   smokePrefab: {fileID: 735905426477565535, guid: 4db47d536070a0c4dae2fe0bf5d8f16c, type: 3}
   smokePoint: {fileID: 1455880337}
+  explodeSFX: {fileID: 0}
 --- !u!1 &1605808550
 GameObject:
   m_ObjectHideFlags: 0
@@ -12448,10 +12471,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
+  spellFieldPrefab: {fileID: 0}
   owner: {fileID: 0}
   usingSFX: []
   smokePrefab: {fileID: 0}
   smokePoint: {fileID: 0}
+  explodeSFX: {fileID: 0}
 --- !u!1 &1610840467
 GameObject:
   m_ObjectHideFlags: 0
@@ -12696,10 +12721,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
+  spellFieldPrefab: {fileID: 0}
   owner: {fileID: 0}
   usingSFX: []
   smokePrefab: {fileID: 0}
   smokePoint: {fileID: 0}
+  explodeSFX: {fileID: 0}
 --- !u!1 &1644830808
 GameObject:
   m_ObjectHideFlags: 0
@@ -12944,10 +12971,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
   interactionDistance: 1.5
+  spellFieldPrefab: {fileID: 0}
   owner: {fileID: 0}
   usingSFX: []
   smokePrefab: {fileID: 0}
   smokePoint: {fileID: 0}
+  explodeSFX: {fileID: 0}
 --- !u!1 &1684786730
 GameObject:
   m_ObjectHideFlags: 0
@@ -13640,7 +13669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: m_Name
-      value: Object (4)
+      value: NPC 4
       objectReference: {fileID: 0}
     - target: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: m_TagString
@@ -13903,11 +13932,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1499873552}
-  m_Father: {fileID: 971397430}
+  m_Father: {fileID: 632441601}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -555.53467, y: -151.40877}
+  m_AnchoredPosition: {x: -325, y: -55}
   m_SizeDelta: {x: 149.6351, y: 43.0238}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1857809258
@@ -14329,6 +14358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Printer
   playerObject: {fileID: 1336332656}
   interactionDistance: 2.2
+  spellFieldPrefab: {fileID: 0}
   paperPrefab: {fileID: 2570435056851777824, guid: dff546b871c85294bbae1cfddbfe7fd5, type: 3}
   holdPoint: {fileID: 1438484072}
   smokePrefab: {fileID: 735905426477565535, guid: 4db47d536070a0c4dae2fe0bf5d8f16c, type: 3}
@@ -14897,10 +14927,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Computer
   playerObject: {fileID: 1336332656}
   interactionDistance: 2.2
+  spellFieldPrefab: {fileID: 0}
   owner: {fileID: 0}
   usingSFX: []
   smokePrefab: {fileID: 735905426477565535, guid: 4db47d536070a0c4dae2fe0bf5d8f16c, type: 3}
   smokePoint: {fileID: 512892157}
+  explodeSFX: {fileID: 0}
 --- !u!4 &2057115961
 Transform:
   m_ObjectHideFlags: 0
@@ -15278,7 +15310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: m_Name
-      value: Object
+      value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 6745884202015600820, guid: c4ad8e6beb0461e4f95a9b55897a58c6, type: 3}
       propertyPath: m_TagString
