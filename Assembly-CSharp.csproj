@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Actions\MaskObject.cs" />
     <Compile Include="Assets\Scripts\Actions\TargetedAction.cs" />
     <Compile Include="Assets\Scripts\Pathfinding\NPCpathfinding.cs" />
+    <Compile Include="Assets\Scripts\ButtonActions.cs" />
     <Compile Include="Assets\Scripts\Actions\Task.cs" />
     <Compile Include="Assets\Scripts\Pathfinding\pathfindingScriptRandomized.cs" />
     <Compile Include="Assets\Scripts\Characters\Player.cs" />

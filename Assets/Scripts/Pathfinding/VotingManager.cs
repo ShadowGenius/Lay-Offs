@@ -102,6 +102,9 @@ public class VotingManager : MonoBehaviour
             votedOut = -1;
             Debug.Log("Tie, nobody voted out");
         }
+        
+        CloseVote();
+        SceneSwitcher.Change("MainMenu");
     }
 
     void CloseVote()

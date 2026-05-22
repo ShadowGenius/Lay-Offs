@@ -11,6 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test Scenes/Interactables.unity
     guid: 387537ffed44325499738029877dfb18
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/MainMenu.unity
+    guid: 8ec16304243844d4988382da846164fa
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/Win.unity
+    guid: 48dfc7bf1802e5548b1062332fa92a6d
+  - enabled: 1
+    path: Assets/Scenes/Test Scenes/Fired.unity
+    guid: 2f175c2afbe8e6444b2a39c9c3e2f6c2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
