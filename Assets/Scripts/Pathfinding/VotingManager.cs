@@ -123,7 +123,15 @@ public class VotingManager : MonoBehaviour
     {
         endVoteButton.gameObject.SetActive(false);
         transform.parent.gameObject.SetActive(false);
-        if (votedOut != -1)
+        if(votedOut == 0)
+        {
+            GameOver();
+        }
+        else if(employeesAlive() < 2)
+        {
+            GameWon();
+        }
+        else if (votedOut != -1)
             employees[votedOut].gameObject.SetActive(false);
     }
 
@@ -200,5 +208,28 @@ public class VotingManager : MonoBehaviour
         }
         Debug.Log("Boss voting for (SLACKER) " + leastProductiveIndex);
         return leastProductiveIndex;
+    }
+
+    int employeesAlive()
+    {
+        int numAlive = 0;
+        for (int i = 0; i < alive.Count; i++)
+        {
+            if (alive[i] == true)
+            {
+                numAlive++;
+            }
+        }
+        return numAlive;
+    }
+
+    void GameOver()
+    {
+        Debug.Log("GAME OVER");
+    }
+
+    void GameWon()
+    {
+        Debug.Log("GAME WON");
     }
 }
