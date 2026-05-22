@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: NPC2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   lines:
-  - 'I am NPC2
+  - 'Please keep all panic within company-approved limits.
 
     F: next line'
   - 'Good afternoon
 
     F: close conversation'
-  speakerName: NPC 2
+  speakerName: Austin
   hasChoice: 1
   choices:
   - label: Good afternoon

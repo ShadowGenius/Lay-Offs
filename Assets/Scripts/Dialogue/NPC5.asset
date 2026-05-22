@@ -13,17 +13,15 @@ MonoBehaviour:
   m_Name: NPC5
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   lines:
-  - 'I am NPC5
-
-    F: next line'
+  - "Have you ever heard of\u2026 actually never mind.\nF: next line"
   - 'I am not good
 
     F: end dialogue'
-  speakerName: NPC 5
+  speakerName: Yuki
   hasChoice: 1
   choices:
-  - label: You'are good
+  - label: You are good
     nextNode: {fileID: 11400000, guid: 9b4f9ff08d64a48df8cb81268c66c906, type: 2}
-  - label: You'r the worst
+  - label: You're the worst
     nextNode: {fileID: 11400000, guid: e512da251b21e40bfb80695997ff4000, type: 2}
   nextNode: {fileID: 0}

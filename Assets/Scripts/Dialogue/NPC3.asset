@@ -13,13 +13,11 @@ MonoBehaviour:
   m_Name: NPC3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   lines:
-  - 'I am NPC 3
-
-    F: next line'
+  - "I\u2019m trying my best! Promise!\nF: next line"
   - 'Good evening
 
     F: close dialogue'
-  speakerName: NPC 3
+  speakerName: Lily
   hasChoice: 1
   choices:
   - label: Good night

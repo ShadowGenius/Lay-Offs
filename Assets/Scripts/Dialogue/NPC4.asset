@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: NPC4
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   lines:
-  - 'I am NPC4
+  - 'Before you ask, yes, I already tried turning it off and on again.
 
-    F: next line'
+    F: next
+    line'
   - 'Good night
 
     F: end conversation'
-  speakerName: NPC 4
+  speakerName: Jose
   hasChoice: 1
   choices:
   - label: Good night

@@ -12,31 +12,43 @@ public class Computer : ObjectInteraction
     [SerializeField] GameObject smokePrefab;
     [SerializeField] Transform smokePoint;
     private GameObject smokeInstance;
+    [SerializeField] private AudioClip explodeSFX = null;
 
     public override void OnPlayerUse()
     {
-        if (player != owner)
+        ComputerUse computerTask = player.playerActions.Find(action => action is ComputerUse && action.IsNotFinished()) as ComputerUse;
+        Use(player, computerTask);
+    }
+
+    public override void OnNPCUse(NPC npc)
+    {
+        Use(npc);
+    }
+
+    private void Use(Character user, ComputerUse computerTask = null)
+    {
+        Debug.Log($"{user.name} using computer {gameObject.transform.parent.name}");
+
+        if (user != owner)
         {
-            Debug.Log($"Player trying to use someone else's computer at desk {gameObject.transform.parent.name}"); // don't let this happen
+            // don't let this happen
+            return;
         }
-        else
+
+        if (canBeUsed())
         {
             SFXManager.instance.PlayRandomSFX(usingSFX, transform);
-            Debug.Log($"Player using their computer {gameObject.transform.parent.name}");
-
-            ComputerUse computerTask = player.playerActions.Find(action => action is ComputerUse && action.IsNotFinished()) as ComputerUse;
-
-            if (computerTask != null && canBeUsed())
+            StartCoroutine(runUsing());
+            if (computerTask != null)
             {
-                StartCoroutine(runUsing());
                 computerTask.MakeProgress();
-                Debug.Log($"Player made progress on computer use ({computerTask.PercentComplete()}% complete)");
             }
+            Debug.Log($"{user.name} made progress on computer use");
         }
 
         if (isBroken)
         {
-            Debug.Log("Player fixing computer");
+            Debug.Log($"{user.name} fixing computer");
             StartCoroutine(runUsing());
             isBroken = false;
 
@@ -45,27 +57,40 @@ public class Computer : ObjectInteraction
                 Destroy(smokeInstance);
                 smokeInstance = null;
             }
+            owner.IncreaseFriendliness(user, FixComputer.friendlinessIncrease);
         }
     }
 
     public override void OnPlayerSabotage()
     {
-        Debug.Log("Player trying to sabotage a computer");
+        Sabotage(player);
+    }
 
-        if (player == owner)
+    public override void OnNPCSabotage(NPC npc)
+    {
+        Sabotage(npc);
+    }
+
+    private void Sabotage(Character traitor)
+    {
+        Debug.Log($"{traitor.name} trying to sabotage {owner}'s computer");
+
+        if (traitor == owner)
         {
-            Debug.Log("Player trying to sabotage own computer"); // don't let this happen
+            // don't let this happen
             return;
         }
 
         if (!isBroken)
         {
+            SFXManager.instance.PlaySFX(explodeSFX, transform);
             isBroken = true;
 
             if (smokePrefab != null && smokePoint != null && smokeInstance == null)
             {
                 smokeInstance = Instantiate(smokePrefab, smokePoint.position, Quaternion.identity);
             }
+            owner.IncreaseFriendliness(traitor, BreakComputer.friendlinessPenalty);
         }
         else
         {
@@ -76,55 +101,7 @@ public class Computer : ObjectInteraction
                 Destroy(smokeInstance);
                 smokeInstance = null;
             }
-        }
-    }
-
-    public override void OnNPCUse(NPC npc)
-    {
-        Debug.Log($"NPC using computer {gameObject.transform.parent.name}");
-
-        if (canBeUsed())
-        {
-            StartCoroutine(runUsing());
-            Debug.Log($"NPC made progress on computer use");
-        }
-
-        if (isBroken)
-        {
-            Debug.Log("NPC fixing computer");
-            StartCoroutine(runUsing());
-            isBroken = false;
-
-            if (smokeInstance != null)
-            {
-                Destroy(smokeInstance);
-                smokeInstance = null;
-            }
-        }
-    }
-
-    public override void OnNPCSabotage(NPC npc)
-    {
-        Debug.Log("NPC trying to sabotage a computer");
-
-        if (!isBroken)
-        {
-            isBroken = true;
-
-            if (smokePrefab != null && smokePoint != null && smokeInstance == null)
-            {
-                smokeInstance = Instantiate(smokePrefab, smokePoint.position, Quaternion.identity);
-            }
-        }
-        else
-        {
-            isBroken = false;
-
-            if (smokeInstance != null)
-            {
-                Destroy(smokeInstance);
-                smokeInstance = null;
-            }
+            owner.IncreaseFriendliness(traitor, FixComputer.friendlinessIncrease);
         }
     }
 

@@ -21,10 +21,10 @@ public class NPC : Character
         tasksCompleted = 0;
         GameObject[] npcs = GameObject.FindGameObjectsWithTag("NPC");
         List<Character> characters = new List<Character>();
-        friendlinessValues.Add(GameObject.FindGameObjectWithTag("Player").GetComponent<Character>(), 0.0);
+        friendlinessValues.Add(GameObject.FindGameObjectWithTag("Player").GetComponent<Character>(), defaultFriendliness);
         for (int i = 0; i < npcs.Length; i++)
         {
-            friendlinessValues.Add(npcs[i].GetComponent<Character>(), 0.0);
+            friendlinessValues.Add(npcs[i].GetComponent<Character>(), defaultFriendliness);
         }
     }
     
