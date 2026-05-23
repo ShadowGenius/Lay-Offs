@@ -106,7 +106,7 @@ public class GameTimeManager : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            npcs[i].teleport(positions[i],false);
+            npcs[i].teleport(positions[i]);
         }
         FindObjectOfType<Player>().transform.position = new Vector3(9, 6, 0);
     }

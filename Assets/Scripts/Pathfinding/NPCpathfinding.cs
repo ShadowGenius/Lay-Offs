@@ -239,7 +239,7 @@ public class NPCpathfinding : MonoBehaviour
         {
             active = false;
         }
-        else;
+        else
         {
             active = true;
         }
