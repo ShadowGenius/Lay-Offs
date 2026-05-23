@@ -119,7 +119,7 @@ public class VotingManager : MonoBehaviour
         }
         
         CloseVote();
-        SceneSwitcher.Change("MainMenu");
+        
     }
 
     void CloseVote()
@@ -229,10 +229,12 @@ public class VotingManager : MonoBehaviour
     void GameOver()
     {
         Debug.Log("GAME OVER");
+        SceneSwitcher.Change("Fired");
     }
 
     void GameWon()
     {
         Debug.Log("GAME WON");
+        SceneSwitcher.Change("Win");
     }
 }
