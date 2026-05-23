@@ -82,6 +82,7 @@ public class GameTimeManager : MonoBehaviour
         minutesElapsedToday = 0;
 
         //Debug.Log($"Day {currentDay}, Clock: {clockString}");
+
     }
 
     public void PauseTime()
@@ -89,16 +90,57 @@ public class GameTimeManager : MonoBehaviour
         timePaused = true;
     }
 
+    public void ResetPosition()
+    {
+        NPCpathfinding[] npcs = FindObjectsOfType<NPCpathfinding>();
+        Vector3[] positions =
+        {
+            new Vector3(14, 14,0),
+            new Vector3(11, 15, 0),
+            new Vector3(7, 14, 0),
+            new Vector3(3, 14, 0),
+            new Vector3(13, 19, 0)
+        };
+
+        int count = Mathf.Min(npcs.Length, positions.Length);
+
+        for (int i = 0; i < count; i++)
+        {
+            npcs[i].teleport(positions[i]);
+        }
+        FindObjectOfType<Player>().transform.position = new Vector3(9, 6, 0);
+    }
     public void StartVoting()
     {
         // start voting logic
         VotingUI.SetActive(true);
+        NPCpathfinding[] npcs = FindObjectsOfType<NPCpathfinding>();
+
+        Vector3[] positions =
+        {
+            new Vector3(30, 25,0),
+            new Vector3(32, 25, 0),
+            new Vector3(34, 25, 0),
+            new Vector3(30, 20, 0),
+            new Vector3(32, 20, 0)
+        };
+
+        int count = Mathf.Min(npcs.Length, positions.Length);
+
+        for (int i = 0; i < count; i++)
+        {
+            npcs[i].teleport(positions[i],true);
+        }
+        FindObjectOfType<Player>().transform.position = new Vector3(34, 18, 0);
     }
 
     public void ResumeTime()
     {
         timePaused = false;
         StartCoroutine(DayLoop());
+        AdvanceDay();
+        ResetPosition();
+        
     }
 
     // Update is called once per frame

@@ -239,6 +239,10 @@ public class NPCpathfinding : MonoBehaviour
         {
             active = false;
         }
+        else
+        {
+            active = true;
+        }
     }
 
     public void teleport(float x, float y, float z, bool setInactive = false)
