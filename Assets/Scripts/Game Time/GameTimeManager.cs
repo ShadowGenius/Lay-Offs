@@ -92,7 +92,6 @@ public class GameTimeManager : MonoBehaviour
 
     public void ResetPosition()
     {
-        VotingUI.SetActive(true);
         NPCpathfinding[] npcs = FindObjectsOfType<NPCpathfinding>();
         Vector3[] positions =
         {

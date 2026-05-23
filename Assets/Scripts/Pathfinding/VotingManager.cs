@@ -119,7 +119,6 @@ public class VotingManager : MonoBehaviour
             //Debug.Log("Tie, nobody voted out");
         }
         
-        CloseVote();
         
     }
 
