@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class VotingManager : MonoBehaviour
 {
+    public GameTimeManager gameTimeManager = null;
     public List<int> votes;
     public List<Button> buttons;
     public List<GameObject> employees;
@@ -136,6 +137,10 @@ public class VotingManager : MonoBehaviour
         }
         else if (votedOut != -1)
             employees[votedOut].gameObject.SetActive(false);
+
+        gameTimeManager.AdvanceDay();
+        gameTimeManager.ResumeTime();
+        
     }
 
     void randomEmployeeVote()

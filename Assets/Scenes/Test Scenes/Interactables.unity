@@ -10585,6 +10585,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5936322753854506291, guid: 72d15751be49ee744b4b91d446fa4494, type: 3}
+      propertyPath: gameTimeManager
+      value: 
+      objectReference: {fileID: 280588490}
+    - target: {fileID: 5936322753854506291, guid: 72d15751be49ee744b4b91d446fa4494, type: 3}
       propertyPath: alive.Array.size
       value: 6
       objectReference: {fileID: 0}
