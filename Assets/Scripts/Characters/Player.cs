@@ -1,13 +1,17 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Player : Character
 {
     [SerializeField] private PlayerMovement movement;
     [SerializeField] private TextMeshProUGUI taskListText = null;
     [SerializeField] private TextMeshProUGUI heldItemText = null;
+    [SerializeField] private Image heldItemImage = null;
+
+    private Sprite waterSprite;
+    private Sprite paperSprite;
 
     [SerializeField] public float npcInteractionDistance = 2.2f;
 
@@ -43,6 +47,10 @@ public class Player : Character
         }
 
         GetNPCS();
+
+        waterSprite = Resources.Load<Sprite>("Art/Items/cupofwater");
+        Debug.Log(waterSprite);
+        paperSprite = Resources.Load<Sprite>("Art/Items/stackofpaper");
     }
 
     // Update is called once per frame
@@ -63,7 +71,20 @@ public class Player : Character
         }
 
         heldItemText.text = "Current held item: " + heldItem.ToString();
-
+        switch (heldItem)
+        {
+            case Item.Paper:
+                heldItemImage.gameObject.SetActive(true);
+                heldItemImage.sprite = paperSprite;
+                break;
+            case Item.Water:
+                heldItemImage.gameObject.SetActive(true);
+                heldItemImage.sprite = waterSprite;
+                break;
+            default:
+                heldItemImage.gameObject.SetActive(false);
+                break;
+        }
         NPCInteraction();
     }
 
