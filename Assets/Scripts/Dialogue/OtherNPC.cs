@@ -9,6 +9,8 @@ public class OtherNPC : MonoBehaviour
     public UIController uIController;
     [SerializeField] private GameObject interactUI;
     [SerializeField] private NPCpathfinding nPCpathfinding;
+    [SerializeField] private NPC npc;
+    [SerializeField] private Character itself;
 
     public bool startDialogue = false;
     private float speed;
@@ -19,6 +21,7 @@ public class OtherNPC : MonoBehaviour
     {
         speed = nPCpathfinding.speed;
         interactUI.SetActive(false);
+        dialogueNode.speakerName = npc.name;
     }
 
     void Update()
@@ -54,7 +57,7 @@ public class OtherNPC : MonoBehaviour
         {
             interactUI.SetActive(false);
             Debug.Log("pressed interact");
-            uIController.StartDialogue(dialogueNode);
+            uIController.StartDialogue(dialogueNode, itself);
             uIController.prompt = false;
         }
     }
