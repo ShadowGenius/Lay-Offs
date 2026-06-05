@@ -18,6 +18,7 @@ public class VotingManager : MonoBehaviour
     {
         GameObject[] employeesArray = GameObject.FindGameObjectsWithTag("NPC");
         employees = new List<GameObject>(employeesArray);
+        employees = sortEmployeesList(employees);
         employees.Insert(0, GameObject.FindGameObjectWithTag("Player"));
         endVoteButton.onClick.AddListener(() => CloseVote());
         for (int i = 0; i < buttons.Count; i++)
@@ -240,5 +241,19 @@ public class VotingManager : MonoBehaviour
     {
         Debug.Log("GAME WON");
         SceneSwitcher.Change("Win");
+    }
+
+    List<GameObject> sortEmployeesList(List<GameObject> e)
+    {
+        List<GameObject> new_e = new List<GameObject>();
+        for(int i = 0; i < e.Count; i++)
+        {
+            new_e.Add(e.Find( e=> e.name == "NPC " + i));
+        }
+        for(int i = 0; i < e.Count; i++)
+        {
+            Debug.Log(new_e[i]);
+        }
+        return new_e;
     }
 }

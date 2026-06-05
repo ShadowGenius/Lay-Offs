@@ -10,8 +10,12 @@ public class UIController : MonoBehaviour
     [SerializeField] private Text choice1Text;
     [SerializeField] private GameObject choice2;
     [SerializeField] private Text choice2Text;
+    [SerializeField] private GameObject choice3;
+    [SerializeField] private Text choice3Text;
     [SerializeField] private Text nameText;
     private DialogueNode node;
+    private Character currentNPC;
+    private Character player;
     private int lineIndex;
 
     public bool prompt = true;
@@ -22,6 +26,8 @@ public class UIController : MonoBehaviour
         dialogueUI.SetActive(false);
         choice1.SetActive(false);
         choice2.SetActive(false);
+        choice3.SetActive(false);
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
     }
 
     void Update()
@@ -42,10 +48,15 @@ public class UIController : MonoBehaviour
             {
                 Choose(1);
             }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                Choose(2);
+            }
         }
     }
-    public void StartDialogue(DialogueNode dialogueNode)
+    public void StartDialogue(DialogueNode dialogueNode, Character npc)
     {
+        currentNPC = npc;
         nameText.text = dialogueNode.speakerName;
         
         lineIndex = 0;
@@ -72,7 +83,7 @@ public class UIController : MonoBehaviour
 
             if (node.nextNode != null)
             {
-                StartDialogue(node.nextNode);
+                StartDialogue(node.nextNode, currentNPC);
                 return;
             }
 
@@ -88,26 +99,62 @@ public class UIController : MonoBehaviour
     {
         choice1.SetActive(true);
         choice2.SetActive(true);
+        choice3.SetActive(true);
         choice1Text.text = node.choices[0].label;
         choice2Text.text = node.choices[1].label;
+        choice3Text.text = "Check friendliness";
     }
 
 
     public void Choose(int id)
     {
         Debug.Log($"press {id}");
-        
-        DialogueNode nextNode = node.choices[id].nextNode;
-        if (nextNode!= null)
+        if (id == 0 || id == 1)
         {
-            StartDialogue(nextNode);
+            DialogueNode nextNode = node.choices[id].nextNode;
+            if (nextNode!= null)
+            {
+                StartDialogue(nextNode, currentNPC);
+            }
+            else
+            {
+                dialogueUI.SetActive(false);
+                prompt = true;
+            }
+            choice1.SetActive(false);
+            choice2.SetActive(false);
+            choice3.SetActive(false);
+        }
+        else if (id == 2)
+        {   
+            ShowFriendliness();
+            choice1.SetActive(false);
+            choice2.SetActive(false);
+            choice3.SetActive(false);
+        }
+    }
+
+    public void ShowFriendliness()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
+        double friendliness = currentNPC.FriendlinessTo(player);
+        dialogueUI.SetActive(true);
+        if (friendliness < 30)
+        {
+            lineText.text = $"{currentNPC.name} seems distant from you.";
+        }
+        else if (friendliness < 60)
+        {
+            lineText.text = $"{currentNPC.name} is neutral toward you.";
+        }
+        else if (friendliness < 80)
+        {
+            lineText.text = $"{currentNPC.name} seems friendly toward you.";
         }
         else
         {
-            dialogueUI.SetActive(false);
-            prompt = true;
+            lineText.text = $"{currentNPC.name} trusts you a lot.";
         }
-        choice1.SetActive(false);
-        choice2.SetActive(false);
+        
     }
 }
