@@ -1448,7 +1448,7 @@ MonoBehaviour:
   realSecondsPerMinute: 1
   timeText: {fileID: 1084265308}
   currentDay: 1
-  dateText: {fileID: 0}
+  dateText: {fileID: 286734082}
 --- !u!224 &280588491
 RectTransform:
   m_ObjectHideFlags: 0
