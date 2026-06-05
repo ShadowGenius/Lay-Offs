@@ -33,7 +33,8 @@ public class ObjectInteraction : MonoBehaviour
         if (PlayerWithinInteractionDistance() && Input.GetKeyDown(KeyCode.E))
         {
             OnPlayerUse();
-
+            playerObject.GetComponent<Player>().tasksCompleted += 2;
+            Debug.Log(playerObject.GetComponent<Player>().tasksCompleted);
             Debug.Log($"Player use at distance {Vector2.Distance(transform.position, playerObject.transform.position)}");
 
             // handle sabotaging later
