@@ -11,7 +11,9 @@ public class GameTimeManager : MonoBehaviour
     [SerializeField] public float realSecondsPerMinute = 1f;
     [SerializeField] public TextMeshProUGUI timeText = null;
 
-    private int currentDay = 1;
+    [SerializeField] public int currentDay = 1;
+
+    [SerializeField] public TextMeshProUGUI dateText = null;
     private int currentHour; // goes from 9 to 17
     private int currentMinute = 0;
 
@@ -40,6 +42,10 @@ public class GameTimeManager : MonoBehaviour
         {
             return $"{currentHour}:{currentMinute:00} AM";
         }
+    }
+    public String GetCurrentDateString()
+    {
+        return $" Day {currentDay}";
     }
 
     public void AdvanceTime()
@@ -80,6 +86,9 @@ public class GameTimeManager : MonoBehaviour
         currentHour = earliestHour;
         currentMinute = 0;
         minutesElapsedToday = 0;
+        dateText.text = GetCurrentDateString();
+        ResetPosition();
+        
 
         //Debug.Log($"Day {currentDay}, Clock: {clockString}");
 
@@ -139,7 +148,6 @@ public class GameTimeManager : MonoBehaviour
         timePaused = false;
         StartCoroutine(DayLoop());
         AdvanceDay();
-        ResetPosition();
         
     }
 
