@@ -137,7 +137,7 @@ public class VotingManager : MonoBehaviour
         else if (votedOut != -1)
             employees[votedOut].gameObject.SetActive(false);
 
-        gameTimeManager.AdvanceDay();
+        //gameTimeManager.AdvanceDay();
         gameTimeManager.ResumeTime();
         
     }
