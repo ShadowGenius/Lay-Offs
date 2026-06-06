@@ -34,9 +34,9 @@ public class VotingManager : MonoBehaviour
         for (int i = 0; i < buttons.Count; i++)
         {
             votes[i] = 0;
-            buttons[i].gameObject.SetActive(true);
             if (alive[i] == true)
             {
+                buttons[i].gameObject.SetActive(true);
                 // buttons[i].transform.parent.GetComponentInChildren<TextMeshProUGUI>().text = "Employee " + (i + 1);
                 NPC npc = employees[i].GetComponent<NPC>();
                 if (npc != null)
@@ -91,6 +91,7 @@ public class VotingManager : MonoBehaviour
         }
         int highestVoteIndex = 0;
         bool isTie = false;
+        List<int> tieInts = new List<int>();
         for (int i = 0; i < buttons.Count; i++)
         {
             buttons[i].gameObject.SetActive(false);
@@ -100,10 +101,13 @@ public class VotingManager : MonoBehaviour
             {
                 isTie = false;
                 highestVoteIndex = i;
+                tieInts.Clear();
             }
             else if(votes[i] == votes[highestVoteIndex])
             {
                 isTie = true;
+                tieInts.Add(i);
+                tieInts.Add(highestVoteIndex);
             }
         }
         endVoteButton.gameObject.SetActive(true);
@@ -116,7 +120,7 @@ public class VotingManager : MonoBehaviour
         }
         else
         {
-            votedOut = bossVote();
+            votedOut = bossVote(tieInts);
             //Debug.Log("Tie, nobody voted out");
         }
         
@@ -150,7 +154,8 @@ public class VotingManager : MonoBehaviour
         do
         {
             voteNum = Random.Range(1, employeesNum);
-        } while (alive[voteNum] == false);
+        } 
+        while (alive[voteNum] == false);
         Debug.Log("Random voted " + voteNum);
         votes[voteNum]+= 1;
     }
@@ -199,9 +204,9 @@ public class VotingManager : MonoBehaviour
         }
     }
 
-    int bossVote()
+    int bossVote(List<int> tieInts)
     {
-        List<Character> characters = new List<Character>();
+        /*List<Character> characters = new List<Character>();
         for(int i = 0; i < employees.Count; i++)
         {
             characters.Add(employees[i].GetComponent<Character>());
@@ -214,7 +219,8 @@ public class VotingManager : MonoBehaviour
                 leastProductiveIndex = i;
             }
         }
-        Debug.Log("Boss voting for (SLACKER) " + leastProductiveIndex);
+        Debug.Log("Boss voting for (SLACKER) " + leastProductiveIndex);*/
+        int leastProductiveIndex = tieInts[Random.Range(0, tieInts.Count-1)];
         return leastProductiveIndex;
     }
 

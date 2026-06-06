@@ -87,6 +87,11 @@ public class GameTimeManager : MonoBehaviour
         currentMinute = 0;
         minutesElapsedToday = 0;
         dateText.text = GetCurrentDateString();
+        
+        //for (int i = 0; i < count; i++)
+        //{
+        //    npcs[i].ResetWater();
+        //}
         ResetPosition();
         
 

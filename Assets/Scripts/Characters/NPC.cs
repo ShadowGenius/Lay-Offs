@@ -77,4 +77,13 @@ public class NPC : Character
 
         return false;
     }
+    public void ResetWater()
+    {
+        if (givenWater)
+        {
+            givenWater = false;
+        }
+        
+
+    }
 }
